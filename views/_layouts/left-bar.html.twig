@@ -1,0 +1,142 @@
+<!-- BEGIN SIDEBAR -->
+<nav id="page-leftbar" role="navigation">
+        <!-- BEGIN SIDEBAR MENU -->
+    <ul class="acc-menu" id="sidebar">
+        <li><a href="{{ app.url }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        {% if app.site.name is not empty %}
+            <li><a href="{{ app.url }}/site-settings"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+            <li><a href="{{ app.url }}/site-files"><i class="fa fa-code"></i> <span>Templates</span></a></li>
+            <li><a href="{{ app.url }}/site-users"><i class="fa fa-users"></i> <span>Users</span></a></li>
+            <li><a href="{{ app.url }}/site-my-themes"><i class="fa fa-coffee"></i> <span>My Themes</span></a></li>
+            <li><a href="{{ app.url }}/site-theme-store"><i class="fa fa-shopping-cart"></i> <span>Theme Store</span></a></li>
+        {% endif %}
+        <li class="divider"></li>
+
+        {% if app.site.name is not empty %}
+            {{ app.site.render('/_admin/_menus/left-nav.html.twig') }}
+        {%  endif %}
+
+        <li class="divider"></li>
+
+        <li><a href="javascript:;"><i class="fa fa-briefcase"></i> <span>Examples</span> <span class="badge badge-danger">1</span></a>
+            <ul class="acc-menu">
+
+                <li><a href="{{ app.url }}/examples/avant/index"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="javascript:;"><i class="fa fa-th"></i> <span>Layout Options</span> </a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/layout-grid"><span>Grids</span></a>
+                        <li><a href="{{ app.url }}/examples/avant/layout-horizontal"><span>Horizontal Navigation</span></a>
+                        <li><a href="{{ app.url }}/examples/avant/layout-horizontal2"><span>Horizontal Navigation 2</span></a>
+                        <li><a href="{{ app.url }}/examples/avant/layout-fixed"><span>Fixed Boxed Layout</span></a>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-list-ol"></i> <span>UI Elements</span> <span class="badge badge-indigo">4</span></a>
+                    <ul class='acc-menu'>
+                        <li><a href="{{ app.url }}/examples/avant/ui-typography">Typography</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-buttons">Buttons</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/tables-basic">Tables</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-layout">Forms</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-panels">Panels</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-images">Images</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-tasks"></i> <span>UI Components</span> <span class="badge badge-info">12</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/ui-tiles">Tiles</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-modals">Modal Boxes</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-progressbars">Progress Bars</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-paginations">Pagers &amp; Paginations</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-breadcrumbs">Breadcrumbs</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-labelsbadges">Labels &amp; Badges</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-alerts">Alerts &amp; Notificiations</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-sliders">Sliders &amp; Ranges</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-tabs">Tabs &amp; Accordions</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-carousel">Carousel</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-nestable">Nestable Lists</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/ui-wells">Wells</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-table"></i> <span>Advanced Tables</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/tables-data">Data Tables</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/tables-responsive">Responsive Tables</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/tables-editable">Editable Tables</a></li>
+                        <!-- <li><a href="#">Samples</a></li> Coming soon -->
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-pencil"></i> <span>Advanced Forms</span><span class="badge badge-primary">5</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/form-components">Components</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-wizard">Wizards</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-validation">Validation</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-masks">Masks</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-fileupload">Multiple File Uploads</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/form-dropzone">Dropzone File Uploads</a></li>
+                        <!-- <li><a href="#">Samples</a></li> Coming soon -->
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-map-marker"></i> <span>Maps</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/maps-google">Google Maps</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/maps-vector">Vector Maps</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-bar-chart-o"></i> <span>Charts</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/charts-flot">Extensible</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/charts-svg">Interactive</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/charts-canvas">Lightweight</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/charts-inline">Inline</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ app.url }}/examples/avant/calendar"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
+                <li><a href="{{ app.url }}/examples/avant/gallery"><i class="fa fa-camera"></i> <span> Gallery</span> </a></li>
+                <li><a href="javascript:;"><i class="fa fa-flag"></i> <span>Icons</span> <span class="badge badge-orange">2</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/icons-fontawesome">Font Awesome</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/icons-glyphicons">Glyphicons</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li><a href="javascript:;"><i class="fa fa-briefcase"></i> <span>Extras</span> <span class="badge badge-danger">1</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="{{ app.url }}/examples/avant/extras-timeline">Timeline</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-profile">Profile</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-inbox">Inbox</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-search">Search Page</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-registration">Registration</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-invoice">Invoice</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-signupform">Sign Up</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-404">404 Page</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-500">500 Page</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-login">Login 1</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-login2">Login 2</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-forgotpassword">Password Reset</a></li>
+                        <li><a href="{{ app.url }}/examples/avant/extras-blank">Blank Page</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;"><i class="fa fa-sitemap"></i> <span>Unlimited Level Menu</span></a>
+                    <ul class="acc-menu">
+                        <li><a href="javascript:;">Menu Item 1</a></li>
+                        <li><a href="javascript:;">Menu Item 2</a>
+                            <ul class="acc-menu">
+                                <li><a href="javascript:;">Menu Item 2.1</a></li>
+                                <li><a href="javascript:;">Menu Item 2.2</a>
+                                    <ul class="acc-menu">
+                                        <li><a href="javascript:;">Menu Item 2.2.1</a></li>
+                                        <li><a href="javascript:;">Menu Item 2.2.2</a>
+                                            <ul class="acc-menu">
+                                                <li><a href="javascript:;">And deeper yet!</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</nav>

@@ -1,0 +1,142 @@
+{
+  "modules":{
+    "store":[
+
+    ]
+  },
+  "components":{
+    "dbsite":{
+      "connectionString":"mysql:host=127.0.0.1;dbname=testsite"
+    },
+    "nvp":{
+      "class":"ext.Paypal.PaypalNVP",
+      "user":"",
+      "pwd":"",
+      "signature":"",
+      "sandbox":false
+    },
+    "payflowpro":{
+      "class":"ext.Paypal.PaypalPayflowPro",
+      "user":"",
+      "vendor":"",
+      "partner":"PayPal",
+      "pwd":"",
+      "sandbox":false
+    }
+  },
+  "params":{
+      "returnTime":"+30 days",
+      "url":{
+          "storeImage":"\/images\/",
+          "live": "",
+          "preview": ""
+      },
+    "email":{
+      "useses":false
+    },
+    "social_settings": {
+      "facebook": {
+        "_comment":" 'like_type' can be set to like or recommend",
+        "active_like":false,
+        "like_type":"like",
+        "active_share":false,
+        "show_count":false,
+        "active_metatags":false,
+        "appId":"",
+        "facebook_page":"",
+        "active_follow_page_button":false
+      },
+      "twitter": {
+        "active_tweet":false,
+        "add_acct_to_tweet":false,
+        "twitter_account":"",
+        "active_metatags":false,
+        "twitter_page":"",
+        "appId":"",
+        "active_follow_page_button":false
+      },
+      "pinterest": {
+        "_comment": "Shape Can Be Set To 'rectangular' Or 'circular'",
+        "active_pin_it":false,
+        "show_count":false,
+        "full_page_name":"",
+        "pinterest_page":"",
+        "appId":"",
+        "active_follow_page_button":false
+      },
+      "google": {
+        "active_plus_one":false,
+        "full_page_name":"",
+        "google_page":"",
+        "appId":"",
+        "active_follow_page_button":false
+      }
+    },
+    "live_chat": {
+      "active_chat":false,
+      "chat_licence":""
+    },
+    "seo": {
+      "img":"",
+      "description":"",
+      "keywords":"",
+      "title":"Home"
+    },
+    "contact-us":{
+          "to":"no-reply@acenda.com",
+          "from":"no-reply@acenda.com"
+      },
+      "notifications":{
+          "from":"no-reply@acenda.com",
+          "order":{
+              "placed":{
+                  "template":"email/order-placed.html.twig",
+                  "subject":"{{ site_name }} - Order {{ order_number }} placed"
+              },
+              "shipped":{
+                  "template":"email/order-shipped.html.twig",
+                  "subject":"{{ site_name }} - Order {{ order_number }} shipped"
+              },
+              "cancelled":{
+                  "template":"email/order-cancelled.html.twig",
+                  "subject":"{{ site_name }} - Order {{ order_number }} cancelled"
+              },
+              "return":{
+                  "template":"email/order-return.html.twig",
+                  "subject":"{{ site_name }} - Order {{ order_number }} return"
+              },
+              "returnupdate":{
+                  "template":"email/order-return-update.html.twig",
+                  "subject":"{{ site_name }} - Order {{ order_number }} return update"
+              },
+              "shipping-update":{
+                  "template":"email/order-shipping-update.html.twig",
+                  "subject":"{{ site_name }} - Order shipping update"
+              }
+          },
+          "customer-reset-password":{
+              "template":"email/customer-reset-password.html.twig",
+              "subject":"{{ site_name }} - Password reset request"
+          },
+          "customer-new-account":{
+            "template":"email/new-account.html.twig",
+            "subject":"Welcome to {{ site_name }}"
+          },
+          "customer-new-subscriber":{
+                "template":"email/new-subscriber.html.twig",
+                "subject":"You subscribed to {{ site_name }}"
+          },
+          "administrator-invitation":{
+              "template":"email/administrator-invitation.html.twig",
+              "subject":"You have been invited to the store {{ site_name }}"
+          },
+          "administrator-forgot-password":{
+              "template":"email/administrator-forgot-password.html.twig",
+              "subject":"{{ site_name }} - You have lost your password? No worries!"
+          }
+      }
+  },
+  "EXTEND":[
+    "json store.json"
+  ]
+}
