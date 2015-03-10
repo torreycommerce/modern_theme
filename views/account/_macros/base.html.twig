@@ -1,0 +1,45 @@
+
+{% macro login() %}
+{% if not app.user.isLoggedIn() %}
+{% do app.redirect('/account/login/'~app.request.url) %}
+{% endif %}
+{% endmacro %}
+
+{% macro navigation(current_page = '') %}
+{% set tabs = {
+    '':'Account Center',
+    'notifications':'Notifications',
+    'addresses':'Addresses',
+    'orders':'Orders',
+    'wishlists':'Wishlists',
+    'registries':'Registries',
+    'reviews':'Reviews',
+    'returns':'Returns',
+    'account-settings':'Account Settings',
+} %}
+<div class="navbar navbar-default">
+    {# Begin mobile menu button #}
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    {# End mobile menu button #}
+    {# Begin menu #}
+    <div class="sidebar">
+        <ul class="nav nav-sidebar">
+            {% for page,title in tabs %}
+            <li {% if current_page == page or page == '' and current_page not in tabs|keys %}class="active"{% endif %}>
+                <a href="{{app.url}}/account/{{page}}">{{title}}</a>
+            </li>
+            {% endfor %}
+        </ul>        
+    </div>
+    <div class="logout">
+        <a class="btn btn-danger btn-block" href="{{app.url}}/account/logout">Logout</a>
+    </div>
+    {# End menu #}
+</div>
+{% endmacro %}

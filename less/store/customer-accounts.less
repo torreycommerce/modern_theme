@@ -1,0 +1,340 @@
+// 5.0
+// CUSTOMER ACCOUNTS
+// --------------------------------------------------
+// 5.1 - Account Center
+// 5.2 - Notifications
+// 5.3 - Addresses
+// 5.4 - Orders
+// 5.5 - Wishlists
+// 5.6 - Registries
+// 5.7 - Reviews
+// 5.8 - Returns
+// 5.9 - Account Settings
+
+
+// 5.0
+// CUSTOMER ACCOUNTS
+// --------------------------------------------------
+
+// Sidebar
+
+#customer-account {
+    .navigation {
+        .navbar {
+            .sidebar { margin-bottom: 20px;}
+            .logout {}
+        }
+    }
+}
+
+.tab-nav { }
+.tab-content {
+    background: #ffffff; margin-bottom: 20px;
+    .tab-pane {
+        header { padding: 10px 0; }
+        .tab-pane-actions { padding: 10px 0; }
+        .tab-pane-content { padding: 10px 0;}
+        footer { }
+    }
+}
+
+.tab-pane {
+    header {}
+    .tab-pane-actions {}
+    .tab-pane-content {}
+    footer { padding-bottom: 20p;}
+}
+
+// Panels
+.panel {
+    .panel-heading {}
+    .panel-body {
+        address { margin-bottom: 0;}
+    }
+    .panel-footer {}
+}
+
+// 5.1
+// ACCOUNT CENTER
+// --------------------------------------------------
+
+#customer-account-center {
+    // Recent Notifications
+    #recent-notifications {}
+
+    // Recent Orders
+    #recent-orders {
+        .order {
+            border-bottom: 1px solid #DDDDDD; padding-bottom: 10px; padding-top: 10px;
+            .order-details { padding-bottom: 10px;}
+            .order-items { padding-bottom: 10px;}
+            .actions {}
+            &:last-child {
+                border-bottom: 0 none; padding-bottom: 0;
+                .actions { margin-bottom: 0;}
+            }
+            @media (min-width: @screen-sm-min) {
+                .actions { text-align: right;}
+            }
+        }
+    }
+
+    // Recent Wishlist Items
+    #recent-wishlist {
+        .product {
+            border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;
+            @media (min-width: @screen-sm-max) {
+                border-bottom: 0px;
+            }
+        }
+    }
+}
+
+
+// 5.2
+// NOTIFICATIONS
+// --------------------------------------------------
+
+#customer-account-notifications {
+    .actions-header { margin-bottom: 20px; }
+    .actions-footer { margin-top: 20px;}
+}
+
+
+// 5.3
+// ADDRESSES
+// --------------------------------------------------
+
+#customer-account-addresses {}
+
+#customer-account-reviews {    
+    .reviews {
+        .review {
+            border-bottom: 1px solid #eeeeee; margin-bottom: 10px; padding-bottom: 10px; padding-top: 10px;
+            .date {}
+            .product-name {}
+            .title {}
+            .actions {}
+        }
+    }
+}
+
+
+// 5.4
+// ORDER HISTORY
+// --------------------------------------------------
+#customer-account-orders {
+    .well { background-color: #ffffff; }
+    .order-filter {
+        margin-bottom: 10px;
+        @media (min-width: @screen-sm-min) {
+            margin-bottom: 0;
+        }
+    }
+    .order-search {
+        margin-bottom: 10px;
+        @media (min-width: @screen-sm-min) {
+            margin-bottom: 0;
+        }
+    }
+
+    .order-details {
+
+         font-size: 12px;
+
+        .order-info { margin-bottom: 20px;}            
+        .shipping-address { margin-bottom: 20px;}
+        .shipping-method { margin-bottom: 20px;}
+        .order-total { margin-bottom: 20px;}
+        .actions {
+            margin-bottom: 20px;
+            @media (min-width: @screen-sm-min) {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: @screen-sm-min) {
+            border-right: 1px solid #E5E5E5;
+        }
+    }
+    .order-items {
+        font-size: 12px;
+        .item {
+            border-bottom: 1px solid #e5e5e5; margin-bottom: 5px; padding-bottom: 5px;
+            .thumbnail { margin-bottom: 0;}
+            &:last-child { border-bottom: 0 none; margin-bottom: 0; padding-bottom: 0; }
+        }
+        @media (min-width: @screen-sm-min) {
+            border-left: 1px solid #E5E5E5; margin-left: -1px;
+        }
+    }
+    
+}
+
+#order-details{
+    .order-details{
+        .return-order{ margin: 5px 0;}
+    }
+}
+#customer-account-orders {
+
+    .well { background-color: #ffffff;} 
+
+    .coupon{
+        margin: 20px 0;
+
+        .discount-line-through{
+            text-decoration: line-through;
+        }
+    }
+
+    // Order Details
+    .order-details {
+
+        font-size: 12px;
+
+         @media (min-width: @screen-sm-min) {
+            border-right: 1px solid #E5E5E5;
+        }
+
+        .modal {
+            font-size: 14px;
+        }
+
+        .order-info { font-size: 12px; margin-bottom: 20px;}
+        .shipping-address {
+            font-size: 12px; margin-bottom: 20px;
+            address { margin-bottom: 0;}
+        }
+        .shipping-method { font-size: 12px; margin-bottom: 20px;}
+        .order-actions { 
+            margin-bottom: 20px;
+        }
+    }
+
+    // Order Items
+    .order-items {
+        font-size: 12px;
+        @media (min-width: @screen-sm-min) {
+            border-left: 1px solid #E5E5E5; margin-left: -1px;
+        }
+        .item {  }
+    }
+
+    .billing-address {
+        font-size: 12px; margin-bottom: 20px;
+        address { margin-bottom: 0;}
+    }
+    .billing-method { font-size: 12px; margin-bottom: 20px;}
+    .order-totals { font-weight: 12px; margin-bottom: 20px;}
+}
+
+
+// 5.5
+// WISHLISTS
+// --------------------------------------------------
+#customer-account {
+    #customer-account-wishlists {
+
+    }
+}
+
+
+// 5.6
+// REGISTRIES
+// --------------------------------------------------
+#customer-account-registries{    
+    .header-actions { border-bottom: 1px solid #EEEEEE; padding-bottom: 20px; margin-bottom: 10px;}
+    .registry-list {
+        .registry {
+            border-bottom: 1px solid #EEEEEE; padding-bottom: 10px; padding-top: 10px; margin-bottom: 10px;
+        .actions { text-align: right;}
+        }
+    }
+    .footer-actions { padding-top: 20px;}
+}
+
+#registry-create,
+#registry-edit {    
+    fieldset {
+        margin-bottom: 30px;
+        legend { margin-bottom: 10px;}
+    }
+    .registry-info { }
+    .registrant-info { }
+    .co-registrant-info { }
+    .shipping-info { }
+    .settings { }
+    .actions {
+        .btn { margin-right: 10px;}
+    }
+}
+
+
+// 5.7
+// REVIEWS
+// --------------------------------------------------
+
+#customer-account-reviews {}
+
+// 5.8
+// RETURNS
+// --------------------------------------------------
+#customer-account-returns {
+    .well { background-color: #ffffff; }
+    .return-filter {
+        margin-bottom: 10px;
+        @media (min-width: @screen-sm-min) {
+            margin-bottom: 0;
+        }
+    }
+    .return-search {
+        margin-bottom: 10px;
+        @media (min-width: @screen-sm-min) {
+            margin-bottom: 0;
+        }
+    }
+    .return {
+        .return-details {
+
+             font-size: 12px;
+
+            .return-info { margin-bottom: 20px;}            
+            .actions {
+
+                margin-bottom: 20px;
+
+                @media (min-width: @screen-sm-min) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .modal {
+                font-size: 14px;
+            }
+
+            @media (min-width: @screen-sm-min) {
+                border-right: 1px solid #E5E5E5;
+            }
+        }
+        .return-items {
+            font-size: 12px;
+            .item {
+                border-bottom: 1px solid #e5e5e5; margin-bottom: 5px; padding-bottom: 5px;
+                .thumbnail { margin-bottom: 0;}
+                &:last-child { border-bottom: 0 none; margin-bottom: 0; padding-bottom: 0; }
+            }
+            @media (min-width: @screen-sm-min) {
+                border-left: 1px solid #E5E5E5; margin-left: -1px;
+            }
+        }
+    }
+}
+
+// 5.9
+// ACCOUNT SETTINGS
+// --------------------------------------------------
+
+#customer-account-settings {
+    
+}

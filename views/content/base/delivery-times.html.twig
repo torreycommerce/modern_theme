@@ -1,0 +1,18 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% block title %}
+Delivery Times
+{% endblock %}
+{% block breadcrumb %}
+    {{ base.breadcrumbs({'Delivery Times':''}) }}
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <header>
+            <h1 class="page-header">Delivery Times</h1>
+        </header>
+        <img src="{{app.url}}/images/delivery_times2013.gif">
+        <p>The above map applies to In Stock items only. Order before 2:00 PM Pacific Standard Time and In Stock items ship the same day.  Orders that have both In Stock items and items with delayed shipping time frames (ex. Ships in 2 to 4 Weeks) will be shipped complete when all items are available. Items with delayed shipping may ship via FedEx Smartpost. Smartpost shipping adds 1-2 business days to shipping times. All Shipping and Delivery times are strictly estimates.</p>
+    </div>
+</div>
+{% endblock %}

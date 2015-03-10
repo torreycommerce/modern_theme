@@ -1,0 +1,35 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% import "/account/_macros/base.html.twig" as account %}
+{% import "/_macros/form-elements.html.twig" as form %}
+
+{# Redirect to the login page if user is not logged in. #}
+{% do account.login() %}
+
+{% set order = api.get('/order',{query:{customer_id:app.user.id,order_number:id}}).0 %}
+
+{% set page_name = 'order' %}
+
+{% block title %}Account - Order Details{% endblock %} 
+
+{% block breadcrumb %}
+    {{ base.breadcrumbs({'Account':'/account','Order History':'/account/orders','Order Details':''}) }}
+{% endblock %}
+
+{% block content %}
+<div class="customer-account">
+    <div class="row">
+    	{# Begin navigation #}
+        <div class="navigation hidden-xs hidden-sm">
+            <div class="col-sm-4 col-md-3 col-lg-2">
+                {{account.navigation('orders')}}
+            </div>
+        </div>
+        {# End navigation #}
+    	<div id="customer-account-order-details">
+    	    <div class="col-sm-9 col-md-9 col-lg-10">
+    	        {% include '/order/_partials/details.html.twig' %}
+    	    </div>
+    	</div>
+    </div>
+</div>
+{% endblock %}

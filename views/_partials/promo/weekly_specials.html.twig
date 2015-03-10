@@ -1,0 +1,32 @@
+<section class="product-grid">
+    {# Category Header (Page #, Items / page, Sort by, Search) #}
+    {# Begin category header #}
+    <header>
+        {# Begin category name #}
+        <div class="row">            
+            <div class="col-md-12">
+                <h2 class="section-name">Weekly Specials</h2>
+            </div>
+        </div>
+        {# End category name #}
+    </header>
+    {# End category header #}
+    <section class="products">
+        <div class="row">
+            {#
+            Products to display:
+            1528, 12458, 14097, 21032
+            #}
+            {% set product_ids = [1528, 34767, 34790, 21032] %}
+            {% set items_per_row = 4 %}
+            {% set products = api.get('/catalog', {query:{id:{'$in':product_ids}}}) %}
+            {% for row,product in products %}
+            {# Begin product #}
+            <div class="col-xs-{{ 48 / items_per_row }} col-sm-{{ 24 / items_per_row }} col-md-{{12 / items_per_row}} col-md-{{12 / items_per_row}}">
+                {{ prod.gridproduct(product, ['image','details']) }}
+            </div>
+            {# End product #}
+            {% endfor %}
+        </div>
+    </section>
+</section>

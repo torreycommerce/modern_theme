@@ -1,0 +1,816 @@
+{#
+// Variables
+// ----------------------------------------------------------------------------------------------------
+// Project: Acenda Default Theme
+// ----------------------------------------------------------------------------------------------------
+#}
+
+{#
+//
+// Table of Contents
+// ----------------------------------------------------------------------------------------------------
+// Colors
+// 		Brand
+// 			Primary brand color
+// 			Secondary brand color
+//
+// 		Feedback states
+// 			Sucess background color
+// 			Sucess text color
+// 			Info background color
+// 			Info text color
+// 			Warning background color
+// 			Warning text color
+// 			Danger background color
+// 			Danger text color
+//
+// Logo, Images, and Colors
+// 		Logo & Background
+// 			Use a custom logo?
+// 			Shop logo
+// 			Center logo
+// 			Use a favicon image?
+// 			Upload favicon
+// 			Use a background image?
+// 			Custom background image
+// 			Background image display style
+// 		Toolbar
+// 			Toolbar background color
+// 			Remove background color
+// 			Toolbar text color
+// 			Toolbar text hover color
+// 			Show toolbar botom border
+// 			Toolbar border color
+// 			Show border around search?
+// 			Show border color
+// 		Footer
+// 			Footer background color
+// 			Remove footer color
+// 			Footer text color
+// 			Footer heading color
+// 			Show footer heading underline?
+// 			Footer heading underline color
+// 			Footer link color
+// 			Show footer bottom border?
+// 			Footer border color
+// 		Content Area
+// 			Site background color
+// 			Content area background color
+// 			No content area background color
+// 			Text color
+// 			Heading color
+// 			Link color
+// 			Link hover color
+// 			Price color
+// 		Buttons
+// 			Button background color
+// 			Button background color hover
+// 			Button text color
+// 			Button text color hover
+// 			Button border radius
+// 		Borders
+// 			General border style
+// 			General border color
+// 		Tabs
+//
+// Typography
+// 		Base styles
+// 		Navigation styles
+// 		Heading styles
+// 		Headings
+// 		Button styles
+//
+// Footer
+// 		General
+//
+// Homepage
+// 		General
+//
+// Homepage
+// 		Homepage content
+// 		Slideshow settings
+// 		Featured layouts
+//
+// Product page
+//
+// Product collection
+//
+// Blog page
+//
+// Cart
+//
+// Additional Layouts
+//
+#}
+
+{% import _self as utils %}
+{{ utils.start_layout() }}
+
+{{ utils.start_group('Branding Colors', 'collapseBradningColors') }}
+
+{#
+// Colors
+// ---------------------------------------------------------------------------------------------------- #}
+
+{# Brand
+// ------------------------- #}
+
+{{ utils.start_subgroup('Branding Colors') }}
+
+{# Primary brand color - input #}
+{{ utils.selectColor('Primary brand color', 'brand-primary', 'settings[current][branding][branding_colors][brand-primary]', settings.current.branding.branding_colors['brand-primary']) }}
+
+{# Secondary brand color - input #}
+{{ utils.selectColor('Secondary brand color', 'brand-second', 'settings[current][branding][branding_colors][brand-second]', settings.current.branding.branding_colors['brand-second']) }}
+{{ utils.end_subgroup() }}
+
+{# ------------------------- #}
+
+
+{# Feedback states
+// ------------------------- #}
+
+{{ utils.start_subgroup('Feedback States') }}
+
+{# Success background color - input #}
+{{ utils.selectColor('Success background color', 'brand-success', 'settings[current][branding][feedback_states][brand-success]',  settings.current.branding.feedback_states['brand-success']) }}
+
+{# Success text color - input #}
+{{ utils.selectColor('Success text color', 'state-success-text', 'settings[current][branding][feedback_states][state-success-text]',  settings.current.branding.feedback_states['state-success-text']) }}
+
+{# Info background color - input #}
+{{ utils.selectColor('Info background color', 'brand-info', 'settings[current][branding][feedback_states][brand-info]',  settings.current.branding.feedback_states['brand-info']) }}
+
+{# Info text color - input #}
+{{ utils.selectColor('Info text color', 'state-info-text', 'settings[current][branding][feedback_states][state-info-text]', settings.current.branding.feedback_states['state-info-text']) }}
+
+{# Warning background color- input #}
+{{ utils.selectColor('Warning background color', 'brand-warning', 'settings[current][branding][feedback_states][brand-warning]',  settings.current.branding.feedback_states['brand-warning']) }}
+
+{# Warning text color- input #}
+{{ utils.selectColor('Warning text color', 'state-warning-text', 'settings[current][branding][feedback_states][state-warning-text]', settings.current.branding.feedback_states['state-warning-text']) }}
+
+{# Danger background color - input #}
+{{ utils.selectColor('Danger background color', 'brand-danger', 'settings[current][branding][feedback_states][brand-danger]', settings.current.branding.feedback_states['brand-danger']) }}
+
+{# Danger text color - input #}
+{{ utils.selectColor('Danger text color', 'state-danger-text', 'settings[current][branding][feedback_states][state-danger-text]',  settings.current.branding.feedback_states['state-danger-text']) }}
+{{ utils.end_subgroup() }}
+
+{# ------------------------- #}
+
+{{ utils.end_group() }}
+{# ---------------------------------------------------------------------------------------------------- #}
+
+
+
+{#
+// Logo, Images, and Colors
+// ---------------------------------------------------------------------------------------------------- #}
+
+
+{# Logo & Background
+// ------------------------- #}
+
+{{ utils.start_group('Logo, Images, and Colors', 'collapseLogoImagesColor') }}
+
+{{ utils.start_subgroup('Logo & Background') }}
+
+{# Use a custom logo? - checkbox #}
+{{ utils.checkBoxx('Use a custom logo?','logo-custom','settings[current][logo_images_and_colors][logo_background][logo-custom]', settings.current.logo_images_and_colors.logo_background['logo-custom']) }}
+
+{# Shop logo - button #}
+{{ utils.fileUploader('Shop Logo (should be less than 700 pixels wide)', 'logo-custom-upload','settings[current][logo_images_and_colors][logo_background][logo-custom-upload]', settings.current.logo_images_and_colors.logo_background['logo-custom-upload']) }}
+
+{# Center logo - checkbox #}
+{{ utils.checkBoxx('Center logo (when main navigation is below)?','ogo-custom-center','settings[current][logo_images_and_colors][logo_background][logo-custom-center]', settings.current.logo_images_and_colors.logo_background['logo-custom-center']) }}
+
+{# Use a favicon image? - checkbox #}
+{{ utils.checkBoxx('Use a favicon image?','favicon-image','settings[current][logo_images_and_colors][logo_background][favicon-image]', settings.current.logo_images_and_colors.logo_background['favicon-image']) }}
+
+{# Upload favicon - button #}
+{{ utils.fileUploader('Upload a favicon (must be 16px x 16px)', 'favicon-upload','settings[current][logo_images_and_colors][logo_background][favicon-upload]', settings.current.logo_images_and_colors.logo_background['favicon-upload']) }}
+
+{# Use a background image? - checkbox #}
+{{ utils.selectDropdown('Use a background image?','site-bg-image',"settings[current][logo_images_and_colors][logo_background][site-bg-image]", settings.current.logo_images_and_colors.logo_background['site-bg-image'], {'':'No background image', 'custom':'Use custom image (see upload button below' ,'style1':'Use background image of style 1', 'style2':'Use background image of style 2'}) }}
+
+{# Custom background image - button #}
+{{ utils.fileUploader('Custom background image', 'site-bg-image-custom', 'settings[current][logo_images_and_colors][logo_background][site-bg-image-custom]', settings.current.logo_images_and_colors.logo_background['site-bg-image-custom']) }}
+
+{# Background image display style - radio #}
+{{ utils.selectDropdown('Background image display style', 'site-bg-image-display', 'settings[current][logo_images_and_colors][logo_background][site-bg-image-display]', settings.current.logo_images_and_colors.logo_background['site-bg-image-display'], { 'tiled':'Tiled', 'full':'Not tiled', 'stretch':'Stretch' }) }}
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Toolbar
+// ------------------------- #}
+
+{{ utils.start_subgroup('Toolbar') }}
+
+{# Toolbar background color -  input #}
+{{ utils.selectColor('Toolbar background color','toolbar-bg-color','settings[current][logo_images_and_colors][toolbar][toolbar-bg-color]', settings.current.logo_images_and_colors.toolbar['toolbar-bg-color']) }}
+
+{# Remove background color - checkbox #}
+{{ utils.checkBoxx("Remove background color", "toolbar-bg-color-none", "settings[current][logo_images_and_colors][toolbar][toolbar-bg-color-none]", settings.current.logo_images_and_colors.toolbar['toolbar-bg-color-none']) }}
+
+{# Toolbar text color -  input #}
+{{ utils.selectColor("Toolbar text color", "toolbar-text-color", "settings[current][logo_images_and_colors][toolbar][toolbar-text-color]", settings.current.logo_images_and_colors.toolbar['toolbar-text-color']) }}
+
+{# Toolbar text hover color -  input #}
+{{ utils.selectColor("Toolbar text hover color", "toolbar-text-color-hover", "settings[current][logo_images_and_colors][toolbar][toolbar-text-color-hover]", settings.current.logo_images_and_colors.toolbar['toolbar-text-color-hover']) }}
+
+{# Show toolbar bottom border? - checkbox #}
+{{ utils.selectDropdown('Show toolbar bottom border?','toolbar-border-style',"settings[current][logo_images_and_colors][toolbar][toolbar-border-style]", settings.current.logo_images_and_colors.toolbar['toolbar-border-style'], {'none':'None', 'regular_width':'Regular width' ,'full_width':'Full width'}) }}
+
+{# Toolbar border color -  input #}
+{{ utils.selectColor("Toolbar border color", "toolbar-border-color", "settings[current][logo_images_and_colors][toolbar][toolbar-border-color]", settings.current.logo_images_and_colors.toolbar['toolbar-border-color']) }}
+
+{# Show border around search? - checkbox #}
+{{ utils.checkBoxx("Show border around search?", "toolbar-border-search", "settings[current][logo_images_and_colors][toolbar][toolbar-border-search]", settings.current.logo_images_and_colors.toolbar['toolbar-border-search']) }}
+
+{# Search border color -  input #}
+{{ utils.selectColor("Search border color", "search-border-color", "settings[current][logo_images_and_colors][toolbar][search-border-color]", settings.current.logo_images_and_colors.toolbar['search-border-color']) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Footer
+// ------------------------- #}
+
+{{ utils.start_subgroup('Footer Colors') }}
+
+{# Footer background color - input #}
+{{ utils.selectColor("Footer background color", "footer-background-color", "settings[current][logo_images_and_colors][footer_colors][footer-background-color]", settings.current.logo_images_and_colors.footer_colors['footer-background-color']) }}
+
+{# Remove footer color - checkbox #}
+{{ utils.checkBoxx("Remove footer color", "footer-bg-color-remove", "settings[current][logo_images_and_colors][footer_colors][footer-bg-color-remove]", settings.current.logo_images_and_colors.footer_colors['footer-bg-color-remove']) }}
+
+{# Footer text color - input #}
+{{ utils.selectColor("Footer text color", "footer-text-color", "settings[current][logo_images_and_colors][footer_colors][footer-text-color]", settings.current.logo_images_and_colors.footer_colors['footer-text-color']) }}
+
+{# Footer heading color - input #}
+{{ utils.selectColor("Footer heading color", "footer-heading-color", "settings[current][logo_images_and_colors][footer_colors][footer-heading-color]", settings.current.logo_images_and_colors.footer_colors['footer-heading-color']) }}
+
+{# Show footer heading underline? - checkbox #}
+{{ utils.checkBoxx("Show footer heading underline?", "footer-heading-underline", "settings[current][logo_images_and_colors][footer_colors][footer-heading-underline]", settings.current.logo_images_and_colors.footer_colors['footer-heading-underline']) }}
+
+{# Footer heading underline color - input #}
+{{ utils.selectColor("Footer heading underline color", "footer-heading-underline-color", "settings[current][logo_images_and_colors][footer_colors][footer-heading-underline-color]", settings.current.logo_images_and_colors.footer_colors['footer-heading-underline-color']) }}
+
+{# Footer link color - input #}
+{{ utils.selectColor("Footer link color", "footer-link-color", "settings[current][logo_images_and_colors][footer_colors][footer-link-color]", settings.current.logo_images_and_colors.footer_colors['footer-link-color']) }}
+
+{# Footer link hover color - input #}
+{{ utils.selectColor("Footer link hover color", "footer-link-color-hover", "settings[current][logo_images_and_colors][footer_colors][footer-link-color-hover]", settings.current.branding.footer_colors['footer-link-color-hover']) }}
+
+{# Show footer bottom border? - checkbox #}
+{{ utils.selectDropdown('Show footer bottom border?','footer-border-style',"settings[current][logo_images_and_colors][footer_colors][footer-border-style", settings.current.logo_images_and_colors.footer_colors['footer-border-style'], {'none':'None', 'regular_width':'Regular width' ,'full_width':'Full width'}) }}
+
+{# Footer border color - input #}
+{{ utils.selectColor("Footer border color", "footer-border-color", "settings[current][logo_images_and_colors][footer_colors][footer-border-color]", settings.current.logo_images_and_colors.footer_colors['footer-border-color']) }}
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Content Area
+// ------------------------- #}
+
+{{ utils.start_subgroup('Content Area Color') }}
+
+{# Site background color - input  #}
+{{ utils.selectColor("Site background color", "site-border-color", "settings[current][logo_images_and_colors][content_area_color][site-border-color]", settings.current.logo_images_and_colors.content_area_color['site-border-color']) }}
+
+{# Content area background color - input  #}
+{{ utils.selectColor("Content area background color", "content-border-color", "settings[current][logo_images_and_colors][content_area_color][content-background-color]", settings.current.logo_images_and_colors.content_area_color['content-background-color']) }}
+
+{# No content area background color - checkbox #}
+{{ utils.checkBoxx("No content area background color", "content-background-transparent", "settings[current][logo_images_and_colors][content_area_color][content-background-transparent]", settings.current.logo_images_and_colors.content_area_color['content-background-transparent']) }}
+
+{# Text color - input  #}
+{{ utils.selectColor("Text color", "text-color", "settings[current][logo_images_and_colors][content_area_color][text-color]", settings.current.logo_images_and_colors.content_area_color['text-color']) }}
+
+{# Heading color - input  #}
+{{ utils.selectColor("Heading color", "heading-color", "settings[current][logo_images_and_colors][content_area_color][heading-color]", settings.current.logo_images_and_colors.content_area_color['heading-color']) }}
+
+{# Link color - input  #}
+{{ utils.selectColor("Link color", "link-color", "settings[current][logo_images_and_colors][content_area_color][link-color]", settings.current.logo_images_and_colors.content_area_color['link-color']) }}
+
+{# Link hover color - input  #}
+{{ utils.selectColor("Link hover color", "link-color-hover", "settings[current][logo_images_and_colors][content_area_color][link-color-hover]", settings.current.logo_images_and_colors.content_area_color['link-color-hover']) }}
+
+{# Price color - input  #}
+{{ utils.selectColor("Price color", "price-color", "settings[current][logo_images_and_colors][content_area_color][price-color]", settings.current.logo_images_and_colors.content_area_color['price-color']) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Buttons
+// ------------------------- #}
+
+{{ utils.start_subgroup('Buttons') }}
+
+{# Button background color - input #}
+{{ utils.selectColor("Button background color", "btn-bg-color", "settings[current][logo_images_and_colors][buttons][btn-bg-color]", settings.current.logo_images_and_colors.buttons['btn-bg-color']) }}
+
+{# Button background color hover - input  #}
+{{ utils.selectColor("Button background color hover", "btn-bg-color-hover", "settings[current][logo_images_and_colors][buttons][btn-bg-color-hover]", settings.current.logo_images_and_colors.buttons['btn-bg-color-hover']) }}
+
+{# Button text color - input  #}
+{{ utils.selectColor("Button text color", "btn-text-color", "settings[current][logo_images_and_colors][buttons][btn-text-color]", settings.current.logo_images_and_colors.buttons['btn-text-color']) }}
+
+{# Button text hover color - input  #}
+{{ utils.selectColor("Button text color hover", "btn-text-color-hover", "settings[current][logo_images_and_colors][buttons][btn-text-color-hover]", settings.current.logo_images_and_colors.buttons['btn-text-color-hover']) }}
+
+{# Button border radius - dropdown #}
+{{ utils.selectDropdown("Button border radius",'btn-border-radius',"settings[current][logo_images_and_colors][buttons][btn-border-radius]", settings.current.logo_images_and_colors.buttons['btn-border-radius'], {
+	'15px':'15px',
+	'10px':'10px',
+	'7px':'7px',
+	'5px': '5px',
+	'4px': '4px',
+	'3px': '3px',
+	'2px': '2px',
+	'none': 'None'
+}) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Borders
+// ------------------------- #}
+
+{{ utils.start_subgroup('Borders') }}
+
+{# General border style - dropdown #}
+{{ utils.selectDropdown("General border style",'general-border-style',"settings[current][logo_images_and_colors][borders][general-border-style]", settings.current.logo_images_and_colors.borders['general-border-style'], {
+	'solid':'Solid',
+	'dashed':'Dashed',
+	'dotted':'Dotted'
+}) }}
+
+{# General border color - input #}
+{{ utils.selectColor("General border color", "gernal-border-color", "settings[current][logo_images_and_colors][borders][gernal-border-color]", settings.current.logo_images_and_colors.borders['gernal-border-color']) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Tabs
+// ------------------------- #}
+
+{{ utils.start_subgroup('Tabs') }}
+
+{#  #}
+{{ utils.selectColor("Tab background color", "tab-bg-color", "settings[current][logo_images_and_colors][tabs][tab-bg-color]", settings.current.logo_images_and_colors.tabs['tab-bg-color']) }}
+
+{#  #}
+{{ utils.checkBoxx("No tab background color", "tab-bg-color-none", "settings[current][logo_images_and_colors][tabs][tab-bg-color-none]", settings.current.logo_images_and_colors.tabs['tab-bg-color-none']) }}
+
+{#  #}
+{{ utils.selectColor("Tab active background color", "tab-active-bg-color", "settings[current][logo_images_and_colors][tabs][tab-active-bg-color]", settings.current.logo_images_and_colors.tabs['tab-active-bg-color']) }}
+
+{#  #}
+{{ utils.checkBoxx("No tab active background color", "tab-active-bg-color-none", "settings[current][logo_images_and_colors][tabs][tab-active-bg-color-none]", settings.current.logo_images_and_colors.tabs['tab-active-bg-color-none']) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+{{ utils.end_group() }}
+{# ---------------------------------------------------------------------------------------------------- #}
+
+
+
+{#
+// Typography
+// ---------------------------------------------------------------------------------------------------- #}
+
+{{ utils.start_group('Typography', 'collapseTypography') }}
+
+{# Base Styles
+// ------------------------- #}
+
+{{ utils.start_subgroup('Base Styles') }}
+{{ utils.selectWithGroup("Base typeface", "base-typeface", "settings[current][typography][base_styles][base-typeface]", settings.current.typography.base_styles['base-typeface'], {
+	'Sans-Serif':{
+		"Helvetica, Arial, sans-serif": "Helvetica/Arial",
+		"Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+		"Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+		"Trebuchet MS, sans-serif": "Trebuchet MS",
+		"Verdana, Helvetica, Arial, sans-serif": "Verdana"
+	}, 'Serif': {
+		"Garamond, Baskerville, Caslon, serif": "Garamond",
+		"Georgia, Utopia, 'Times New Roman', Times, serif": "Georgia",
+		"Palatino, 'Palatino Linotype', 'Book Antiqua', serif": "Palatino",
+		"'Times New Roman', Times, serif": "Times New Roman",
+	}, 'Monospace': {
+		"'Courier New', Courier, monospace": "Courier new",
+		"Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace": "Monaco",
+	}
+}) }}
+
+{{ utils. selectDropdown("Font size", "body-font-size", "settings[current][typography][base_styles][body-font-size]", settings.current.typography.base_styles['body-font-size'], {
+	"17px": "17px",
+	"16px": "16px",
+	"15px": "15px",
+	"14px": "14px",
+	"13px": "13px",
+	"12px": "12px",
+	"11px": "11px",
+}) }}
+{{ utils.showText('base-result', 'base-typeface', 'body-font-size') }}
+{{ utils. selectDropdown("Line Height", "body-line-height", "settings[current][typography][base_styles][body-line-height]", settings.current.typography.base_styles['body-line-height'], {
+	"28px": "28px",
+	"24px": "24px",
+	"22px": "22px",
+	"20px": "20px",
+	"18px": "18px",
+	"16px": "16px"
+}) }}
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Navigation styles
+// ------------------------- #}
+{{ utils.start_subgroup('Navigation Styles') }}
+{{ utils. selectDropdown("Google webfonts typeface", "google-nav-font", "settings[current][typography][navigation_styles][google-nav-font]", settings.current.typography.navigation_styles['google-nav-font'], {
+	"none": "-- None --",
+	"Abril+Fatface": "Abril Fatface",
+	"Arvo": "Arvo",
+	"Asap": "Asap",
+	"Bevan": "Bevan",
+	"Cabin": "Cabin",
+	"Dancing+Script": "Dancing Script",
+	"Droid+San": "Droid San",
+	"Droid+Serif": "Droid Serif",
+	"Gentium+Book+Basic": "Gentium Book Basic",
+	"Gravitas+One": "Gravitas One",
+	"Gruppo": "Gruppo",
+	"Josefin+Slab": "Josefin Slab",
+	"Josefin+Sans": "Josefin Sans",
+	"Kreon": "Kreon",
+	"Lato": "Lato",
+	"Merriweather": "Merriweather",
+	"Old+Standard+TT": "Old Standard TT",
+	"Open+Sans": "Open Sans",
+	"Vollkorn": "Vollkorn"
+}) }}
+{{ utils. selectDropdown("Navigation Font Size", "nav-font-size", "settings[current][typography][navigation_styles][nav-font-size]", settings.current.typography.navigation_styles['nav-font-size'], {
+	"20px": "20px",
+	"19px": "19px",
+	"18px": "18px",
+	"17px": "17px",
+	"16px": "16px",
+	"15px": "15px",
+	"14px": "14px",
+	"13px": "13px",
+	"12px": "12px",
+	"11px": "11px"
+}) }}
+
+{{ utils. selectDropdown("Navigation font weight", "nav-font-weight", "settings[current][typography][navigation_styles][nav-font-weight]", settings.current.typography.navigation_styles['nav-font-weight'], {
+	"700": "700",
+	"400": "400",
+	"300": "300"
+}) }}
+
+{{ utils. selectDropdown("Navigation font style", "nav-font-style", "settings[current][typography][navigation_styles][nav-font-style]", settings.current.typography.navigation_styles['nav-font-style'], {
+	"none": "None",
+	"uppercase": "Upper case",
+	"lowercase": "Lower case",
+	"capitalize": "Capitalize"
+}) }}
+
+{{ utils.showText('nav-result', 'google-nav-font', 'nav-font-size', 'nav-font-weight', '', 'nav-font-style') }}
+
+{{ utils. selectDropdown("Navigation font style", "nav-line-height", "settings[current][typography][navigation_styles][nav-line-height]", settings.current.typography.navigation_styles['nav-line-height'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+}) }}
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+
+{# Heading styles
+// ------------------------- #}
+{{ utils.start_subgroup('Heading Styles') }}
+{{ utils. selectDropdown("Google typeface", "google-header-font", "settings[current][typography][heading_styles][google-header-font]", settings.current.typography.heading_styles['google-header-font'], {
+	"none": "-- None --",
+	"Abril+Fatface": "Abril Fatface",
+	"Arvo": "Arvo",
+	"Asap": "Asap",
+	"Bevan": "Bevan",
+	"Cabin": "Cabin",
+	"Dancing+Script": "Dancing Script",
+	"Droid+San": "Droid San",
+	"Droid+Serif": "Droid Serif",
+	"Gentium+Book+Basic": "Gentium Book Basic",
+	"Gravitas+One": "Gravitas One",
+	"Gruppo": "Gruppo",
+	"Josefin+Slab": "Josefin Slab",
+	"Josefin+Sans": "Josefin Sans",
+	"Kreon": "Kreon",
+	"Lato": "Lato",
+	"Merriweather": "Merriweather",
+	"Old+Standard+TT": "Old Standard TT",
+	"Open+Sans": "Open Sans",
+	"Vollkorn": "Vollkorn"
+}) }}
+
+{{ utils. selectDropdown("Font weight", "header-weight", "settings[current][typography][heading_styles][header-weight]", settings.current.typography.heading_styles['header-weight'], {
+	"700": "700",
+	"400": "400",
+	"300": "300"
+}) }}
+
+{{ utils. selectDropdown("Font style", "header-font-style", "settings[current][typography][heading_styles][header-font-style]", settings.current.typography.heading_styles['header-font-style'], {
+	"none": "None",
+	"uppercase": "Upper case",
+	"lowercase": "Lower case",
+	"capitalize": "Capitalize"
+}) }}
+
+{{ settings.current.typography.heading_styles['site-heading-font-size'] }}
+{{ utils. selectDropdown("Site heading", "site-heading-font-size", "settings[current][typography][heading_styles][site-heading-font-size]", settings.current.typography.heading_styles['site-heading-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+}) }}
+
+{{ utils.showText('show-heading', 'google-header-font', 'site-heading-font-size', 'header-weight', 'header-font-style') }}
+
+{{ utils.end_subgroup() }}
+
+{# Heading styles
+// ------------------------- #}
+{{ utils.start_subgroup('Headings') }}
+
+{# H1 #}
+{{ utils.selectDropdown("H1 font size", "main-heading-font-size", "settings[current][typography][headings][main-heading-font-size]", settings.current.typography.headings['main-heading-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# H2 #}
+{{ utils.selectDropdown("H2 font size", "h2-font-size", "settings[current][typography][headings][h2-font-size]", settings.current.typography.headings['h2-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# H3 #}
+{{ utils.selectDropdown("H3 font size", "h3-font-size", "settings[current][typography][headings][h3-font-size]", settings.current.typography.headings['h3-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# H4 #}
+{{ utils.selectDropdown("H4 font size", "h4-font-size", "settings[current][typography][headings][h4-font-size]", settings.current.typography.headings['h4-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# H5 #}
+{{ utils.selectDropdown("H5 font size", "h5-font-size", "settings[current][typography][headings][h5-font-size]", settings.current.typography.headings['h5-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# H6 #}
+{{ utils.selectDropdown("H6 font size", "h6-font-size", "settings[current][typography][headings][h6-font-size]", settings.current.typography.headings['h6-font-size'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+{# button styles
+// ------------------------- #}
+{{ utils.start_subgroup('Button Styles') }}
+
+{# Font size #}
+{{ utils.selectDropdown("Font Size", "btn-font-size", "settings[current][typography][button_style][btn-font-size]", settings.current.typography.button_styles['btn-font-size'], {
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# Line height #}
+{{ utils.selectDropdown("Line Height", "btn-line-height", "settings[current][typography][button_style][btn-line-height]", settings.current.typography.button_styles['btn-line-height'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+})}}
+
+{# Font weight #}
+{{ utils. selectDropdown("Font weight", "btn-font-weight", "settings[current][typography][button_styles][btn-font-weight]", settings.current.typography.button_styles['btn-font-weight'], {
+	"700": "700",
+	"400": "400",
+	"300": "300"
+}) }}
+
+{# Font style #}
+{{ utils. selectDropdown("Font style", "btn-font-style", "settings[current][typography][button_styles][btn-font-style]", settings.current.typography.button_styles['btn-font-style'], {
+	"none": "None",
+	"uppercase": "Upper case",
+	"lowercase": "Lower case",
+	"capitalize": "Capitalize"
+}) }}
+
+{{ utils.showText('show-btn', '', 'btn-font-size', 'btn-font-weight', '', 'btn-font-style') }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+{{ utils.end_group() }}
+{# ---------------------------------------------------------------------------------------------------- #}
+
+
+
+{#
+// Navigation
+// ---------------------------------------------------------------------------------------------------- #}
+
+{{ utils.start_group('Navigation', 'collapseNavigation') }}
+
+{# base styles
+// ------------------------- #}
+{{ utils.start_subgroup('Base Styles') }}
+{# ------------------------- #}
+
+{# Main navigation alignment #}
+{{ utils.selectDropdown("Main navigation alignment", "navigation-alignment", "settings[current][navigation][base_styles][navigation-alignment]", settings.current.navigation.base_styles['navigation-alignment'], {
+	"right": "Right",
+	"below": "Below"
+}) }}
+
+{# Center navigation links #}
+{{ utils.checkBoxx('Center nvagation links?','navigation-center','settings[current][navigation][base_styles][navigation-center]', settings.current.navigation.base_styles['navigation-center']) }}
+
+{# Right nav top padding #}
+{{ utils.selectDropdown("Right navigation top padding", "nav-right-padding", "settings[current][navigation][base_styles][nav-right-padding]", settings.current.navigation.base_styles['nav-right-padding'], {
+	"72px": "72px",
+	"60px": "60px",
+	"48px": "48px",
+	"36px": "36px",
+	"24px": "24px",
+	"21px": "21px",
+	"18px": "18px",
+	"16px": "16px",
+	"14px": "14px",
+	"12px": "12px",
+	"11px": "11px",
+	"10px": "10px"
+}) }}
+
+{# Navigation link color #}
+{{ utils.selectColor('Navigation Link Color', 'nav-link-color', 'settings[current][navigation][base_styles][nav-link-color]',  settings.current.navigation.base_styles['nav-link-color']) }}
+
+{# Navigation link hover color #}
+{{ utils.selectColor('Navigation Link Hover Color', 'nav-link-hover-color', 'settings[current][navigation][base_styles][nav-link-hover-color]',  settings.current.navigation.base_styles['nav-link-hover-color']) }}
+
+{# Selected navigation link color #}
+{{ utils.selectColor('Selected Navigation Link Color', 'selected-nav-link-color', 'settings[current][navigation][base_styles][selected-nav-link-color]',  settings.current.navigation.base_styles['selected-nav-link-color']) }}
+
+{# Navigation dropdown background color #}
+{{ utils.selectColor('Navigation Dropdown Background Color', 'nav-dropdown-background-color', 'settings[current][navigation][base_styles][nav-dropdown-background-color]',  settings.current.navigation.base_styles['nav-dropdown-background-color']) }}
+
+{# Navigation dropdown link color #}
+{{ utils.selectColor('Navigation Dropdown Link Color', 'nav-dropdown-link-color', 'settings[current][navigation][base_styles][nav-dropdown-link-color]',  settings.current.navigation.base_styles['nav-dropdown-link-color']) }}
+
+{# Navigation dropdown link hover color #}
+{{ utils.selectColor('Navigation Dropdown Link Hover Color', 'nav-dropdown-link-hover-color', 'settings[current][navigation][base_styles][nav-dropdown-link-hover-color]',  settings.current.navigation.base_styles['nav-dropdown-link-hover-color']) }}
+
+{# Show dropdown icon #}
+{{ utils.checkBoxx('Show Dropdown Arrow icon?','show-dropdown-arrow','settings[current][navigation][base_styles][show-dropdown-arrow]', settings.current.navigation.base_styles['show-dropdown-arrow']) }}
+
+{# Navigation dropdown link color #}
+{{ utils.selectDropdown("Show dropdown menu arrow?", "dropdown-arrow", "settings[current][navigation][base_styles][dropdown-arrow]", settings.current.navigation.base_styles['dropdown-arrow'], {
+	"none": "None",
+	"light": "Light",
+	"dark": "Dark"
+}) }}
+
+{# Display recent articles in a dropdown under blog #}
+{{ utils.checkBoxx('Display recent articles in a dropdown under Blog links?','display-blog-dropdown','settings[current][navigation][base_styles][display-blog-dropdown]', settings.current.navigation.base_styles['display-blog-dropdown']) }}
+
+{# Display product tags in a dropdown under collection links #}
+{{ utils.checkBoxx('Display product tags in a dropdown under Collection links?', 'display-collection-dropdown','settings[current][navigation][base_styles][display-collection-dropdown]', settings.current.navigation.base_styles['display-collection-dropdown']) }}
+
+{{ utils.end_subgroup() }}
+{# ------------------------- #}
+
+{{ utils.end_group() }}
+{#} ---------------------------------------------------------------------------------------------------- #}
+
+
+
+{#
+// Footer
+// ---------------------------------------------------------------------------------------------------- #}
+
+{{ utils.start_group('Footer', 'collapseFooter') }}
+{{ utils.start_subgroup('General') }}
+{{ utils.inputText("Link List", "footer-linklist", 'settings[current][footer][general][footer-linklist]', settings.current.footer.general['footer-linklist']) }}
+{{ utils.end_subgroup() }}
+{{ utils.end_group() }}
+
+{# End additional layouts #}
+{{ utils.end_layout() }}
+{{ utils.initColorpick() }}

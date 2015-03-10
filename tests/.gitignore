@@ -1,0 +1,4 @@
+node_modules
+*!.coffee
+*!.json
+*!.js

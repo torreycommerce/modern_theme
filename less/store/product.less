@@ -1,0 +1,297 @@
+// 3.3
+// Product
+// --------------------------------------------------
+// Images
+// Details
+// Header
+// Reviews
+// Pricing
+// Actions
+// Desktop
+// Mobile
+// Tabs
+// Misc
+
+
+
+// Images
+// --------------------------------------------------
+
+#product-images {
+    #image-main.thumbnail {
+        max-height: 451px;
+        text-align: center;
+
+        .helper{
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        img{
+            display: inline-block;
+            max-width: 640px;
+            max-height: 640px;
+            vertical-align: middle;
+        }
+    }
+
+    // Main Image
+    #image-main {
+        margin-bottom: 20px;
+        .thumbnail {
+            margin-bottom: 0px;
+            max-height: 640px;
+            text-align: center;
+
+            .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            img,
+            iframe {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+
+                @media (max-width: @screen-xs-max) {
+                    max-height: 640px;
+                    max-width: 640px;
+                }
+
+                @media (max-width: @screen-sm-max) {
+                    max-height: 340px;
+                    max-width: 340px;
+                }
+
+                @media (max-width: @screen-md-max) {
+                    max-height: 532px;
+                    max-width: 532px;
+                }
+
+                @media (min-width: @screen-lg-min) {
+                    max-height: 640px;
+                    max-width: 640px;
+                }
+            }
+        }
+    }
+
+    // Video Thumbnail
+    .thumbnail.video {
+        img {
+            padding: 3px 0;
+            @media (min-width: @screen-lg-min) {
+                padding: 7px 0;
+            }
+        }
+        cursor: pointer;
+        .video-icon {
+            color:#000;
+            display: block;
+            margin-top:5px;
+            margin-left:6px;
+            opacity: .5;
+            position: absolute;
+
+            @media (min-width: @screen-lg-min) {
+                margin-left:14px;
+                margin-top:12px;
+                font-size: 30px;
+            }
+        }
+        &:hover {
+            .video-icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    // Image Carousel
+    #image-carousel {
+        margin-bottom: 20px;
+        .thumbnail { margin-bottom: 0;}
+    }
+
+}
+
+
+
+// Product Details
+// --------------------------------------------------
+
+#product-details {
+
+    // Header
+    header {
+        border-bottom: 1px solid @border-color;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+
+        .brand {
+            margin-bottom: 5px;
+        }
+
+        .name {
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+    }
+
+    // Reviews
+    ul.reviews {
+        border-bottom: 1px solid @border-color;
+        font-size: 12px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            list-style-type: none;
+            padding-left: 0;
+            padding-right: 4px;
+        }
+
+        .stars {}
+            .average {}
+                .submit {}
+                }
+
+
+                // Pricing
+                .price,
+                .price-range {
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    margin-right: 10px;
+                    font-size: 22px;
+                }
+
+                .stock {
+                    display: inline-block;
+                    color: #009900;
+                    font-size: 12px;
+                    padding-bottom: 2px;
+                }
+
+                ul.pricing {
+                    margin-left: 0px;
+                    padding-left: 0px;
+
+                    li {
+                        color: @gray;
+                        font-size: 12px;
+                        display: inline-block;
+                        list-style-type: none;
+                        padding: 0;
+                        margin-right: 10px;
+                    }
+
+                    .per-month {
+                        color: lighten(@text-color, 25%);
+                    }
+
+                    .regular {
+                        color: lighten(@text-color, 25%);
+                    }
+
+                    .percent {
+                        color: lighten(@text-color, 25%);
+                    }
+                }
+
+                .btn-toolbar {
+                    margin-bottom: 20px;
+                }
+
+                .description-content{
+                    a { font-size: 12px; }
+                }
+
+
+                // Shipping Estimate
+                ul.shipping {
+                    padding-left: 0;
+
+                    li {
+                        color: lighten(@text-color, 25%);
+                        font-size: 12px;
+                        display: inline-block;
+                        list-style-type: none;
+                        padding: 0;
+                        margin-right: 10px;
+                    }
+                }
+
+                // Product Tags
+                ul.tags {
+                    padding-left: 0;
+
+                    li {
+                        color: lighten(@text-color, 25%);
+                        font-size: 12px;
+                        display: inline-block;
+                        list-style-type: none;
+                        padding: 0;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+
+
+            // Actions
+            // --------------------------------------------------
+
+            #product-details {
+                .actions {
+                    background: none; margin-bottom: 20px;
+                    .quantity-input-group { margin-bottom: 10px;}
+                    .btn-cart { margin-bottom: 10px;}
+                    .btn-toolbar .btn-group {
+                        float: none;
+                    }
+                    // Actions Desktop
+                    @media (min-width: @screen-md-min) {
+                        .quantity-input-group { margin-bottom: 10px;}
+                        .btn-cart { margin-bottom: 0px;}
+                    }
+                }
+            }
+
+
+
+            // Product - Tabs
+            // --------------------------------------------------
+
+            #product-tabs,
+            #product-tabs-mobile {
+
+                .panel { border-top: 0 none;}
+
+                // Panel Tabs
+
+
+                // Panel Tabs - Content
+                .tab-content {
+                    padding: 0;
+                    // Tab Panes
+                    .tab-pane {
+
+                        // Lists
+                        ul {
+                            padding: 0px 20px 10px 20px;
+
+                            li {
+                                font-size: 12px;
+                                padding:4px 0;
+
+                                a.disabled { color: #aaa; }
+                            }
+                        }
+                    }
+                }
+            }

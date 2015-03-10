@@ -1,0 +1,56 @@
+#order {
+
+    // Order details
+    .order-details {
+
+         font-size: 12px;
+
+        .order-info { margin-bottom: 20px;}            
+        .shipping-address { margin-bottom: 20px;}
+        .shipping-method { margin-bottom: 20px;}
+        .actions {
+            margin-bottom: 20px;
+            @media (min-width: @screen-sm-min) {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: @screen-sm-min) {
+            border-right: 1px solid #E5E5E5;
+        }
+    }
+
+    // Order items
+    .order-items {
+        font-size: 12px;
+        .item {
+            border-bottom: 1px solid #e5e5e5; margin-bottom: 5px; padding-bottom: 5px;
+            .thumbnail { margin-bottom: 0;}
+            &:last-child { border-bottom: 0 none; margin-bottom: 0; padding-bottom: 0; }
+        }
+        @media (min-width: @screen-sm-min) {
+            border-left: 1px solid #E5E5E5; margin-left: -1px;
+        }
+    }
+
+    // Returns
+    .returns {
+        header { border-bottom: 1px solid #EEEEEE;}
+        .item {
+            border-bottom: 1px solid #EEEEEE; font-size: 12px; padding-bottom: 10px; padding-top: 10px;
+
+            &:last-child {
+                border: 0 none;
+                .actions { margin-bottom: 0;}
+            }
+
+            .actions {   
+                 margin-top: 10px;
+                @media (min-width: @screen-sm-min) {
+                    margin-bottom: 0; margin-top: 0;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,264 @@
+{% macro breadcrumbs(crumbs=[]) %}
+    <div class="hidden-sm hidden-xs row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="{{app.url}}"><span class="glyphicon glyphicon-home"></span><span class="visually-hidden">Home</span></a></li>
+                {% for name,link in crumbs %}
+                    {% if link is empty %}
+                        <li class="active">{{name}}</li>
+                    {% else %}
+                        <li><a href="{{app.url}}{{link}}">{{ name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro pagination(number_items, items_per_page = 12, number_pages_displayed = 8, current_page = '', page_key = 'page' ) %}
+{% spaceless %}
+    {% if not current_page %}
+        {% set current_page = app.request.get[(page_key)] %}
+    {% endif %}
+    {% set number_pages = (number_items / items_per_page)|round(0,'ceil') %}
+    {% if number_pages > 1 %}
+        {% set current_page = current_page > 1? current_page : 1 %}
+        {% set start_page = current_page >= number_pages_displayed? current_page : 2 %}
+        {% set end_page = current_page >= number_pages_displayed? current_page + number_pages_displayed - 2 : number_pages_displayed %}
+        {% if end_page > number_pages %}
+            {% set end_page = number_pages %}
+            {% set start_page = number_pages - number_pages_displayed + 2 > 2? number_pages - number_pages_displayed + 2: 2 %}
+        {% endif %}
+            <ul class="pagination pagination-sm">
+                <li class="previous {% if app.request.get.page <= 1 %}disabled{% endif %}">
+                    <a {% if current_page > 1 %} href="{{app.request.getUrl({(page_key):current_page - 1})}}"{% endif %}>«</a>
+                </li>
+                <li class="page {% if current_page == 1 %}active{% endif %}">
+                    <a href="{{app.request.getUrl({(page_key):1})}}">1</a>
+                </li>
+                {% for page in start_page..end_page %}
+                    <li class="page {% if current_page == page %}active{% endif %}">
+                        <a href="{{app.request.getUrl({(page_key):page})}}">{{page}}</a>
+                    </li>
+                {% endfor %}
+                <li class="next {% if current_page >= number_pages %}disabled{% endif %}">
+                    <a {% if current_page < number_pages %}href="{{app.request.getUrl({(page_key):current_page + 1})}}"{% endif %}>»</a>
+                </li>
+            </ul>
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}
+
+{% macro rating(score, attributes=[]) %}
+{% spaceless %}
+    <div {% if attributes.id is not empty %}id="{{ attributes.id }}"{% endif %} class="star-rating {% if attributes.class is not empty %}{{ attributes.class }}{% endif %}">
+        <div class="disabled">
+            {% for stars in 0..4 %}
+                <span class="glyphicon glyphicon-star"></span>
+            {% endfor %}
+            <div class="active" style="width: {{ (score*100)|number_format }}%">
+                {% for stars in 0..4 %}
+                    <span class="glyphicon glyphicon-star"></span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endspaceless %}
+{% endmacro %}
+
+{% macro protected_site() %}
+
+    {% if app.request.get.clear == 42 %}
+        {% do app.user.setState('user_allowed', null) %}
+    {% endif %}
+
+
+    {% set protected = api.get('/site/isprotected') %}
+    {% set authenticated = api.post('/site/authentication', {"password": app.user.getState('user_allowed')}) %}
+    {% if protected == true and not authenticated and app.request.url != "store-protected" %}
+        {% do app.redirect('/store-protected') %}
+    {% elseif protected == true and authenticated %}
+        
+        {# <a href="{{app.request.base ~ "/" ~ app.request.url}}?clear=42">Clear Access</a>#}
+        
+        {# <div class="alert alert-info">
+            <h1 style="color: white;">You're connected to a store protected by a password</h1>
+            <h4 style="color: white;">To clear the access from this computer, click on the following link:</h4>
+            <a href="{{app.request.base ~ "/" ~ app.request.url}}?clear=42">Clear Access</a>
+        </div> #}
+        {% if app.request.url == "store-protected" %}
+            {% do app.redirect('/') %}
+        {% endif %}
+    {% elseif (app.request.url == "store-protected" and protected == false) %}
+        {% do app.redirect('/') %}
+    {% endif %}
+{% endmacro %}
+
+
+{#  below code will be deleted / replaced by _macros/social_sharing.html.twig  #}
+{% macro generate_tags_products(default_tags) %}
+
+    {# Products & Collections' tags #}
+    {% set request = app.request.path | split('/') %}
+    {% if request.1 | split('-') | last | integer %}{% set item  = api.get('/catalog/' ~ request.1 | split('-') | last ) %}{% endif %}
+    {% if app.request.path is integer %}{% set item  = api.get('/catalog',{query:{id:app.request.path}})|first %}
+    {% else %}{% set item  = api.get('/catalog', {query:{slug:app.request.path}})|first %}{% endif %}
+
+    <meta property="og:keywords" content="{{ item.keywords|default(default_tags['description']) }}"/>
+
+    <meta property="og:title" content="{{ app.params.site.title }} - {{ (item.name|title)|default(default_tags['title']) }}" />
+
+    <meta property="og:description" content="{{ item.meta_description|default(default_tags['description']) }}" />
+    <meta property="og:site_name" content="{{ app.params.site.title }}"/>
+    <meta property="og:url" content="{{ app.url ~ "/" ~ app.request.url }}"/>
+
+    <meta property="og:type" content="product" />
+    <meta property="og:price:currency" content="USD" />
+    {% if item.group == "product" %}
+        <meta property="og:brand" content="{{ item.brand }}" />
+        {% set prices = (item.product|values_in('variant')|values_in(['price','compare_price','save_price','save_percent'])) %}
+        <meta property="og:price:amount" content="{{ prices.price.0 }}" />
+        {% if prices.compare_price is not empty and prices.compare_price != prices.price %}
+            <meta property="og:price:standard_amount" content="{% if prices.compare_price.0 %}{{ prices.compare_price.0 }}{% else %}0.0{% endif %}" />
+        {% endif %}
+        {% set stock_description = item.product[0].variant[0].inventory_quantity > 0 ? 'In Stock' :  item.product[0].variant[0].inventory_shipping_estimate is not empty ? item.product[0].variant[0].inventory_shipping_estimate : '' %}
+        {% if stock_description %}
+            <meta property="og:availability" content="{{ stock_description }}" />
+        {% endif %}
+        {% if item.product[0].variant[0].gender %}
+            <meta property="product:gender" content="{{ item.product[0].variant[0].gender }}" />
+        {% endif %}
+        {% if item.product[0].variant[0].color %}
+            <meta property="product:color" content="{{ item.product[0].variant[0].color }}" />
+        {% endif %}
+    {% endif %}
+
+    {# Image fields #}
+    {% set img_used = 0 %}
+    {% for img in item.images %}
+        {% if (img_used < 6) %}
+            <meta property="og:image" content="{{ app.url ~ '/../../..' ~ app.image.getImageUrl('product','large',img.id) }}" />
+            {% set img_used = img_used + 1 %}
+        {% endif %}
+    {% endfor %}
+
+    {% for sub in item.product %}
+        {% for img in sub.images if img.id is not empty %}
+            {% if (img_used < 6) %}
+                <meta property="og:image" content="{{ app.url ~ '/../../..' ~ app.image.getImageUrl('product','large',img.id) }}" />
+                {% set img_used = img_used + 1 %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    {% if img_used < 6 %}
+        <meta property="og:image" content="{{ default_tags['img'] }}" />
+    {% endif %}
+
+    {% set see_used = 0 %}
+    {% for sub in item.product %}
+        {% if see_used < 6 %}
+            <meta property="og:see_also" content="{{ app.request.base ~ '/product/' ~ sub.slug }}" />
+            {% set see_used = see_used + 1 %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro generate_tags_categories(default_tags) %}
+
+    {% set category = api.get('/category',{"query":{"status":"active","slug":app.request.path}})|first %}
+    <meta property="og:title" content="{{ app.params.site.title }} - {{ (category.name|title)|default(default_tags['title']) }}" />
+    <meta property="og:description" content="{{ category.meta_description|default(default_tags['description']) }}" />
+    <meta property="og:site_name" content="{{ app.params.site.title }}"/>
+    <meta property="og:url" content="{{ app.url ~ "/" ~ app.request.url }}"/>
+    <meta property="og:keywords" content="{{ category.keywords|default(default_tags['description']) }}"/>
+
+{% endmacro %}
+
+{% macro generate_metatags(default_tags) %}
+    {%- import "/_macros/product.html.twig" as prod -%}
+    {%- import _self as base -%}
+    {{ base.generate_twitter_cards(default_tags) }}
+    {% spaceless %}
+        {% set type = app.request.url|split('/')|first %}
+        {% if type == "category" %}
+            {{ base.generate_tags_categories(default_tags) }}
+        {% elseif type == "product" %}
+            {{ base.generate_tags_products(default_tags) }}
+        {% else %}
+            <meta property="og:keywords" content="{{ default_tags['description'] }}"/>
+            <meta property="og:title" content="{{ app.params.site.title }} - {{ default_tags['title'] }}" />
+            <meta property="og:description" content="{{ default_tags['description'] }}" />
+            <meta property="og:site_name" content="{{ app.params.site.title }}"/>
+            <meta property="og:url" content="{{ app.url ~ "/" ~ app.request.url }}"/>
+            <meta property="og:image" content="{{ default_tags['img'] }}" />
+        {% endif %}
+    {% endspaceless %}
+
+{% endmacro %}
+
+{% macro generate_twitter_cards(default_tags)  %}
+  {# }{{ dump(default_tags) }} #}
+  {% set type = app.request.url|split('/')|first %}
+  {% spaceless %}
+  {% if type == "category" %}
+    {% set category = api.get('/category',{"query":{"status":"active","slug":app.request.path}})|first %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="{{ category.meta_description|default(default_tags['description']) }}" />
+    {# We need a way to store this information in a config file / db #}
+    {# <meta name="twitter:site" content="@blablaTwitterAccount" /> #}
+    {# <meta name="twitter:creator" content="@blablaTwitterAccount2" /> #}
+    <meta name="twitter:title" content="{{ app.params.site.title }} - {{ (category.name|title)|default(default_tags['title']) }}" />
+
+  {% elseif type == "product" %}
+
+    {% set request = app.request.path | split('/') %}
+    {% if request.1 | split('-') | last | integer %}{% set item  = api.get('/catalog/' ~ request.1 | split('-') | last ) %}{% endif %}
+    {% if app.request.path is integer %}{% set item  = api.get('/catalog',{query:{id:app.request.path}})|first %}
+    {% else %}{% set item  = api.get('/catalog', {query:{slug:app.request.path}})|first %}{% endif %}
+
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:title" content="{{ app.params.site.title }} - {{ (item.name|title)|default(default_tags['title']) }}" />
+
+    {# item.meta_description is always null  #}
+    <meta name="twitter:description" content="{{ item.meta_description|default(default_tags['description']) }}" />
+
+    {% if item.group == "product" %}
+        <meta property="og:brand" content="{{ item.brand }}" />
+
+        {% set prices = (item.product|values_in('variant')|values_in(['price','compare_price','save_price','save_percent'])) %}
+        <meta name="twitter:label1" content="Price" />
+        <meta name="twitter:data1" content="${{ prices.price.0 }}" />
+
+        {% set stock_description = item.product[0].variant[0].inventory_quantity > 0 ? 'In Stock' :
+                    item.product[0].variant[0].inventory_shipping_estimate is not empty
+                    ? item.product[0].variant[0].inventory_shipping_estimate : '' %}
+
+        {% if stock_description %}
+            <meta name="twitter:label2" content="Availability" />
+            <meta name="twitter:data2" content="{{ stock_description }}" />
+        {% elseif item.product[0].variant[0].gender %}
+            <meta name="twitter:label2" content="Gender" />
+            <meta name="twitter:data2" content="{{ item.product[0].variant[0].gender }}" />
+        {% elseif item.product[0].variant[0].color %}
+            <meta name="twitter:label2" content="Color" />
+            <meta name="twitter:data2" content="{{ item.product[0].variant[0].color }}" />
+        {% endif %}
+    {% endif %}
+    {% set img_used = 0 %}
+    {% for img in item.images %}
+        {% if (img_used < 1) %}
+            <meta name="twitter:image" content="{{ app.url ~ '/../../..' ~ app.image.getImageUrl('product','large',img.id) }}" />
+            {% set img_used = img_used + 1 %}
+        {% endif %}
+    {% endfor %}
+
+  {% else %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="{{ default_tags['description'] }}" />
+    {# <meta name="twitter:site" content="@blablaTwitterAccount" /> #}
+    {# <meta name="twitter:creator" content="@blablaTwitterAccount2" /> #}
+    <meta name="twitter:title" content="{{ app.params.site.title }}" />
+    <meta name="twitter:image" content="{{ default_tags['img'] }}" />
+  {% endif %}
+  {% endspaceless %}
+{% endmacro %}

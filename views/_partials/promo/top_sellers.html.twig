@@ -1,0 +1,41 @@
+<section class="product-grid">
+    {# Begin category header #}
+    <header>
+        {# Begin category name #}
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-name">Top Sellers</h2>
+            </div>
+        </div> 
+        {# End category name #}
+    </header>
+    {# End category header #}
+    <section class="products">
+        <div class="row">
+            {#
+            Products to display:
+            1528, 12458, 14097, 21032
+            #}
+            {% set items_per_row = 4 %}
+            {% set collection_ids = [] %}
+            {% set product_count = 1 %}
+            {% set products = api.get('/catalog', {sort:"product.variant.popularity:-1",limit:20}) %}
+            {% for row,product in products if collection_ids[product.id] is empty and product_count < 5 %}
+                {% if product.group == 'product' %}
+                    {% for id in product.product.collection_id %}
+                        {% set collection_ids = collection_ids|merge({(id):true}) %}
+                    {% endfor %}
+                {% else %}
+                    {% set collection_ids = collection_ids|merge({(product.id):true}) %}
+                {% endif %}
+                {% set product_count = product_count + 1 %}
+
+                {# Begin product #}
+                <div class="col-xs-{{ 48 / items_per_row }} col-sm-{{ 24 / items_per_row }} col-md-{{12 / items_per_row}} col-md-{{12 / items_per_row}}">
+                    {{ prod.gridproduct(product, ['image','details']) }}
+                </div>
+                {# End product #}
+            {% endfor %}
+        </div>
+    </section>
+</section>

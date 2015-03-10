@@ -1,0 +1,109 @@
+{# avoiding the display of the menu when we're in the store-protected template #}
+{% if app.request.url != "store-protected" %}
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+            <div class="quicklinks">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Quicklinks</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <ul class="list-unstyled">
+                                   {% if app.user.id != '' %}
+                                    <li> <a href="{{app.url}}/account/orders">Order Status</a> </li>
+                                    {% else %}
+                                    <li> <a href="{{app.url}}/order">Order Status</a> </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="{{app.url}}/cart">Shopping Cart</a></li>
+                                    <li><a href="{{app.url}}/registry/search">Gift Registry</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="{{app.url}}/content/help">Help &amp; FAQs</a></li>
+                                    <li><a href="{{app.url}}/contact">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="{{app.url}}/content/privacy-security">Privacy &amp; Security</a></li>
+                                    <li><a href="{{app.url}}/content/terms">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+            <div class="newsletter">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Email Newsletter</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        {{ newsletterform.begin('newsletter',app.url ~ '/newsletter') }}
+                        <div class="input-group">
+                            <input id="NewsLInput" type="search" placeholder="Email Address" class="form-control input-md" name="email">
+                            <div class="input-group-btn">
+                                <button id="NewsLSub" class="btn btn-primary btn-md" type="submit">Subscribe</button>
+                            </div>
+                            {{ newsletterform.end() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endif %}
+{# Social Network Icons if found in config file #}
+{# if social settings is not set in the config file, just do nothing #}
+{% if app.params.social_settings is defined and app.params.social_settings is not empty %}
+  {{ social.social_parseConfig(app.params.social_settings) }}
+{% endif %}
+{# End Social Network Icons #}
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <ul class="copyright list-unstyled list-inline">
+            <li>Copyright &copy; {{"now"|date("Y")}} {{ app.params.site.title }}</li>
+            <li>All Rights Reserved.</li>
+            <li>Powered by Acenda.</li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+{% set request = app.request.url | split('/') %}
+{% if request.0 != 'checkout' and app.params['live_chat']['active_chat'] is defined and app.params['live_chat']['active_chat'] == true
+and app.params['live_chat']['chat_licence'] is defined and app.params['live_chat']['chat_licence'] is not empty %}
+{% import "/_macros/chat.html.twig" as chat %}
+  {{ chat.displayLiveChat( app.params['live_chat']['chat_licence']) }}
+{% endif %}
+
+{% if 'place' not in app.request.url %}
+{% include '/_partials/analytics.html.twig' %} {# There should probably be a better way to do this #}
+{% endif %}

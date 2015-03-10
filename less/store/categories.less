@@ -1,0 +1,50 @@
+// 3.2
+// Categories
+// --------------------------------------------------
+    
+// Product Filters
+.category-filters {
+
+    // Filter
+    .filter {
+        margin-bottom: 14px;
+
+        .panel-heading {
+            border-bottom: 0 none;
+            a {
+                padding: 0;
+            }
+        }
+        
+        .panel-heading {    
+            + .panel-collapse .panel-body {
+              border-top: 1px solid @border-color;
+            }
+        }
+
+        .panel-body {
+            border-top: 0 none;
+        }
+    }
+
+    // Clear selected filter
+    .filter-clear {
+        a {
+            background-color: @gray;
+            color: @gray-lighter;
+            display:block;
+            font-size: 11px;
+            margin: 2px 0px;
+            padding: 10px;
+
+            i:first-child { padding-right: 5px; }
+
+            &:hover {
+                text-decoration: none;
+                background-color: @gray-darker;
+            }
+        }
+    }
+}
+
+

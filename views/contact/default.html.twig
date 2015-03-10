@@ -1,0 +1,109 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% import "/_macros/form-elements-bootstrap.html.twig" as forms %}
+{% block title %}
+Contact Us
+{% endblock %}
+{% block breadcrumb %}
+{{ base.breadcrumbs({'Contact Us':''}) }}
+{% endblock %}
+{% block content %}
+{% set subjects = {
+    'Order Status' : 'Order Status',
+    'Shipping / Tracking Info' : 'Shipping / Tracking Info',
+    'Cancel an Item / Order' : 'Cancel an Item / Order',
+    'Return and Item / Order' : 'Return and Item / Order',
+    'Product Question' : 'Product Question',
+    'Website Comment' : 'Website Comment',
+    'Store Comment' : 'Store Comment',
+    'Gift Registry Comment' : 'Gift Registry Comment',
+    'Other' : 'Other'
+}
+%}
+{% if app.request.post.contact is defined and app.request.post.contact.subject in subjects %}
+    {% do app.request.validateToken() %}
+    {% if app.params['contact-us']['to'] is empty or app.params['contact-us']['from'] is empty %}
+        <div class="alert-danger">We're sorry, contact-us feature has not yet been setup.</div>
+    {% elseif api.post('/contact', app.request.post.contact) %}
+        {% do app.redirect('/', {'success':'Your comment has been submitted. Thank you.'}) %}
+    {% endif %}
+{% endif %}
+<div class="row">
+    <div class="col-md-12">
+        <header>
+            <h1 class="page-header">Contact Us</h1>
+        </header>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7 col-md-6">
+        <h2>We are here to help</h2>
+        <p>For questions or comments, please complete the form below.</p>
+        {{ forms.begin('contact','','post',{ class:'form-horizontal' }) }}
+        {# Begin name field #}
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-md-3 col-lg-3" for="input1">Name
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                {{ forms.text('contact[name]', contact.name|default(app.user.full_name), {class:'form-control parsley-validated', placeholder:"Name", required:true}) }}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                <div class="validation">{{ forms.errorlist(form_errors, 'name') }}</div>
+            </div>
+        </div>
+        {# End name field #}
+        {# Begin email field #}
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-md-3 col-lg-3" for="input1">Email
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                {{ forms.email('contact[email]', contact.email|default(app.user.email), {class:'form-control parsley-validated', placeholder:"Email", required:true}) }}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                <div class="validation">{{ forms.errorlist(form_errors, 'email') }}</div>
+            </div>
+        </div>
+        {# End email field #}
+        {# Begin subject field #}
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-md-3 col-lg-3" for="input1">Subject
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                {{ forms.select('contact[subject]', contact.subject, subjects, {class:'form-control parsley-validated', placeholder:"Subject", required:true}) }}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                <div class="validation">{{ forms.errorlist(form_errors, 'subject') }}</div>
+            </div>
+        </div>
+        {# End subject field #}
+        {# Begin message field #}
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-md-3 col-lg-3" for="input1">Message
+                <span class="text-danger">*</span>
+            </label>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                {{ forms.textarea('contact[message]', contact.message, {class:'form-control parsley-validated', placeholder:"Message", required:true}) }}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                <div class="validation">{{ forms.errorlist(form_errors, 'message') }}</div>
+            </div>
+        </div>
+        {# End message field #}
+        {# Begin actions #}
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                <div class="actions">
+                    {{ forms.submit('submit', 'create', 'Send request', {class:'btn btn-primary'})}}
+                </div>
+            </div>
+        </div>
+        {# End actions #}
+        {{ forms.end() }}
+    </div>
+    <div class="col-sm-5 col-md-5 col-md-offset-1">
+        
+    </div>
+</div>
+{% endblock %}

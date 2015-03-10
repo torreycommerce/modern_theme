@@ -1,0 +1,43 @@
+{% set reviews = api.get('/productreview', {query:{score:{'$gt':0.8},status:'active'},sort:'date_created:-1',limit:30}) %}
+{% set products = api.get('/catalog', {query:{id:{'$in':reviews|values_in('product_id')}}})|group_by('id') %}
+{% if reviews|length > 0 %}
+<section id="featured-reviews" class="product-grid">
+    {# Category Header (Page #, Items / page, Sort by, Search) #}
+    <header>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-name">Featured Reviews</h2>
+            </div>
+        </div>
+    </header>
+    <section class="products">
+        {% set counter = 0 %}
+        {% for row,review in reviews if products[review.product_id].0.id is defined and counter < 3 %}
+            {% set counter = counter + 1 %}
+            <div class="review">
+                <div class="row">
+                    {% set product = products[review.product_id].0 %}
+                    {# Begin product #}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        {{ prod.gridproduct(product) }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                        <div class="well">
+                            <div class="title">{{ review.title }}</div>
+                            <div class="reviewer">
+                                By: <span class="first-name">{{ review.first_name }}</span>
+                                from <span class="city">{{ review.city }}</span>,
+                                <span class="state">{{ review.state }}</span>
+                            </div>
+                            <div class="date">{{ review.date_created|strtotime|date('F j, Y') }}</div>
+                            <div class="score">{{ base.rating(review.score) }}</div>
+                            <div class="comment">{{ review.comment }}</div>
+                        </div>
+                    </div>
+                    {# End product #}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+</section>
+{% endif %}

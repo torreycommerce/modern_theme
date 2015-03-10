@@ -1,0 +1,38 @@
+// 2.4
+// Branding
+// --------------------------------------------------
+
+section#branding {
+    .brand {
+
+        padding: 20px 0px;
+
+        #logo-img {
+            display: none;
+            a {
+
+                .img-retina (@logo; @logo-retina; 257px; 70px);
+
+                background-position: 0 0; background-repeat: no-repeat; display: block; height: 70px; width: 257px;
+                span { position: absolute; visibility: hidden;}
+            }
+        }
+
+        #logo-txt {
+            text-align: center;
+            a { color: @logo-color; font-size: 64px;}
+        }
+    }
+    @media (max-width:@screen-xs-max ){
+        .brand {
+            padding-top: 10px;
+            #logo-img {
+                width: 100%;
+                text-align: center;
+                a {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

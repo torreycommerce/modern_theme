@@ -1,0 +1,29 @@
+{
+    "name": "BTD",
+    "version": "0.0.1",
+    "private": true,
+    "main": "main.js",
+    "scripts": {
+        "preinstall": "npm i -g casperjs"
+    },
+    "contributors": [
+        {
+            "name": "Yoann Jaspar",
+            "email": "yoannj@acenda.com"
+        }
+    ],
+    "dependencies": {
+        "casperjs": "*",
+        "phantomjs": "*",
+        "require": "*",
+        "coffee-script": "*"
+    },
+    "scripts": {
+        "start": "casperjs main.js"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "readme": "",
+    "readmeFilename": "Readme.md"
+}

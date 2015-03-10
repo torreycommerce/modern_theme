@@ -1,0 +1,130 @@
+{% set return = api.get('/orderreturn/' ~ return_id) %}
+{% set item = api.get('/orderitem/' ~ return.item_id) %}
+{# Variables passed in: order_id, return_id #}
+<table border="0" cellpadding="0" cellspacing="0" width="640" style="color: #555555; font-family: helvetica, arial, sans-serif;">
+	<!-- Begin email header -->
+	<tr>
+		<td>
+			{% include 'email/core/header.html.twig' %}
+		</td>
+	</tr>
+	<!-- End email header -->
+	<!-- Begin title -->
+	<tr>
+		<td style="padding:20px 20px 10px 20px; vertical-align: top;">
+			<h1 style="color: #333333; font-size: 36px; line-height: 46px; margin: 0;">
+				Order Return
+			</h1>
+		</td>
+	</tr>
+	<!-- End title -->
+	<!-- Begin order return details -->
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="640" style="background-color: #ebebeb; font-family: helvetica, arial, sans-serif; padding: 20px;">
+				<tr>
+					<td style="vertical-align: top;">
+						<h2 style="color: #E16C25; font-size: 18px; text-transform: uppercase;">
+							Order Return Details
+						</h2>
+						<p style="font-size: 14px; line-height: 22px;">
+							You have successfully created a return and a copy of the return instructions below have been emailed to you. In order for us to process your return, your items must meet the following criteria:
+						</p>
+						<ul style="font-size: 14px; line-height: 22px; margin-bottom: 0px; padding-left: 20px;">
+							<li>Items must be unused and returned with the original product tags.</li>
+							<li>Items must be returned in their original, undamaged packaging.</li>
+							<li>Please do not place shipping labels on product packaging, only place shipping labels on the cardboard shipping box.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- End order return details -->
+	<!-- Begin what happens next -->
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="640" style="color:#555555; font-family: helvetica, arial, sans-serif; padding: 20px;">
+				<tr>
+					<td>
+						<h2 style="font-size: 18px; text-transform: uppercase;">What Happens Next</h2>
+						<ol style="font-size: 14px; line-height: 22px; margin-bottom: 0px; padding-left: 20px;">
+							<li style="padding-bottom: 5px;">Print this page and cut on the dashed lines.</li> 
+							<li style="padding-bottom: 5px;">Place the packing slip inside the box with the items you are returning.</li>
+							<li style="padding-bottom: 5px;">Affix the returns address label to the outside of your shipping box.</li>
+							<li style="padding-bottom: 5px;">Reprint as necessary for each package. If you do not currently have access to a printer, you can write your Return # and return shipping address on the shipping box.</li>
+							<li style="padding-bottom: 5px;">Please ship your items to the specified fulfillment center address below.</li>
+						</ol>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- End what happens next -->
+	<!-- Begin rma -->
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="640" style="color:#555555; font-family: helvetica, arial, sans-serif; padding: 20px;">
+				<tr>
+					<td style="vertical-align: top;">
+						<h2 style="font-size: 18px; text-transform: uppercase;">
+							Your RMA number information
+						</h2>
+						<p style="font-size: 14px; line-height: 22px; margin: 0;">
+							URL: {{app.url}}{{products[item.product_id].0.url}} <br>
+							SKU: {{item.sku}} <br>
+							Item name: {{ item.name }} <br>
+							Price: ${{ item.price|number_format(2) }} <br>
+							Quantity: {{ item.quantity }}
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- End rma -->
+	<!-- Begin return address -->
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="640" style="color: #555555; font-family: helvetica, arial, sans-serif; padding: 20px;">
+				<tr>
+					<td style="border-bottom: 1px dashed #CCCCCC; padding-bottom: 10px; vertical-align: top;">
+						<h2 style="font-size: 18px; margin: 0; text-transform: uppercase;">
+							Ship your returns to:
+						</h2>
+					</td>
+				</tr>
+				<tr>
+					<td style="border-bottom: 1px dashed #CCCCCC; padding-bottom: 20px; padding-top: 20px; vertical-align: top;">
+						<p style="font-size: 20px; line-height: 30px; margin: 0;">
+							Address: {{ app.params['return_address']['street_line1'] }} {{ app.params['return_address']['street_line2'] }} <br>
+							City: {{ app.params['return_address']['city'] }}
+							State: {{ app.params['return_address']['state'] }}
+							Zip: {{ app.params['return_address']['zip'] }} <br>
+							{% if app.params['information']['phone_number'] is defined %}
+							P: {{ app.params['information']['phone_number'] }}
+							{% endif %}
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- End return address -->	
+	<!-- Begin thank you -->
+	<tr>
+		<td style="padding: 20px; vertical-align:top;">
+			<p style="font-size: 14px; line-height: 22px;">
+				Thank you for shopping with us.
+			</p>
+		</td>
+	</tr>
+	<!-- End thank you -->
+	<!-- Begin email footer -->
+	<tr>
+		<td>
+			{% include 'email/core/footer.html.twig' %}
+		</td>
+	</tr>
+	<!-- End email footer -->
+</table>

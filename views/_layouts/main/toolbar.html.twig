@@ -1,0 +1,195 @@
+{# Begin desktop toolbar #}
+<div class="row hidden-xs hidden-sm">
+    <div class="col-md-12">
+        <ul class="list-inline list-unstyled">
+            <li> <a href="{{app.url}}/contact">Contact Us</a> </li>
+            {% if app.user.id != '' %}
+            <li> <a href="{{app.url}}/account/orders">Order Status</a> </li>
+            {% else %}
+            <li> <a href="{{app.url}}/order">Order Status</a> </li>
+            {% endif %}
+            {% if app.user.id != '' %}
+            <li> <a href="{{app.url}}/account/orders">Easy Returns</a> </li>
+            {% else %}
+            <li> <a href="{{app.url}}/return">Easy Returns</a> </li>
+            {% endif %}
+            <li> <a href="{{app.url}}/registry/search">Gift Registry</a> </li>
+            {% if app.user.id is null %}
+            {# Begin login button #}
+            <li class="login">
+                <a href="{{app.url}}/account/login">
+                    <i class="fa fa-user"></i>
+                    <div class="text">Log In</div>
+                </a>
+            </li>
+            {# End login button #}
+            {% else %}
+            {% set customer = api.get('/customer/' ~ app.user.id) %}
+            <li>
+                <div class="btn-group my-account">
+                    <button type="button" id="dropdown-account" class="btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>{{ customer.first_name }} {{ customer.last_name}}<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{app.url}}/account">My Account</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="{{app.url}}/account/orders">Orders</a></li>
+                        <li><a href="{{app.url}}/account/wishlists">Wishlists</a></li>
+                        <li><a href="{{app.url}}/account/registries">Registries</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="{{app.url}}/account/logout">Not {{ customer.first_name}}? Logout</a></li>
+                    </ul>
+                </div>
+            </li>
+            {% endif %}
+            {# End my account button #}
+            {# Begin cart section #}
+            <li class="cart" data-content="" data-placement='bottom' rel='popover'>
+                {# Begin ajax cart popover #}
+                <div class="ajaxcart" style="display:none">
+                    <div class="popover-close">
+                        <div class="row">
+                            <div class="col-md-7">
+                                Quickcart
+                            </div>
+                            <div class="col-md-5">
+                                <a onclick="$('li.cart').popover('hide')" id="ajaxcart-close" class="btn btn-danger btn-sm pull-right fa fa-times"></a>
+                            </div>
+                        </div>
+                    </div>
+                    {# Begin Popover products #}
+                    <section class="ajaxcart-products">
+                        {# Begin product #}
+                        <div class="ajaxcart-product product">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="thumbnail">
+                                        <img onerror="this.src='{{ app.url_asset }}/images/product/image-250x250.jpg'" class="product-image" src="">
+                                    </div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <div class="name">
+                                        <span class="product-name"></span>
+                                    </div>
+                                    <div class="price"><strong>Price:</strong> $<span class="product-price"></span></div>
+                                    <div class="quantity"><strong>Qty:</strong> <span class="product-quantity"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        {# Begin product #}
+                    </section>
+                    {# End Popover products #}
+                    {# Begin popover cart totals #}
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-4">
+                            <div class="cart-totals">
+                                <div class="items">Item count: <span class="item-count"></span></div>
+                                <div class="total">Subtotal: $<span class="subtotal">0.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    {# End popover cart totals #}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{ app.url }}/cart" class="btn btn-cart btn-block">My Cart</a>
+                        </div>
+                    </div>
+                </div>
+                {# End ajax cart popover #}
+                {# Begin cart button #}
+                <a href="{{app.url}}/cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="text">My Cart</div>
+                    <div class="item-count">{{ api.get('/sessioncart').item_count }}</div>
+                </a>
+                {# End cart button #}
+            </li>
+            {# End cart section #}
+        </ul>
+    </div>
+</div>
+{# End deskop toolbar #}
+
+{# Begin mobile toolbar #}
+<div class="row hidden-md hidden-lg">
+    <div class="toolbar-mobile">
+        <div class="col-sm-12">
+            <div class="btn-group btn-group-justified">
+                {# Begin navigation button #}
+                <a href="#nav-mobile-main" class="btn btn-nav-mobile btn-primary" role="button">
+                    <i class="fa fa-bars"></i>
+                    <div class="text">Menu</div>
+                </a>
+                {# End navigation button #}
+
+                {# Begin search button #}
+                <a class="btn btn-search btn-primary" href="{{app.url}}">
+                    {{ app.params.site.title }}
+                </a>
+                {# End search button #}
+
+                {# Begin cart button #}
+                <a class="btn btn-cart btn-add-to-cart cart" role="button" href="{{app.url}}/cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="text">Cart</div>
+                    <div class="item-count">{{ api.get('/sessioncart').item_count }}</div>
+                </a>
+                {# End cart button #}
+            </div>
+        </div>
+        <div class="mobile-popover col-xs-12" data-content="">
+            {# Begin ajax cart popover #}
+            <div class="ajaxcart" style="display:none;">
+                <div class="popover-close">
+                    <div class="row">
+                        <div class="col-md-7 col-xs-10">
+                                Quickcart
+                        </div>
+                        <div class="col-md-5 col-xs-2">
+                            <a onclick="$('.mobile-popover').popover('hide')" id="ajaxcart-close" class="btn btn-danger btn-sm pull-right fa fa-times"></a>
+                        </div>
+                    </div>
+                </div>
+                {# Begin Popover products #}
+                <section class="ajaxcart-products">
+                    {# Begin product #}
+                    <div class="ajaxcart-product product">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="thumbnail">
+                                    <img onerror="this.src='{{ app.url_asset }}/images/product/image-250x250.jpg'" class="product-image" src="">
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="name">
+                                    <span class="product-name"></span>
+                                </div>
+                                <div class="price"><strong>Price:</strong> $<span class="product-price"></span></div>
+                                <div class="quantity"><strong>Qty:</strong> <span class="product-quantity"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    {# Begin product #}
+                </section>
+                {# End Popover products #}
+                {# Begin popover cart totals #}
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-4">
+                        <div class="cart-totals">
+                            <div class="items">Item count: <span class="item-count"></span></div>
+                            <div class="total">Subtotal: $<span class="subtotal">0.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                {# End popover cart totals #}
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="{{ app.url }}/cart" class="btn btn-cart btn-block">My Cart</a>
+                    </div>
+                </div>
+            </div>
+            {# End ajax cart popover #}
+        </div>
+    </div>
+</div>
+{# End mobile toolbar #}

@@ -1,0 +1,29 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% import "/account/_macros/base.html.twig" as account %}
+{% import "/_macros/form-elements-bootstrap.html.twig" as forms %}
+
+{% do account.login() %}
+
+{% block title %}Account - Registry{% endblock %} 
+
+{% block breadcrumb %}
+    {{ base.breadcrumbs({'Account':'/account','Registries':'/account/registries','Registry':''}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    	{# Begin navigation #}
+	    <div class="navigation hidden-xs hidden-sm">
+	        <div class="col-md-3 col-lg-2">
+	            {{account.navigation('registries')}}
+	        </div>
+	    </div>
+	    {# End navigation #}
+        {# Begin content #}
+        <div class="content">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10">
+                {% include '/registry/_partials/list.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

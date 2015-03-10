@@ -1,0 +1,62 @@
+{# Variables passed in: order_id, return_id #}
+{% set return = api.get('/orderreturn/' ~ return_id) %}
+{% set item = api.get('/orderitem/' ~ return.item_id) %}
+<table border="0" cellpadding="0" cellspacing="0" width="640" style="color: #555555; font-family: helvetica, arial, sans-serif;">
+	<!-- Begin email header -->
+	<tr>
+		<td>
+			{% include 'email/core/header.html.twig' %}
+		</td>
+	</tr>
+	<!-- End email header -->
+	<!-- Begin title -->
+	<tr>
+		<td style="padding:20px 20px 10px 20px; vertical-align: top;">
+			<h1 style="color: #333333; font-size: 36px; line-height: 46px;">
+				Order Return Update
+			</h1>
+			<p style="font-size: 14px; line-height: 22px;">
+				Your return status has been updated:
+			</p>
+		</td>
+	</tr>
+	<!-- End title -->
+	<!-- Begin item info -->
+	<tr>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="0" width="640" style="background-color: #ebebeb; color: #555555; font-family: helvetica, arial, sans-serif; padding: 20px;">
+				<tr>
+					<td style="vertical-align: top;">
+						<h2 style="color: #E16C25; font-size: 18px; text-transform: uppercase;">
+							Order Return Status
+						</h2>
+						<p style="color: #555555; font-size: 14px; line-height: 22px; margin: 0;">
+							Status: {{return.status }}<br>
+							RMA#: {{return.rma}}<br>
+							Item name: {{item.name}}<br>
+							Quantity: {{return.quantity}}<br>
+							Reason: {{return.reason}}
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- End item info -->
+	<!-- Begin thank you -->
+	<tr>
+		<td style="padding: 20px; vertical-align: top;">
+			<p style="font-size: 14px; line-height: 22px;">
+				Thank you for shopping with us.
+			</p>
+		</td>
+	</tr>
+	<!-- End thank you -->
+	<!-- Begin email footer -->
+	<tr>
+		<td>
+			{% include 'email/core/footer.html.twig' %}
+		</td>
+	</tr>
+	<!-- End email footer -->
+</table>

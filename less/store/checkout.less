@@ -1,0 +1,131 @@
+// 4.5
+// CHECKOUT
+// -------------------------------------------------
+
+.checkout-display-address{
+    border: 2px dashed #ccc;
+    padding: 10px;
+}
+
+#order-summary {
+    h2 {}
+    .product {
+
+        border-bottom: 1px solid #eeeeee; font-size: 12px; margin-bottom: 10px; padding-bottom: 10px; padding-top: 10px;
+
+        .photo {}
+        .thumbnail { margin-bottom: 0;}
+        .description {}
+        .name {}
+        .size {}
+        .number {}
+        .qty {}
+        .amount {}
+        .actions { text-align: left;}
+    }
+}
+
+//
+// ORDER COMPLETE
+// -------------------------------------------------
+#order-complete {
+    #order-details { font-size: 13px;}
+    #order-items {
+        .panel {
+            .panel-heading {
+                background-color: #ffffff; border-bottom: 1px solid #e5e5e5;
+                a {
+                    color: #333333;
+                    .panel-title { font-size: 13px;}
+                    .item-total { font-size: 13px;}
+                }
+            }
+            .panel-body {
+                .shipping-address {
+                    font-size: 13px; padding-bottom: 10px;
+                    address {
+                        .name {}
+                        .address1 {}
+                        .address2 {}
+                        .city-state {}
+                        .shipping-method {}
+                    }
+                }
+                .billing-address {
+                    font-size: 13px; padding-bottom: 10px;
+                    address {
+                        .name {}
+                        .address1 {}
+                        .address2 {}
+                        .city-state {}                        
+                        .billing-method {}
+                    }
+                }
+                .item-totals {
+                    border-top: 1px solid #e5e5e5; font-size: 13px; padding-top: 10px;
+                    .txt-label { text-align: left;}
+                    .amount { text-align: right;}
+                    .order-subtotal {}
+                    .shipping {}
+                    .coupon-discount {}
+                    .pre-tax-total {}
+                    .tax {}
+                    .gift-card {}
+                    .item-total {}
+                }
+
+                @media (min-width: @screen-sm-min){
+                    .billing-address { padding-bottom: 0;}
+                    .item-totals {
+                        border-top: 0 none; padding-top: 0;
+                        .txt-label { text-align: right;}
+                    }
+                }
+            }
+        }
+    }
+    #order-totals {
+        .shipping-address {
+            font-size: 13px; padding-bottom: 10px;
+            address {
+                .name {}
+                .address1 {}
+                .address2 {}
+                .city-state {}
+                .shipping-method {}
+            }
+        }
+        .billing-address {
+            font-size: 13px;
+            address {
+                margin-bottom: 10px;
+                .name {}
+                .address1 {}
+                .address2 {}
+                .city-state {}                        
+                .billing-method {}
+            }
+        }
+        .order-totals {
+            border-top: 1px solid #e5e5e5; font-size: 13px; padding-bottom: 10px; padding-top: 10px;
+            .txt-label {text-align: left;}
+            .amount { text-align: right;}
+            .order-subtotal {}
+            .shipping {}
+            .coupon-discout {}
+            .pre-tax-total {}
+            .tax {}
+            .gift-card {}
+            .order-totals {}            
+        }
+
+        @media (min-width: @screen-sm-min){
+            .billing-address { padding-bottom: 0;}
+            .order-totals {
+                border-top: 0 none; padding-top: 0;
+                .txt-label { text-align: right;}
+            }
+        }
+    }
+
+}

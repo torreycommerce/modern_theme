@@ -1,0 +1,51 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% import "/_macros/form-elements-bootstrap.html.twig" as forms %}
+{% block title %}{{ app.params.site.title}} is protected{% endblock %}
+{% block content %}
+{% if app.request.post.auth_protection is not empty %}
+{% if app.form.validateCaptcha(app.request.ip,app.request.post.recaptcha_challenge_field,app.request.post.recaptcha_response_field) %}
+{% set auth = api.post('/site/authentication', app.request.post.auth_protection) %}
+{% if api.post('/site/authentication', app.request.post.auth_protection) %}
+{% do app.user.setState('user_allowed', app.request.post.auth_protection.password) %}
+{% do app.redirect('/') %}
+{% else %}
+{% set form_errors = api.error() %}
+{% endif %}
+{% else %}
+{% do app.user.setFlash('The captcha is not valide', 'danger') %}
+{% do app.redirect('store-protected') %}
+{% endif %}
+{% endif %}
+<div class="content" style="min-height: calc(100vh - 269px);">
+    <div class="container">
+        <div class="row">
+            {{ forms.begin('auth_protection','','post', {class:'form-horizontal'}) }}
+            <div class="col-md-6">
+                <h1 class="page-header">{{ app.params.site.title}} is coming soon ...</h1>
+                <p>The store is actually protected by a password. In order to access it, please fill the form down below...</p>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-md-3 col-lg-3" for="input2">Password<span class="text-danger">*</span>
+                    </label>
+                    <div class="col-sm-9 col-md-9 col-lg-9">
+                        {{ forms.password('auth_protection[password]','', {class:'form-control parsley-validated', required:true, placeholder: "Password"}) }}
+                    </div>
+                    <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                        <div class="validation">{{ forms.errorlist(form_errors, 'password') }}</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                        {{ forms.captcha() }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                        {{ forms.submit('auth_protection[submit]', 'submit', 'Access', {class:'btn btn-primary'})}}
+                    </div>
+                </div>
+            </div>
+            {{ forms.end() }}
+        </div>
+    </div>
+</div>
+{% endblock %}

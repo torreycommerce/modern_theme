@@ -1,0 +1,8 @@
+{% set id = app.request.path|split('/')|first %}
+{% if id is not empty and id is integer %}
+	{% set product = api.get('/catalog/' ~ id) %}
+	{% if product is not empty %}
+		{% do app.redirect(product.url, {'code':301}) %}
+	{% endif %}
+{% endif %}
+{% do app.redirect(app.url, {"error":"Sorry, the page you've requested does not exist."}) %}

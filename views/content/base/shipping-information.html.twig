@@ -1,0 +1,91 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% block title %}
+Shipping Information
+{% endblock %}
+{% block breadcrumb %}
+    {{ base.breadcrumbs({'Shipping Information':''}) }}
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <header>
+            <h1 class="page-header">Shipping Information</h1>
+        </header>
+        <p>Delivery charges are based on the total value of your order. When your order is ready to ship, it generally takes 7-10 business days for delivery. No weekend or holiday delivery is available. Oversized and overweight packages may incur additional charges and service restrictions. You may also choose to upgrade to Expedited delivery for an additional charge (see chart below). For more information on delivery times please see our delivery times page <a href="{{app.url}}/content/delivery-times">here</a>.</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>
+                        Purchase Amount
+                    </td>
+                    <td></td>
+                    <td>
+                        <p>Standard</p>
+                        <p>7-10 days</p>
+                    </td>
+                    <td>
+                        <p>Expedited</p>
+                        <p>2-4 Days</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>From</td>
+                    <td>To</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>$0.01</td>
+                <td>$25.00</td>
+                <td>$8.25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>$25.01</td>
+                <td>$35.00</td>
+                <td>$9.50</td>
+                <td>$34.50</td>
+            </tr>
+            <tr>
+                <td>$35.01</td>
+                <td>$50.00</td>
+                <td>$10.25</td>
+                <td>$38.50</td>
+            </tr>
+            <tr>
+                <td>$50.01</td>
+                <td>$99.00</td>
+                <td>$13.00</td>
+                <td>$49.00</td>
+            </tr>
+            <tr>
+                <td>$100.00</td>
+                <td>$150.00</td>
+                <td><del>$20.00</del> <span style="color: #ff3300;" color="#ff3300"><strong>FREE!</strong></span></td>
+                <td>$62.00</td>
+            </tr>
+            <tr>
+                <td>$150.01</td>
+                <td>$250.00</td>
+                <td><del>$27.00</del> <span style="color: #ff3300;" color="#ff3300"><strong>FREE!</strong></span></td>
+                <td>$67.00</td>
+            </tr>
+            <tr>
+                <td>$250.01</td>
+                <td>$350.00</td>
+                <td><del>$32.00</del> <span style="color: #ff3300;" color="#ff3300"><strong>FREE!</strong></span></td>
+                <td>$72.00</td>
+            </tr>
+            <tr>
+                <td>$350.01</td>
+                <td>and up</td>
+                <td><del>$32.00</del> <span style="color: #ff3300;" color="#ff3300"><strong>FREE!</strong></span></td>
+                <td>$87.00</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

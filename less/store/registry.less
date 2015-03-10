@@ -1,0 +1,91 @@
+// 4.2
+// REGISTRY
+// --------------------------------------------------
+
+#registry {
+    
+    // Wishlist name
+    .registry-name {
+        border-bottom: 1px solid #eeeeee; margin-bottom: 20px; padding-bottom: 10px;
+    }
+
+    .product {
+        border-bottom: 1px solid #eeeeee; margin-bottom: 20px; padding-bottom: 20px;
+
+         // Product header
+        header {
+            margin-bottom: 10px;
+
+            .name { font-size: 18px; margin-bottom: 5px; }
+            .brand { font-size: 11px;}
+            @media (min-width: @screen-md-min) {
+                margin-bottom: 0;
+                .name { margin-bottom: 0;}
+            }
+        }
+
+        // Product image
+        .images {
+            margin-bottom: 20px;
+
+            .thumbnail { margin-bottom: 0;}
+
+            @media (min-width: @screen-sm-min) {
+                margin-bottom: 0px;
+            }
+        }
+
+        // Product pricing
+        .pricing {
+            margin-bottom: 10px;
+            .price, .price-range { display: inline-block; margin-right: 10px; font-size: 16px;}    
+            .stock { display: inline-block; color: #009900; font-size: 12px;}
+            .price-regular { display: block; font-size: 11px; text-decoration:line-through; }
+        }
+
+        // Product quatities
+        .quantities {
+            margin-bottom: 10px;
+            .qty-purchased { display: inline-block; font-size: 13px; margin-right: 10px; }
+            .qty-wanted { display: inline-block; font-size: 13px; margin-right: 10px;}
+            .qty-update { display: inline-block; margin-right: 10px;}
+            .qty-remove { display: inline-block;}
+
+            @media (min-width: @screen-sm-min) {
+                .qty-purchased { margin-bottom: 4px;}
+                .qty-wanted { margin-bottom: 4px;}
+                .qty-update { display: block; margin-bottom: 4px;}
+            }
+
+            @media (min-width: @screen-lg-min) {
+                .qty-update { display: inline-block; margin-bottom: 4px;}
+                .qty-remove { display: block;}
+            }
+        }
+
+        // Product actions
+        .actions {
+            .quantity { float: left; margin-bottom: 10px; }
+            .add-to-cart { }
+        }
+
+        .fg-red{ color: #CC0000;}
+        .fg-green{ color: #009900;}
+    }
+
+    //Wishlist actions
+    .actions {
+        margin-bottom: 20px;
+
+        .btn-share { margin-right: 10px;}
+        .btn-edit { margin-right: 10px;}
+    }
+}
+
+// Registry Search
+#registry_search {
+    .registry {
+        border-bottom: 1px solid #ccc; padding-bottom: 10px; padding-top: 10px;
+        &:last-child { border-bottom: 0 none;}
+    }   
+}

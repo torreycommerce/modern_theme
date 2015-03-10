@@ -1,0 +1,81 @@
+//
+// GLOBAL
+// --------------------------------------------------
+
+//
+// Base Elements
+// --------------------------------------------------
+
+html,body { margin: 0; padding: 0; border: 0;}
+html { font-size: 62.5%; -webkit-touch-callout: none; -webkit-text-size-adjust: none; -ms-text-size-adjust: 100%; }
+
+
+//
+// Forms
+// --------------------------------------------------
+
+// Search withing
+.search-within {    
+    input { border-bottom-color: #E5E1D8; border-left-color: #E5E1D8; border-top-color: #E5E1D8; border-width: 1px; border-style: solid;} 
+    button { border-bottom-color: #E5E1D8; border-right-color: #E5E1D8; border-top-color: #E5E1D8; }
+}
+
+// Quantity Button Group
+.quantity-input-group {
+    float: left; margin-left: 5px; margin-right: 4px;
+    label { display: inline-block; float: left; font-weight: 400; margin-right: 8px; padding-top: 7px; padding-bottom: 6px;}
+    .input-group {
+        float: left; width: 114px;
+        input { width: 3em;}
+    }    
+}
+
+//
+// Headers
+// --------------------------------------------------
+
+.actions-header { margin-bottom: 20px;}
+
+.actions-footer { margin-top: 20px;}
+
+
+
+//
+// Misc
+// --------------------------------------------------
+
+.visually-hidden { /*http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
+position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px); padding:0 !important; border:0 !important; height: 1px !important; width: 1px !important; overflow: hidden;}
+
+// Page Filters
+.page-filters {
+    padding-top: 10px; padding-bottom: 10px;
+
+    // Search Within
+    .search-within {
+        margin-bottom: 10px;
+
+        // Media Queries
+        @media (min-width: @screen-md-min) {
+            margin-bottom: 0px;
+        }
+    }
+
+    // Product Sorting
+    .sorting {
+        text-align: center; margin-bottom: 10px;
+        ul.dropdown-menu { min-width: 50px;}
+        div#items-per-page { margin-left: 10px;}
+
+        // Media Queries
+        @media (min-width: @screen-md-min) {
+        text-align: right;         
+        }
+    }
+}
+
+
+
+// Modals
+.modal-footer { text-align: left; }

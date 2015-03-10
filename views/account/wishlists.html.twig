@@ -1,0 +1,116 @@
+{% extends "/_layouts/theme.html.twig" %}
+{% import "/_macros/form-elements-bootstrap.html.twig" as forms %}
+{% import "/account/_macros/base.html.twig" as account %}
+
+{# Redirect to the login page if user is not logged in. #}
+{% do account.login() %} 
+
+{# Set the page_name - used for the page title, heading, tab selection, and breadcrumb in this page. #}
+{% set page_name = 'wishlists' %}
+
+{# Set the html head title #}
+{% block title %}Account - {{page_name|title}}{% endblock %} 
+
+{# Load in the breadcrumbs positioned in /_layouts/main/base.html.twig #}
+{% block breadcrumb %}
+{#
+Passed into the macro is a array of key:value pairs as (title):(relative url)
+- The last link should not have a url, as it will be used as a 'you are here'
+#}
+{{ base.breadcrumbs({'Account':'/account',(page_name|title):''}) }}
+{% endblock %}
+
+{% block content %}
+{% if app.request.post.wishlist.action is not empty %}
+{% set action = app.request.post.wishlist.action|split('/')|first %}
+{% set id = app.request.post.wishlist.action|split('/')|last %}
+
+{% if action != id %}
+{% set wishlist = api.get('/wishlist/' ~ id) %}
+    {% if wishlist.customer_id != app.user.id %}
+{% do app.redirect('/account/wishlists') %}
+{% endif %}
+{% endif %}
+
+{% if action == 'delete' %}
+{% include "/account/wishlist/_partials/delete.html.twig" %}
+{% elseif action == 'makeDefault' %}
+{% include "/account/wishlist/_partials/makeDefault.html.twig" %}
+{% endif %}
+{% endif %}
+<div id="customer-account">
+    <div class="row">
+        {# Begin navigation #}
+        <div class="navigation hidden-xs hidden-sm">
+            <div class="col-md-3 col-lg-2">
+                {{account.navigation('wishlists')}}
+            </div>
+        </div>
+        {# End navigation #}
+        {# Begin wishlists #}
+        <div id="customer-account-wishlists">
+            <div class="col-sm-12 col-md-9 col-lg-10">
+                {# Begin header #}
+                <header>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <header>
+                                <h1 class="page-header">Your Wishlists</h1>
+                            </header>
+                        </div>
+                    </div>
+                </header>
+                {# End header #}
+                {# Begin wishlist #}
+                {{ forms.begin('wishlist','','post',{ class:'form-horizontal' }) }}
+                {% set wishlists = api.get('/wishlist',{query:{"customer_id":app.user.id}}) %}
+                {# Begin actions #}            
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="actions-header">
+                            <a class="btn btn-primary" href="{{ app.request.base}}/account/wishlist/create"><i class="fa fa-plus"></i>&nbsp;Create a new wishlist</a>
+                        </div>
+                    </div>
+                </div>
+                {# End actions #}
+                {% if wishlists is empty %}
+                There are no wishlists.
+                {% else %}
+                {# Begin wishlists #}
+                <div class="row">
+                    {% for wishlist in wishlists %}
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="panel panel-default panel-info ">
+                            <div class="panel-heading">
+                                <strong>{% if wishlist.default %}<i class="fa fa-star"></i>{% endif %}{{ wishlist.name }}</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="item-count">{{ wishlist.item_count }} items</div>
+                                <div class="privacy">{{ wishlist.privacy }}</div>
+                                <div class="default">{% if wishlist.default %}default wishlist{% endif %}</div>
+                            </div>
+                            <div class="panel-footer">
+                                <a class="btn btn-neutral" href="{{app.url}}/wishlist/{{wishlist.id}}">View</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                {# End wishlists #}
+                {% endif %}
+                {# Begin actions #}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="actions-footer">
+                            <a class="btn btn-primary" href="{{ app.request.base}}/account/wishlist/create"><i class="fa fa-plus"></i>&nbsp;Create a new wishlist</a>
+                        </div>
+                    </div>
+                </div>
+                {# End actions #}
+                {{ forms.end() }}
+            </div>
+        </div>
+        {# End wishlists #}
+    </div>
+</div>
+{% endblock %}

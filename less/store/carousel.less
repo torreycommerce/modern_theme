@@ -1,0 +1,36 @@
+//
+// Carousel
+// --------------------------------------------------
+
+// Left/right controls for nav
+// ---------------------------
+
+.carousel-control {
+
+  // Set gradients for backgrounds
+  &.left {
+    #gradient > .horizontal(@start-color: rgba(54,190,217,0.25); @end-color: rgba(54,190,217,0));
+  }
+  &.right {
+    #gradient > .horizontal(@start-color: rgba(54,190,217,0); @end-color: rgba(54,190,217,0.25));
+  }
+}
+
+.carousel-indicators {
+
+  li {
+
+    border: 1px solid #0f8299;
+
+    // IE8-9 hack for event handling
+    //
+    // Internet Explorer 8-9 does not support clicks on elements without a set
+    // `background-color`. We cannot use `filter` since that's not viewed as a
+    // background color by the browser. Thus, a hack is needed.
+    //
+    // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+    // set alpha transparency for the best results possible.
+    background-color: #ffc859 \9; // IE8
+    background-color: rgba(255,200,89,1.0); // IE9
+  }
+}

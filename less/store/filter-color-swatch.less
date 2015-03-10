@@ -1,0 +1,53 @@
+// Color chip
+.color-chip {
+    border:1px solid #eee; opacity:0.7; color:white; font-size: .6em; padding: .8em 1em; margin:.19em .19em; border-radius: 2em; width:3.5em; height:3.5em;
+    i { font-size: 1.2em; line-height: 1.4em; padding: 0; }
+    &:hover,
+    &:focus { opacity:1; text-decoration: none; }
+    &.white { color: gray; border: 1px solid #ccc; }
+    &.active { opacity:1; }
+    &.disabled {
+        opacity:0.1;
+        i { padding: 0; }
+    }
+}
+
+// Color chip colors
+.color-chip {
+    &.bright-red          { background-color:#ff00cc; }
+    &.red                 { background-color:#9b1e20; }
+    &.hot-pink            { background-color:#ff33cc; }
+    &.pink                { background-color:#e0b3cd; }
+    &.bright-orange       { background-color:#ff9900; }
+    &.orange              { background-color:#d58c28; }
+    &.yellow              { background-color:#e5e058; }
+    &.lime-green          { background-color:#00ff33; }
+    &.army-green          { background-color:#999933; }
+    &.light-green         { background-color:#b9d197; }
+    &.green               { background-color:#90b55b; }
+    &.teal                { background-color:#24c4c8; }
+    &.light-blue          { background-color:#d8e2fa; }
+    &.blue                { background-color:#346492; }
+    &.deep-navy           { background-color:#000066; }
+    &.dark-blue           { background-color:#000099; }
+    &.purple              { background-color:#8033cc; }
+    &.light-brown         { background-color:#d4c9be; }
+    &.chocolate           { background-color:#663300; }
+    &.brown               { background-color:#6f5d42; }
+    &.black               { background-color:#000000; }
+    &.grey                { background-color:#aaaaaa; }
+    &.ivory               { background-color:#fffff0; }
+    &.white               { background-color:#eeeeee; border:1px solid #999;}
+}
+
+// Created using http://www.colorzilla.com/gradient-editor
+.color-chip.multi         {
+background: rgb(136,191,232); // Old browsers
+background: -moz-linear-gradient(-45deg,  rgba(136,191,232,1) 0%, rgba(150,255,194,1) 27%, rgba(185,150,255,1) 53%, rgba(255,150,152,1) 75%, rgba(241,255,150,1) 100%, rgba(112,176,224,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(136,191,232,1)), color-stop(27%,rgba(150,255,194,1)), color-stop(53%,rgba(185,150,255,1)), color-stop(75%,rgba(255,150,152,1)), color-stop(100%,rgba(241,255,150,1)), color-stop(100%,rgba(112,176,224,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(136,191,232,1) 0%,rgba(150,255,194,1) 27%,rgba(185,150,255,1) 53%,rgba(255,150,152,1) 75%,rgba(241,255,150,1) 100%,rgba(112,176,224,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(136,191,232,1) 0%,rgba(150,255,194,1) 27%,rgba(185,150,255,1) 53%,rgba(255,150,152,1) 75%,rgba(241,255,150,1) 100%,rgba(112,176,224,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(136,191,232,1) 0%,rgba(150,255,194,1) 27%,rgba(185,150,255,1) 53%,rgba(255,150,152,1) 75%,rgba(241,255,150,1) 100%,rgba(112,176,224,1) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(136,191,232,1) 0%,rgba(150,255,194,1) 27%,rgba(185,150,255,1) 53%,rgba(255,150,152,1) 75%,rgba(241,255,150,1) 100%,rgba(112,176,224,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
