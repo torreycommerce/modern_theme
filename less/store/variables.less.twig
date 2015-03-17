@@ -20,6 +20,7 @@
 // Typography
 //      Body text
 //      Headings
+// Images
 // Header
 // Toolbar
 // My Cart
@@ -131,6 +132,10 @@
 // -------------------------
 @price-color:                         			#b2246b;
 
+// Hr
+// -------------------------
+@hr-border:										#333333;
+
 
 
 //
@@ -142,6 +147,7 @@
 @font-family-sans-serif:						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
 @font-family-serif:       						Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   						Menlo, Monaco, Consolas, "Courier New", monospace; // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-lucida:							Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
 @line-height-base:								1.428571429; // 20/14
 
 @font-size-base:								14px;
@@ -171,6 +177,25 @@
 
 @page-header-color:								@gray;
 @page-header-border-color:						#EEEEEE;
+
+
+
+// 
+// Thumbnails
+// ----------------------------------------------------------------------------------------------------
+
+@thumbnail-padding: 							0px;
+@thumbnail-bg: 									@body-bg;
+@thumbnail-border-width: 						0px;
+@thumbnail-border-style: 						solid;
+@thumbnail-border: 								transparent;
+@thumbnail-border-radius: 						@border-radius-base;
+@thumbnail-caption-color: 						@text-color;
+@thumbnail-caption-padding: 					9px;
+
+
+// Hover
+@thumbnail-border-hover: 						transparent;
 
 
 
@@ -222,18 +247,27 @@
 @login-hover-bg:								darken(@login-bg, 10%);
 
 
-
 // 
 // Navigation
 // -------------------------
 
+// Default
 @nav-bg:										0 none;
-@nav-bg-hover:									0 none;
 @nav-text:										#666666;
+@nav-text-weight:								600;
+@nav-hr: 										;
+
+// Hover
+@nav-bg-hover:									0 none;
 @nav-text-hover:								#000000;
+@nav-text-hover-decoration: 					underline;
+
+// Dropdown
 @nav-dropdown-bg:								@nav-bg-hover;
-@nav-dropdown-bg-hover:							0 none;
 @nav-dropdown-text:								@nav-text-hover;
+
+// Dropdown Hover
+@nav-dropdown-bg-hover:							0 none;
 @nav-dropdown-text-hover:						@nav-text-hover;
 
 
@@ -241,9 +275,11 @@
 // Tabs
 // ----------------------------------------------------------------------------------------------------
 
+// Default
 @nav-tabs-border-color:							@gray-lighter;
 @nav-tabs-link-hover-border-color:				@gray-lighter;
 
+// Active
 @nav-tabs-active-link-hover-bg:					@body-bg;
 @nav-tabs-active-link-hover-color:				@gray;
 @nav-tabs-active-link-hover-border-color:		@gray-lighter;
@@ -258,8 +294,14 @@
 // ----------------------------------------------------------------------------------------------------
 
 @logo-color:									#333333;
+@logo-font-size:								40px;
+@logo-font-weight:								600;
 @logo:                      		            "../images/store-logo-1x.png";
 @logo-retina:                       		    "../images/store-logo-2x.png";
+
+// Hover
+@logo-color-hover: 								saturate(@logo-color, 20%);
+@logo-color-text-decoration-hover: 				underline;
 
 
 
@@ -430,7 +472,7 @@
 @breadcrumb-active-color:						@gray-light;
 @breadcrumb-active-bg:							#ffffff;
 
-// Default
+// Hover
 @breadcrumb-color-hover:						@gray-darker;
 @breadcrumb-bg-hover:							#ffffff;
 
@@ -474,8 +516,72 @@
 // Product Categories
 // ----------------------------------------------------------------------------------------------------
 
+// Product Grid
+// -------------------------
+
 @product-grid-border-color:						#ffffff;
 @product-grid-border-color-hover:				#e52e90;
+
+
+// Product
+// -------------------------
+@product-bg-color:								none;	
+
+// Brand
+@product-brand-color: 							#4D332E;
+@product-brand-font-family:						@font-family-sans-serif;
+@product-brand-font-size:						14px;
+@product-brand-font-style:						normal;
+@product-brand-font-weight:						400;
+@product-brand-text-transform:					none;
+
+// Product Name
+@product-name-color: 							#4D332E;
+@product-name-font-family:						@font-family-sans-serif;
+@product-name-font-size:						14px;
+@product-name-font-style:						normal;
+@product-name-font-weight:						400;
+@product-name-text-transform:					none;
+
+// Price
+@product-price-color: 							#DB5176;
+@product-price-font-family:						@font-family-sans-serif;
+@product-price-font-size:						14px;
+@product-price-font-style:						normal;
+@product-price-font-weight:						400;
+@product-price-text-transform:					none;
+
+// Price Per Month
+@product-price-per-month-color:					lighten(@text-color, 10%);
+@product-price-per-month-font-family:			@font-family-sans-serif;
+@product-price-per-month-font-size:				12px;
+@product-price-per-month-font-style:			normal;
+@product-price-per-month-font-weight:			400;
+@product-price-per-month-text-transform:		none;
+
+// Price Range
+@product-price-range-color:						@text-color;
+@product-price-range-font-family:				@font-family-sans-serif;
+@product-price-range-font-size:					12px;
+@product-price-range-font-style:				normal;
+@product-price-range-font-weight:				400;
+@product-price-range-text-transform:			none;
+
+// Price Regular
+@product-price-regular-color:					@text-color;
+@product-price-regular-font-family:				@font-family-sans-serif;
+@product-price-regular-font-size:				12px;
+@product-price-regular-font-style:				normal;
+@product-price-regular-font-weight:				400;
+@product-price-regular-text-transform:			none;
+
+// Price Percent
+@product-price-percent-color:					lighten(@text-color, 10%);
+@product-price-percent-font-family:				@font-family-sans-serif;
+@product-price-percent-font-size:				12px;
+@product-price-percent-font-style:				normal;
+@product-price-percent-font-weight:				400;
+@product-price-percent-text-transform:			none;
 
 
 
@@ -553,6 +659,8 @@
 @panel-bg:										#ffffff;
 @panel-body-padding:							10px;
 @panel-border-radius:							0px;
+@panel-inner-border: 							#ffffff;
+@panel-footer-bg: 								#ffffff;
 
 
 // Default
@@ -619,7 +727,7 @@
 @footer-color-link-hover:						@brand-primary;
 @footer-header-text:							#ffffff;
 @footer-hr:										@gray;
-
+@footer-copy:									#FAF6F0;
 
 
 // 

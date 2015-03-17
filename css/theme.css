@@ -326,7 +326,7 @@ hr {
   margin-top: 24px;
   margin-bottom: 24px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #333333;
 }
 .sr-only {
   position: absolute;
@@ -6002,7 +6002,7 @@ hr {
   margin-top: 12px;
   margin-bottom: 12px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #333333;
 }
 h1,
 h2,

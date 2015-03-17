@@ -1,4 +1,3 @@
-
 // Variables
 // ----------------------------------------------------------------------------------------------------
 // Project: Acenda Default Theme
@@ -133,6 +132,10 @@
 // -------------------------
 @price-color:                         			#b2246b;
 
+// Hr
+// -------------------------
+@hr-border:										#333333;
+
 
 
 //
@@ -144,6 +147,7 @@
 @font-family-sans-serif:						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
 @font-family-serif:       						Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   						Menlo, Monaco, Consolas, "Courier New", monospace; // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-lucida:							Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
 @line-height-base:								1.5714; // 22/14
 
 @font-size-base:								14px;
@@ -192,6 +196,7 @@
 
 // Hover
 @thumbnail-border-hover: 						transparent;
+
 
 
 // 
@@ -246,8 +251,10 @@
 // Navigation
 // -------------------------
 
+// Default
 @nav-bg:										transparent;
 @nav-text:										@brand-primary;
+@nav-text-weight:								600;
 @nav-hr: 										#ede5da;
 
 // Hover
@@ -288,6 +295,7 @@
 
 @logo-color:									#EA567D;
 @logo-font-size:								40px;
+@logo-font-weight:								600;
 @logo:                      		            "../images/store-logo-1x.png";
 @logo-retina:                       		    "../images/store-logo-2x.png";
 
@@ -460,13 +468,13 @@
 @breadcrumb-color:								#A39C93;
 @breadcrumb-bg:									transparent;
 
-// Hover
-@breadcrumb-color-hover:						saturate(@breadcrumb-color, 10%);
-@breadcrumb-bg-hover:							transparent;
-
 // Active
 @breadcrumb-active-color:						lighten(@breadcrumb-color, 10%);
 @breadcrumb-active-bg:							transparent;
+
+// Hover
+@breadcrumb-color-hover:						saturate(@breadcrumb-color, 10%);
+@breadcrumb-bg-hover:							transparent;
 
 
 
@@ -574,6 +582,7 @@
 @product-price-percent-font-style:				normal;
 @product-price-percent-font-weight:				400;
 @product-price-percent-text-transform:			none;
+
 
 
 // 
@@ -719,7 +728,6 @@
 @footer-header-text:							#4D332E;
 @footer-hr:										@nav-hr;
 @footer-copy:									#FAF6F0;
-
 
 
 // 
