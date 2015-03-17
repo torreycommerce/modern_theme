@@ -2,7 +2,7 @@
 <!-- NAV -->
 {% spaceless %}
 {# Begin desktop nav #}
-<nav id="nav-desktop-main" class="col-lg-9 col-md-9 hidden-sm hidden-xs">
+<nav id="nav-desktop-main" class="col-md-12 hidden-sm hidden-xs">
     <ul class="nav navbar-nav">
         {% for main_category,items in categories if main_category != "clearance" %}
         {% if items|length %}
@@ -28,22 +28,13 @@
         {% endif %}
         {% endfor %}
     </ul>
+    <div class="row">
+       <div class="col-md-12">
+           <hr>
+       </div>
+   </div>
 </nav>
 {# End desktop nav #}
-{# Begin search bar #}
-<div class="search col-lg-3 col-md-3 hidden-sm hidden-xs">
-    <form role="search" method="get" action="{{app.url}}/search">
-        <div class="input-group">
-            <input class="form-control input-md" type="text" name="s" placeholder="Enter search terms">
-            <span class="input-group-btn">
-                <button class="btn btn-md" type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-            </span>
-        </div>
-    </form>
-</div>
-{# End search bar #}
 {# Begin mobile navigation menu #}
 <nav id="nav-mobile-main" class="mobile-nav hidden-md hidden-lg" data-navi="mobile-nav-main" data-navi-type="root">
     {# Begin nav list #}

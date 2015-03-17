@@ -1,3 +1,4 @@
+
 // Variables
 // ----------------------------------------------------------------------------------------------------
 // Project: Acenda Default Theme
@@ -20,6 +21,7 @@
 // Typography
 //      Body text
 //      Headings
+// Images
 // Header
 // Toolbar
 // My Cart
@@ -65,18 +67,18 @@
 
 
 
-//
-// Colors
+// 
+// Colors 
 // ----------------------------------------------------------------------------------------------------
 
 // Brand
 // -------------------------
-@brand-primary:									#f45b4f;
-@brand-secondary:								#666666;
-@brand-success:         						#5cb85c;
-@brand-info:         		   					#5bc0de;
-@brand-warning:     						    #f0ad4e;
-@brand-danger:     							    #d9534f;
+@brand-primary:									#DB5176;
+@brand-secondary:								#98c1c3;
+@brand-success:         						#5CB85C;
+@brand-info:         		   					#3BA4C4;
+@brand-warning:     						    #F0AC4D;
+@brand-danger:     							    #D9534F;
 
 // Gray
 // -------------------------
@@ -88,24 +90,19 @@
 
 // Feedback states
 // -------------------------
-
-// Success
-@state-success-text:							#ffffff;
+@state-success-text:							#FFFFFF;
 @state-success-bg:								@brand-success;
 @state-success-border:							darken(spin(@state-success-bg, -10), 5%);
 
-// Info
-@state-info-text:								#ffffff;
+@state-info-text:								#FFFFFF;
 @state-info-bg:									@brand-info;
 @state-info-border:								darken(spin(@state-info-bg, -10), 7%);
 
-// Warning
-@state-warning-text:							#ffffff;
+@state-warning-text:							#FFFFFF;
 @state-warning-bg:								@brand-warning;
 @state-warning-border:							darken(spin(@state-warning-bg, -10), 5%);
 
-// Danger
-@state-danger-text:								#ffffff;
+@state-danger-text:								#FFFFFF;
 @state-danger-bg:								@brand-danger;
 @state-danger-border:							darken(spin(@state-danger-bg, -10), 5%);
 
@@ -119,13 +116,13 @@
 
 // Background color for `<body>`
 // -------------------------
-@body-bg:					                    #FFFFFF;
+@body-bg:					                    #FAF6F0;
 @shop-bg-image:									0 none;
 @shop-bg-image-retina:							0 none;
 
 // Text color on `<body>`
 // -------------------------
-@text-color:									#555555;
+@text-color:									#4D332E;
 
 // Link color
 // -------------------------
@@ -144,10 +141,10 @@
 
 // Body text
 // -------------------------
-@font-family-sans-serif:  						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
+@font-family-sans-serif:						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
 @font-family-serif:       						Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   						Menlo, Monaco, Consolas, "Courier New", monospace; // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-base:								@font-family-sans-serif;
+@line-height-base:								1.5714; // 22/14
 
 @font-size-base:								14px;
 @font-size-large:         						ceil((@font-size-base * 1.25)); // ~18px
@@ -161,17 +158,17 @@
 @font-size-h6:									ceil((@font-size-base * 0.90));	// ~13px
 
 // Unit-less `line-height` for use in components like buttons.
-@line-height-base:								1.428571429; // 20/14
+@line-height-base:								1.7143; // 24/14
 
 // Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 // Headings
 // -------------------------
-@headings-font-family:							'Open Sans Condensed';
-@headings-font-weight:							700;
+@headings-color:								;
+@headings-font-family:							'Open Sans';
+@headings-font-weight:							400;
 @headings-line-height:							1.1;
-@headings-color:								#333333;
 @headings-small-color:							#333333;
 
 @page-header-color:								@gray;
@@ -180,10 +177,28 @@
 
 
 // 
+// Thumbnails
+// ----------------------------------------------------------------------------------------------------
+
+@thumbnail-padding: 							0px;
+@thumbnail-bg: 									@body-bg;
+@thumbnail-border-width: 						0px;
+@thumbnail-border-style: 						solid;
+@thumbnail-border: 								transparent;
+@thumbnail-border-radius: 						@border-radius-base;
+@thumbnail-caption-color: 						@text-color;
+@thumbnail-caption-padding: 					9px;
+
+
+// Hover
+@thumbnail-border-hover: 						transparent;
+
+
+// 
 // Header
 // ----------------------------------------------------------------------------------------------------
 
-@header-bg-color:								#ffffff;
+@header-bg-color:								#FAF6F0;
 @header-bg-pattern:								0 none;
 @header-bg-pattern-retina:						0 none;
 
@@ -193,15 +208,15 @@
 // Toolbar
 // ----------------------------------------------------------------------------------------------------
 
-@toolbar-bg:									#222222;
+@toolbar-bg:									#FAF6F0;
 
-// Default
-@toolbar-link-bg-color:							0 none;
-@toolbar-link-text-color:						#BBBBBB;
+// Default state
+@toolbar-link-bg-color:							transparent;
+@toolbar-link-text-color:						#99665C;
 
 // Hover
-@toolbar-link-bg-color-hover:					0 none;
-@toolbar-link-text-color-hover:					#FFFFFF;
+@toolbar-link-bg-color-hover:					transparent;
+@toolbar-link-text-color-hover:					darken(@toolbar-link-text-color, 20%);
 
 
 
@@ -220,38 +235,47 @@
 // Login
 // ----------------------------------------------------------------------------------------------------
 
-@login-color:									#ffffff;
-@login-bg:										@gray;
+@login-color:									#99665C;
+@login-bg:										#E6DBCF;
 
-@login-hover-color:								#ffffff;
-@login-hover-bg:								darken(@login-bg, 10%);
-
+@login-hover-color:								#99665C;
+@login-hover-bg:								darken(@login-bg, 6%);
 
 
 // 
 // Navigation
 // -------------------------
 
-@nav-bg:										0 none;
-@nav-bg-hover:									0 none;
-@nav-text:										#666666;
-@nav-text-hover:								#000000;
-@nav-dropdown-bg:								@nav-bg-hover;
-@nav-dropdown-bg-hover:							0 none;
-@nav-dropdown-text:								@nav-text-hover;
-@nav-dropdown-text-hover:						@nav-text-hover;
+@nav-bg:										transparent;
+@nav-text:										@brand-primary;
+@nav-hr: 										#ede5da;
+
+// Hover
+@nav-bg-hover:									transparent;
+@nav-text-hover:								saturate(@brand-primary, 20%);
+@nav-text-hover-decoration: 					underline;
+
+// Dropdown
+@nav-dropdown-bg:								@brand-primary;
+@nav-dropdown-text:								#ffffff;
+
+// Dropdown Hover
+@nav-dropdown-bg-hover:							saturate(@brand-primary, 20%);
+@nav-dropdown-text-hover:						#ffffff;
 
 
 
 // Tabs
 // ----------------------------------------------------------------------------------------------------
 
-@nav-tabs-border-color:							@gray-lighter;
-@nav-tabs-link-hover-border-color:				@gray-lighter;
+// Default
+@nav-tabs-border-color:							darken(#F5F1EB, 5%);
+@nav-tabs-link-hover-border-color:				0 none;
 
-@nav-tabs-active-link-hover-bg:					@body-bg;
-@nav-tabs-active-link-hover-color:				@gray;
-@nav-tabs-active-link-hover-border-color:		@gray-lighter;
+// Active
+@nav-tabs-active-link-hover-bg:					#ffffff;
+@nav-tabs-active-link-hover-color:				@text-color;
+@nav-tabs-active-link-hover-border-color:		darken(#F5F1EB, 5%);
 
 @nav-tabs-justified-link-border-color:			#ddd;
 @nav-tabs-justified-active-link-border-color:	@body-bg;
@@ -262,9 +286,14 @@
 // Logo
 // ----------------------------------------------------------------------------------------------------
 
-@logo-color:									#333333;
+@logo-color:									#EA567D;
+@logo-font-size:								40px;
 @logo:                      		            "../images/store-logo-1x.png";
 @logo-retina:                       		    "../images/store-logo-2x.png";
+
+// Hover
+@logo-color-hover: 								saturate(@logo-color, 20%);
+@logo-color-text-decoration-hover: 				underline;
 
 
 
@@ -358,23 +387,23 @@
 @input-bg-disabled:								@gray-lighter;
 
 // Text color for `<input>`s
-@input-color:                    				@gray;
+@input-color:                    				@text-color;
 
 // `<input>` border color
-@input-border:                   				#ccc;
+@input-border:                   				#CCBBB8;
 
 // Border color for inputs on focus
 @input-border-focus:             				#f45b4f;
 
 // Placeholder text color
-@input-color-placeholder:        				@gray-light;
+@input-color-placeholder:        				lighten(@text-color, 40%);
 
-@legend-color:                   				@gray-dark;
+@legend-color:                   				@text-color;
 
-@legend-border-color:            				#e5e5e5;
+@legend-border-color:            				@text-color;
 
 // Background color for textual input addons
-@input-group-addon-bg:           				@gray-lighter;
+@input-group-addon-bg:           				@input-bg;
 
 // Border color for textual input addons
 @input-group-addon-border-color: 				@input-border;
@@ -428,16 +457,16 @@
 // ----------------------------------------------------------------------------------------------------
 
 // Default
-@breadcrumb-color:								@gray;
-@breadcrumb-bg:									#ffffff;
+@breadcrumb-color:								#A39C93;
+@breadcrumb-bg:									transparent;
+
+// Hover
+@breadcrumb-color-hover:						saturate(@breadcrumb-color, 10%);
+@breadcrumb-bg-hover:							transparent;
 
 // Active
-@breadcrumb-active-color:						@gray-light;
-@breadcrumb-active-bg:							#ffffff;
-
-// Default
-@breadcrumb-color-hover:						@gray-darker;
-@breadcrumb-bg-hover:							#ffffff;
+@breadcrumb-active-color:						lighten(@breadcrumb-color, 10%);
+@breadcrumb-active-bg:							transparent;
 
 
 
@@ -479,9 +508,72 @@
 // Product Categories
 // ----------------------------------------------------------------------------------------------------
 
+// Product Grid
+// -------------------------
+
 @product-grid-border-color:						#ffffff;
 @product-grid-border-color-hover:				#e52e90;
 
+
+// Product
+// -------------------------
+@product-bg-color:								none;	
+
+// Brand
+@product-brand-color: 							#4D332E;
+@product-brand-font-family:						@font-family-sans-serif;
+@product-brand-font-size:						14px;
+@product-brand-font-style:						normal;
+@product-brand-font-weight:						400;
+@product-brand-text-transform:					none;
+
+// Product Name
+@product-name-color: 							#4D332E;
+@product-name-font-family:						@font-family-sans-serif;
+@product-name-font-size:						14px;
+@product-name-font-style:						normal;
+@product-name-font-weight:						400;
+@product-name-text-transform:					none;
+
+// Price
+@product-price-color: 							#DB5176;
+@product-price-font-family:						@font-family-sans-serif;
+@product-price-font-size:						14px;
+@product-price-font-style:						normal;
+@product-price-font-weight:						400;
+@product-price-text-transform:					none;
+
+// Price Per Month
+@product-price-per-month-color:					lighten(@text-color, 10%);
+@product-price-per-month-font-family:			@font-family-sans-serif;
+@product-price-per-month-font-size:				12px;
+@product-price-per-month-font-style:			normal;
+@product-price-per-month-font-weight:			400;
+@product-price-per-month-text-transform:		none;
+
+// Price Range
+@product-price-range-color:						@text-color;
+@product-price-range-font-family:				@font-family-sans-serif;
+@product-price-range-font-size:					12px;
+@product-price-range-font-style:				normal;
+@product-price-range-font-weight:				400;
+@product-price-range-text-transform:			none;
+
+// Price Regular
+@product-price-regular-color:					@text-color;
+@product-price-regular-font-family:				@font-family-sans-serif;
+@product-price-regular-font-size:				12px;
+@product-price-regular-font-style:				normal;
+@product-price-regular-font-weight:				400;
+@product-price-regular-text-transform:			none;
+
+// Price Percent
+@product-price-percent-color:					lighten(@text-color, 10%);
+@product-price-percent-font-family:				@font-family-sans-serif;
+@product-price-percent-font-size:				12px;
+@product-price-percent-font-style:				normal;
+@product-price-percent-font-weight:				400;
+@product-price-percent-text-transform:			none;
 
 
 // 
@@ -558,12 +650,14 @@
 @panel-bg:										#ffffff;
 @panel-body-padding:							10px;
 @panel-border-radius:							0px;
+@panel-inner-border: 							#ffffff;
+@panel-footer-bg: 								#ffffff;
 
 
 // Default
 // -------------------------
-@panel-default-text:							@gray-dark;
-@panel-default-border:							#ddd;
+@panel-default-text:							@text-color;
+@panel-default-border:							darken(@body-bg, 4%);
 @panel-default-heading-bg:						#ffffff;
 
 
@@ -618,12 +712,13 @@
 
 @footer-bg-image:								"../images/bg-pattern-footer-1x.png";
 @footer-bg-image-retina:						"../images/bg-pattern-footer-2x.png";
-@footer-bg-color:								#222222;
-@footer-color:									@gray-light;
-@footer-color-link:								#ffffff;
-@footer-color-link-hover:						@brand-primary;
-@footer-header-text:							#ffffff;
-@footer-hr:										@gray;
+@footer-bg-color:								#FAF6F0;
+@footer-color:									#4D332E;
+@footer-color-link:								#EA567D;
+@footer-color-link-hover:						darken(@footer-color-link, 15%);
+@footer-header-text:							#4D332E;
+@footer-hr:										@nav-hr;
+@footer-copy:									#FAF6F0;
 
 
 

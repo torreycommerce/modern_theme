@@ -13,14 +13,25 @@ section#branding {
 
                 .img-retina (@logo; @logo-retina; 257px; 70px);
 
-                background-position: 0 0; background-repeat: no-repeat; display: block; height: 70px; width: 257px;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                display: block; height: 70px;
+                width: 257px;
                 span { position: absolute; visibility: hidden;}
             }
         }
 
         #logo-txt {
             text-align: center;
-            a { color: @logo-color; font-size: 64px;}
+            
+            a {
+                color: @logo-color;
+                font-size: @logo-font-size;
+                &:active, &:hover, &:focus {
+                    color: @logo-color-hover;
+                    text-decoration: @logo-color-text-decoration-hover;
+                }
+            }
         }
     }
     @media (max-width:@screen-xs-max ){

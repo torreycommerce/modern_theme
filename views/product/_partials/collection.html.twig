@@ -68,7 +68,7 @@
                     <div class="brand">
                         <a href="{{app.url}}/brand/{{product.brand|url_encode}}">{{product.brand}}</a>
                     </div>
-                    <h1 class=>{{product.name}}</h1>
+                    <h1 class="name">{{product.name}}</h1>
                 </header>
             </div>
         </div>
@@ -245,14 +245,18 @@
                                     {% endif %}
                                     <div class="panel-heading">
                                         {# Begin desktop buttons #}
-                                        <div class="hidden-xs btn-toolbar">
-                                            {% include "/product/_partials/list/buttons.html.twig" %}
-                                            {# Begin add to cart button #}
-                                            <button type="submit" class="btn btn-cart" name="action" value="cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span>Add to Cart</span>
-                                            </button>
-                                            {# End add to cart button #}
+                                        <div class="btn-toolbar hidden-xs">
+                                            <div class="row">
+                                                {% include "/product/_partials/list/actions-collection.html.twig" %}
+                                                {# Begin add to cart button #}
+                                                <div class="col-sm-4 col-md-3 col-lg-2">
+                                                    <button type="submit" class="btn btn-block btn-cart" name="action" value="cart">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                        <span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                                {# End add to cart button #}
+                                            </div>
                                         </div>
                                         {# End desktop buttons #}
                                         {# Begin mobile buttons #}

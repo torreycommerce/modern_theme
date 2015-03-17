@@ -6,17 +6,19 @@
 {% set added = true %}
 {% endif %}
 {% if registries is empty %}
-<button type="submit" name="action" value="registry" class="btn btn-registry">
-    {% if added %}
-    <i class="fa fa-check"></i>&nbsp;
-    {% else %}
-    <i class="fa fa-gift"></i>&nbsp;
-    {% endif %}
-    <span>Add to Registry</span>
-</button>
+<div class="col-sm-4 col-md-3 col-md-offset-3 col-lg-2 col-lg-offset-6">
+    <button type="submit" name="action" value="registry" class="btn btn-block btn-registry">
+        {% if added %}
+        <i class="fa fa-check"></i>&nbsp;
+        {% else %}
+        <i class="fa fa-gift"></i>&nbsp;
+        {% endif %}
+        <span>Add to Registry</span>
+    </button>
+</div>
 {% else %}
-<div class="btn-group">
-    <button type="submit" name="action" value="registry" class="btn btn-registry dropdown-toggle" data-toggle="dropdown">
+<div class="btn-group col-sm-4 col-md-3 col-md-offset-3 col-lg-2 col-lg-offset-6">
+    <button type="submit" name="action" value="registry" class="btn btn-block btn-registry dropdown-toggle" data-toggle="dropdown">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;
         {% else %}
@@ -32,7 +34,6 @@
 </div>
 {% endif %}
 {# End registry button #}
-
 {# Begin wishlist button #}
 {% if items_in_wishlist is empty %}
 {% set added = false %}
@@ -40,17 +41,19 @@
 {% set added = true %}
 {% endif %}
 {% if wishlists is empty %}
-<button type="submit" name="action" value="wishlist" class="btn btn-wishlist">
-    {% if added %}
-    <i class="fa fa-check"></i>&nbsp;
-    {% else %}
-    <i class="fa fa-star"></i>&nbsp;
-    {% endif %}
-    <span>Add to Wishlist</span>
-</button>
+<div class="col-sm-4 col-md-3 col-lg-2">
+    <button type="submit" name="action" value="wishlist" class="btn btn-block btn-wishlist">
+        {% if added %}
+        <i class="fa fa-check"></i>&nbsp;
+        {% else %}
+        <i class="fa fa-star"></i>&nbsp;
+        {% endif %}
+        <span>Add to Wishlist</span>
+    </button>
+</div>
 {% else %}
-<div class="btn-group">
-    <button type="submit" name="action" value="wishlist" class="btn btn-wishlist dropdown-toggle" data-toggle="dropdown">
+<div class="btn-group col-sm-4 col-md-3 col-lg-2">
+    <button type="submit" name="action" value="wishlist" class="btn btn-block btn-wishlist dropdown-toggle" data-toggle="dropdown">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;
         {% else %}

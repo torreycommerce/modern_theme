@@ -1,10 +1,20 @@
 // 
 // Thumbnails
 // ----------------------------------------------------------------------------------------------------
-// ----------------------------------------------------------------------------------------------------
 
 img { border: 0 none;}
 img[data-image-swap],
 img[data-image-zoom] {
     cursor: pointer;
+}
+
+// Mixin and adjust the regular image class
+.thumbnail {
+  display: block;
+  border: @thumbnail-border-width @thumbnail-border-style @thumbnail-border;
+  a&:hover,
+  a&:focus,
+  a&.active {
+    border-color: @thumbnail-border-hover;
+  }
 }

@@ -4,7 +4,6 @@
 
 .breadcrumb {
 
-    background-color: #ffffff;    
     margin-bottom: 10px;
     padding:8px 0px;
 
@@ -12,17 +11,10 @@
 
         font-size: 12px;
 
-        &.active { color: lighten(#595959, 30%);}
-
         > a {
             background-color: @breadcrumb-bg;
             color: @breadcrumb-color;
             padding: 10px 12px;
-            &:active, &:hover, &:focus {
-                background-color: @breadcrumb-active-bg;
-                color: @breadcrumb-active-color;
-                text-decoration: none;
-            }
         }
 
         // Home icon
@@ -33,12 +25,18 @@
             }
         }
     }
+
+    > .active {
+        background-color: @breadcrumb-active-bg;
+        color: @breadcrumb-active-color;
+    }
+
     // Dividers
     > li + li {
         &:before {
             content:"\3009";
             padding: 0 1px;
-            color: lighten(@breadcrumb-active-color, 30%);
+            color: lighten(@breadcrumb-color, 10%);
         }
     }
 }

@@ -11,9 +11,9 @@
 
     // Product
     .product {
-        background: #ffffff;
+        background: @product-bg-color;
         height: auto;
-        
+        text-align: center;
         margin-bottom: 30px;        
 
         &:hover {
@@ -30,6 +30,8 @@
             height: 390px;    
         }
         
+        a { text-decoration: none;}
+
         // Product image
         .image {
 
@@ -76,16 +78,24 @@
             margin-bottom: 0;
 
             .brand {
-                color: lighten(@text-color, 30%);
-                font-size: 10px;
-                font-weight: 400;
+                color: @product-brand-color;
+                font-family: @product-brand-font-family;
+                font-size: @product-brand-font-size;
+                font-style: @product-brand-font-style;
+                font-weight: @product-brand-font-weight;
                 margin-bottom: 5px;
-                text-transform:uppercase;
+                text-transform: @product-brand-text-transform;
             }
 
             .product-name {
+                color: @product-name-color;
+                font-family: @product-name-font-family;
+                font-size: @product-name-font-size;
+                font-style: @product-name-font-style;
+                font-weight: @product-name-font-weight;
                 margin-bottom: 5px;
                 margin-top: 0;
+                text-transform: @product-name-text-transform;
             }
         }
 
@@ -94,37 +104,55 @@
         .pricing {
 
             .price {
-                color: @gray;
-                font-size: 16px;
-
-                
+                color: @product-price-color;
+                font-family: @product-price-font-family;
+                font-size: @product-price-font-size;
+                font-style: @product-price-font-style;
+                font-weight: @product-price-font-weight;
+                text-transform: @product-price-text-transform;
                 @media (min-width: @screen-sm-min) {
                     margin-bottom: 5px;
                 }
             }
 
             .price-per-month {
-                color: lighten(@text-color, 10%);
-                font-size: 12px;
+                color: @product-price-per-month-color;
+                font-family: @product-price-per-month-font-family;
+                font-size: @product-price-per-month-font-size;
+                font-style: @product-price-per-month-font-style;
+                font-weight: @product-price-per-month-font-weight;
                 margin-bottom: 2px;
+                text-transform: @product-price-per-month-text-transform;
             }
 
             .price-range {
-                color: lighten(@text-color, 10%);
-                font-size: 12px;
+                color: @product-price-range-color;
+                font-family: @product-price-range-font-family;
+                font-size: @product-price-range-font-size;
+                font-style: @product-price-range-font-style;
+                font-weight: @product-price-range-font-weight;
                 margin-bottom: 2px;
+                text-transform: @product-price-range-text-transform;
             }
 
             .price-regular {
-                color: lighten(@text-color, 30%);
-                font-size: 12px;
+                color: @product-price-regular-color;
+                font-family: @product-price-regular-font-family;
+                font-size: @product-price-regular-font-size;
+                font-style: @product-price-regular-font-style;
+                font-weight: @product-price-regular-font-weight;
                 margin-bottom: 2px;
+                text-transform: @product-price-regular-text-transform;
             }
 
             .percent {
-                color: lighten(@text-color, 30%);
-                font-size: 12px;
+                color: @product-price-percent-color;
+                font-family: @product-price-percent-font-family;
+                font-size: @product-price-percent-font-size;
+                font-style: @product-price-percent-font-style;
+                font-weight: @product-price-percent-font-weight;
                 margin-bottom: 2px;
+                text-transform: @product-price-percent-text-transform;
             }
         }
 

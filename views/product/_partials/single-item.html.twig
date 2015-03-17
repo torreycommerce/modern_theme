@@ -84,41 +84,45 @@
                 {# End review #}
                 {# Begin Product Prices #}
                 {% if product.variant[0].price > 0 %}
-                <div class="pricing">
-                    {% set stock_description = product.variant[0].inventory_quantity > 0 ? 'In Stock' :  product.variant[0].inventory_shipping_estimate is not empty ? product.variant[0].inventory_shipping_estimate : '' %}
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="price">{{ prod.price(product.variant[0].price) }}</div>
-                        <div class="stock">{{stock_description}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            {# Begin pricing #}
-                            <ul class="pricing">
-                                {# Begin regular price #}
-                                {% if product.variant[0].price != product.variant[0].compare_price and product.variant[0].compare_price is not empty %}
-                                <li class="regular">
-                                    Compare at {{ prod.price(product.variant[0].compare_price) }}
-                                </li>
-                                {% endif %}
-                                {# End regular price #}
-                                {# Begin percent off #}
-                                {% if product.variant[0].save_price > 1 %}
-                                <li class="percent">
-                                    Save up to {{ prod.saveprice(product.variant[0].save_price ) }} {{ prod.savepercent(product.variant[0].save_percent) }}
-                                </li>
-                                {% endif %}
-                                {# End percent off #}
-                                {# Begin price per month #}
-                                {% if product.variant[0].price >= 100 %}
-                                <li class="per-month">
-                                    <span data-tooltip data-toggle="tooltip" data-original-title="Spread payments over six months by selecting &quot;Checkout with Paypal&quot; on the Shopping Cart page. Then log in and apply for a &quot;Bill Me Later&quot; account.">
-                                        {{ prod.billmelater(product.variant[0].price) }}
-                                    </span>
-                                </li>
-                                {% endif %}
-                                {# End price per month #}
-                            </ul>
-                            {# End pricing #}
+                        {% set stock_description = product.variant[0].inventory_quantity > 0 ? 'In Stock' :  product.variant[0].inventory_shipping_estimate is not empty ? product.variant[0].inventory_shipping_estimate : '' %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="price">{{ prod.price(product.variant[0].price) }}</div>
+                                <div class="stock">{{stock_description}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {# Begin pricing #}
+                                <ul class="pricing">
+                                    {# Begin regular price #}
+                                    {% if product.variant[0].price != product.variant[0].compare_price and product.variant[0].compare_price is not empty %}
+                                    <li class="regular">
+                                        Compare at {{ prod.price(product.variant[0].compare_price) }}
+                                    </li>
+                                    {% endif %}
+                                    {# End regular price #}
+                                    {# Begin percent off #}
+                                    {% if product.variant[0].save_price > 1 %}
+                                    <li class="percent">
+                                        Save up to {{ prod.saveprice(product.variant[0].save_price ) }} {{ prod.savepercent(product.variant[0].save_percent) }}
+                                    </li>
+                                    {% endif %}
+                                    {# End percent off #}
+                                    {# Begin price per month #}
+                                    {% if product.variant[0].price >= 100 %}
+                                    <li class="per-month">
+                                        <span data-tooltip data-toggle="tooltip" data-original-title="Spread payments over six months by selecting &quot;Checkout with Paypal&quot; on the Shopping Cart page. Then log in and apply for a &quot;Bill Me Later&quot; account.">
+                                            {{ prod.billmelater(product.variant[0].price) }}
+                                        </span>
+                                    </li>
+                                    {% endif %}
+                                    {# End price per month #}
+                                </ul>
+                                {# End pricing #}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,44 +148,42 @@
                 {% endif %}
                 {% endif %}
                 {% if product.variant[0].price > 0 %}
-                <div class="actions hidden-sm hidden-xs">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form method="post" id="productForm" action="{{ app.url }}/product/route" class="form-inline">
-                                <div class="btn-toolbar">
-
-                                    {% if product.variant[0]['inventory_quantity'] is defined and product.variant[0]['inventory_minimum_quantity'] is defined and
-                                    product.variant[0]['inventory_policy'] is defined and (product.variant[0]['inventory_policy'] == 'continue' or
-                                    product.variant[0]['inventory_quantity'] > product.variant[0]['inventory_minimum_quantity'] ) %}
-                                    {# Begin product quantity #}
-                                    <div class="quantity-input-group">
-                                        <label for="quantity-selector" class="control-label">Qty</label>
-                                        <div class="input-group">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-neutral btn-remove" type="button"><i class="fa fa-minus"></i></button>
-                                            </div>
-                                            <input class="form-control quantity-selector" type="text" value="1" maxlength="2" placeholder="1" name="items[{{product.variant[0].id}}]">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-neutral btn-add" type="button"><i class="fa fa-plus"></i></button>
-                                            </div>
+                <form method="post" id="productForm" action="{{ app.url }}/product/route">                        
+                    {% if product.variant[0]['inventory_quantity'] is defined and product.variant[0]['inventory_minimum_quantity'] is defined and
+                    product.variant[0]['inventory_policy'] is defined and (product.variant[0]['inventory_policy'] == 'continue' or
+                    product.variant[0]['inventory_quantity'] > product.variant[0]['inventory_minimum_quantity'] ) %}
+                    <div class="actions hidden-sm hidden-xs row">
+                        {# Begin product quantity #}
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="quantity-input-group">
+                                    <label for="quantity-selector" class="control-label">Qty</label>
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-neutral btn-remove" type="button"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                        <input class="form-control quantity-selector" type="text" value="1" maxlength="2" placeholder="1" name="items[{{product.variant[0].id}}]">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-neutral btn-add" type="button"><i class="fa fa-plus"></i></button>
                                         </div>
                                     </div>
-                                    <div style="clear: both"></div>
-                                    {# End product quantity #}
-                                    {# Begin add to cart button #}
-                                    <button type="submit" class="btn btn-cart" name="action" value="cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        <span>Add to Cart</span>
-                                    </button>
-
-                                    {% endif %}
-
-                                    {% include "/product/_partials/list/buttons.html.twig" %}
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        {# End product quantity #}
+                        {# Begin add to cart button #}
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-block btn-cart" name="action" value="cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% include "/product/_partials/list/actions-single.html.twig" %}
                         </div>
                     </div>
-                </div>
+                </form>
                 {# End actions desktop #}
                 {# Begin actions mobile #}
                 <div class="actions hidden-lg hidden-md">

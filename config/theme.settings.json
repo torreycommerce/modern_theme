@@ -3,7 +3,7 @@
         "branding": {
             "branding_colors": {
                 "brand-primary": "ba20ba",
-                "brand-second": "000000"
+                "brand-second": "a86da8"
             },
             "feedback_states": {
                 "brand-success": "000000",
@@ -28,7 +28,7 @@
                 "site-bg-image-display": "stretch"
             },
             "toolbar": {
-                "toolbar-bg-color": "0000ff",
+                "toolbar-bg-color": "5987ba",
                 "toolbar-bg-color-none": "0",
                 "toolbar-text-color": "BBBBBB",
                 "toolbar-text-color-hover": "FFFFFF",

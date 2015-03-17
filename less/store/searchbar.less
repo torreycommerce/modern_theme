@@ -1,0 +1,23 @@
+// Search
+.search {
+    form {
+        .input-group {
+            
+            input {
+                border-color: @input-border;
+                &:active, &:focus, &:hover {
+                    .box-shadow(0px; 0px; 0px; transparent); // mixins
+                }
+            }
+
+            .btn {
+                background-color: #ffffff;
+                border-bottom-color: @input-border;
+                border-right-color: @input-border;
+                border-top-color: @input-border;
+                color: @text-color;                
+            }
+        }
+
+    }
+}

@@ -7,21 +7,52 @@
 // --------------------------------------------------
 
 nav#main {
-    background: @nav-bg; border-color: lighten(@nav-text, 40%); border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px; padding-left:0; padding-right:0;
+    background: @nav-bg;
+    border-color: none;
+    border-top-style: solid;
+    border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 0;
+    padding-left:0;
+    padding-right:0;
 }
 
 nav#nav-desktop-main {
-    ul li {
-        a {
-            color: @nav-text; font-size: 15px; outline: none; padding: 16px 12px;
-            span.caret { border-top-color: @nav-text; border-bottom-color: @nav-text; margin-left: 8px;}
-        }
-        &:active, &:focus, &:hover {            
+    text-align: center;
+
+    // Horizontal Rule
+   hr { border-color: @nav-hr;}
+   
+    ul{
+        display: inline-block;
+        float: none;
+
+        li {
             a {
-                background-color: @nav-bg-hover; color: @nav-text-hover;
-                span.caret { border-top-color: @nav-text-hover; border-bottom-color: @nav-text-hover;}
+                color: @nav-text;
+                font-size: 20px;
+                outline: none;
+                padding: 16px 12px;                
+
+                span.caret {
+                    border-top-color: @nav-text;
+                    border-bottom-color: @nav-text;
+                    margin-left: 8px;
+                }
             }
-        }        
+            &:active, &:focus, &:hover {
+                a {
+                    background-color: @nav-bg-hover;
+                    color: @nav-text-hover;
+                    text-decoration: @nav-text-hover-decoration;
+
+                    span.caret {
+                        border-top-color: @nav-text-hover;
+                        border-bottom-color: @nav-text-hover;
+                    }
+                }
+            }        
+        }
     }
 }
 
@@ -36,8 +67,12 @@ nav#nav-desktop-main {
 nav#nav-desktop-main ul li ul.dropdown-menu {
     background-color: @nav-dropdown-bg;
     li a {
-        color: @nav-dropdown-text; font-size: 13px;
-        &:hover { color: @nav-dropdown-text-hover; background-color: @nav-dropdown-bg-hover;}
+        color: @nav-dropdown-text;
+        font-size: 13px;
+        &:hover {
+            color: @nav-dropdown-text-hover;
+            background-color: @nav-dropdown-bg-hover;
+        }
     }
 }
 
@@ -53,32 +88,6 @@ nav#nav-desktop-main ul.dropdown-menu {
     }
 }
 
-// Search
-div.search {
-    padding: 8px 14px;
-    form {
-
-        &:active, &:focus, &:hover {
-            .box-shadow(0px; 0px; 3px; @input-border-focus); // mixins
-        }
-        
-        input {
-            border-color: @input-border;
-            &:active, &:focus, &:hover {
-                .box-shadow(0px; 0px; 0px; @input-border); // mixins
-            }
-        }
-
-        a {
-            border-color: @input-border;
-            color: #335E67;
-            &:hover {
-                background-color: #ffffff;
-            }
-        }
-    }
-}
-
 
 // Navigation Sidebar
 // --------------------------------------------------
@@ -89,12 +98,18 @@ div.search {
         .sidebar {
             background-color: #ffffff;
             .nav > li > a {
-                background-color: #ffffff; color: #bf568b; text-align: center;
-                &:active, &:focus, &:hover { background-color: #bf568b; color: #ffffff;}
+                background-color: #ffffff;
+                color: @brand-primary;
+                text-align: center;
+
+                &:active, &:focus, &:hover {
+                    background-color: @brand-primary;
+                    color: #ffffff;}
             }
 
             .nav > li.active > a {
-                background-color: #bf568b; color: #ffffff;
+                background-color: @brand-primary;
+                color: #ffffff;
             }
             
             .box-shadow; // mixins
@@ -107,6 +122,13 @@ div.search {
 // --------------------------------------------------
 .nav-tabs {
     margin-top: 10px;
+    > li {
+        > a {
+            &:active, &:focus, &:hover {
+                background: @nav-tabs-active-link-hover-bg;
+            }
+        }
+    }
 }
 
 // Hide tabbable panes to start, show them when `.active`

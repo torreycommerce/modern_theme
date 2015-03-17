@@ -202,11 +202,7 @@
                         color: lighten(@text-color, 25%);
                     }
                 }
-
-                .btn-toolbar {
-                    margin-bottom: 20px;
-                }
-
+                
                 .description-content{
                     a { font-size: 12px; }
                 }
@@ -247,17 +243,17 @@
             // --------------------------------------------------
 
             #product-details {
-                .actions {
-                    background: none; margin-bottom: 20px;
-                    .quantity-input-group { margin-bottom: 10px;}
-                    .btn-cart { margin-bottom: 10px;}
-                    .btn-toolbar .btn-group {
-                        float: none;
-                    }
-                    // Actions Desktop
-                    @media (min-width: @screen-md-min) {
+                .btn-toolbar{
+                    margin-bottom: 10px;
+                    .actions {
+                        background: none; margin-bottom: 20px;
                         .quantity-input-group { margin-bottom: 10px;}
-                        .btn-cart { margin-bottom: 0px;}
+                        .btn-cart { margin-bottom: 10px;}
+                        // Actions Desktop
+                        @media (min-width: @screen-md-min) {
+                            .quantity-input-group { margin-bottom: 10px;}
+                            .btn-cart { margin-bottom: 0px;}
+                        }
                     }
                 }
             }

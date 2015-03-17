@@ -9,13 +9,13 @@
     margin-top: 40px;
 
     .estimated-time{
-        color: #000;        
+        color: #000;
         font-size: 12px;
     }    
 
     // Tab Content
     .tab-content {
-        padding: 0;        
+        padding: 0;
 
         // Panel
         .panel {
@@ -32,10 +32,17 @@
 
                     @media (min-width: @screen-sm-min) {
                         text-align: right;
-
                         .btn {
                             padding: 6px 12px;
                             i { display: inline-block; } // Adds button icons
+                        }
+                    }
+
+
+                    @media (max-width: @screen-xs-max) {
+
+                        .btn-cart {
+                            margin-bottom: 10px;
                         }
                     }
                 }
@@ -133,7 +140,7 @@
                         float: right; margin: 0;
                     }
                 }
-            }        
+            }
         }
     }
 }
