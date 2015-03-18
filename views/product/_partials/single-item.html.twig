@@ -154,35 +154,31 @@
                     product.variant[0]['inventory_quantity'] > product.variant[0]['inventory_minimum_quantity'] ) %}
                     <div class="actions hidden-sm hidden-xs row">
                         {# Begin product quantity #}
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="quantity-input-group">
-                                    <label for="quantity-selector" class="control-label">Qty</label>
-                                    <div class="input-group">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-neutral btn-remove" type="button"><i class="fa fa-minus"></i></button>
-                                        </div>
-                                        <input class="form-control quantity-selector" type="text" value="1" maxlength="2" placeholder="1" name="items[{{product.variant[0].id}}]">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-neutral btn-add" type="button"><i class="fa fa-plus"></i></button>
-                                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="quantity-input-group">
+                                <label for="quantity-selector" class="control-label">Qty</label>
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-neutral btn-remove" type="button"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <input class="form-control quantity-selector" type="text" value="1" maxlength="2" placeholder="1" name="items[{{product.variant[0].id}}]">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-neutral btn-add" type="button"><i class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {# End product quantity #}
                         {# Begin add to cart button #}
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <button type="submit" class="btn btn-block btn-cart" name="action" value="cart">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>Add to Cart</span>
-                                </button>
-                            </div>
-                            {% endif %}
-                            {% include "/product/_partials/list/actions-single.html.twig" %}
+                        <div class="form-group col-sm-4">
+                            <button type="submit" class="btn btn-block btn-cart" name="action" value="cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>Add to Cart</span>
+                            </button>
                         </div>
+                        {% include "/product/_partials/list/actions-single.html.twig" %}
                     </div>
+                    {% endif %}
                 </form>
                 {# End actions desktop #}
                 {# Begin actions mobile #}

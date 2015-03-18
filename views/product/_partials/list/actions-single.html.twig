@@ -6,7 +6,7 @@
 {% set added = true %}
 {% endif %}
 {% if registries is empty %}
-<div class="col-sm-4">
+<div class="form-group col-sm-4">
     <button type="submit" name="action" value="registry" class="btn btn-block btn-registry">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;
@@ -17,7 +17,7 @@
     </button>
 </div>
 {% else %}
-<div class="btn-group col-sm-4">
+<div class="form-group col-sm-4">
     <button type="submit" name="action" value="registry" class="btn btn-block btn-registry dropdown-toggle" data-toggle="dropdown">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;
@@ -41,7 +41,7 @@
 {% set added = true %}
 {% endif %}
 {% if wishlists is empty %}
-<div class="col-sm-4">
+<div class="form-group col-sm-4">
     <button type="submit" name="action" value="wishlist" class="btn btn-block btn-wishlist">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;
@@ -52,7 +52,7 @@
     </button>
 </div>
 {% else %}
-<div class="btn-group col-sm-4">
+<div class="form-group col-sm-4">
     <button type="submit" name="action" value="wishlist" class="btn btn-block btn-wishlist dropdown-toggle" data-toggle="dropdown">
         {% if added %}
         <i class="fa fa-check"></i>&nbsp;

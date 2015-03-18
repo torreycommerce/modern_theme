@@ -5650,7 +5650,7 @@ button.close {
   font-size: 24px;
   color: #ffc859;
   text-align: center;
-  text-shadow: 2px 2px 1px #0f8299;
+  text-shadow: 0 none;
 }
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
@@ -5742,9 +5742,9 @@ button.close {
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #ffffff;
+  color: #db5176;
   text-align: center;
-  text-shadow: 2px 2px 1px #0f8299;
+  text-shadow: 0 none;
 }
 .carousel-caption .btn {
   text-shadow: none;
@@ -8141,6 +8141,7 @@ section#toolbar .popover .cart-totals .total {
   margin-bottom: 20px;
 }
 #product-details .btn-toolbar .actions .quantity-input-group {
+  display: inline-block;
   margin-bottom: 10px;
 }
 #product-details .btn-toolbar .actions .btn-cart {
