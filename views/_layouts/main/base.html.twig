@@ -40,7 +40,9 @@
     <meta name="keywords" content="{% block meta_keywords %}{{ seo['keywords'] }}{% endblock %}">
     <meta name="description" content="{% block meta_description %}{{ seo['description'] }}{% endblock %}">
 
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    {% if app['theme']['logo_images_and_colors']['logo_background']['favicon-image'] == '1' %}
+      <link rel="shortcut icon" href="{{app.theme['logo_images_and_colors']['logo_background']['favicon-upload']}}" type="image/x-icon" />
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="{{app.url_asset}}/css/datepicker.css" />
     <link rel="stylesheet" type="text/css" href="{{app.url_asset}}/css/theme.css?v=05092014" />
     <link rel="stylesheet" type="text/css" href="{{app.url_asset}}/fonts/font-awesome/css/font-awesome.min.css" />
@@ -91,8 +93,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="brand">
-                            <div id="logo-img"><a href="{{app.url}}/"></a></div>
-                            <div id="logo-txt"><a href="{{app.url}}/">{{ app.params.site.title }}</a></div>
+                        {% if app['theme']['logo_images_and_colors']['logo_background']['logo-custom'] == '1' %}
+                          <div id="logo-img"><a href="{{app.url}}/"></a></div>
+                          <div id="logo-txt"><a href="{{app.url}}/">{{ app.params.site.title }}</a></div>
+                        {% endif %}
                         </div>
                     </div>
                 </div>
@@ -171,7 +175,7 @@
             Your store is password protected with the code: test. When you're ready you can <a href="/site-settings">remove the password and open your site</a>.
         </div> -->
     </nav>
-        
+
 <script>
     $(document).ready(function() {
         var timer=0;
@@ -192,4 +196,3 @@
 </script>
 {% endif %}
 </html>
-
