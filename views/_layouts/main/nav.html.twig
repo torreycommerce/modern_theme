@@ -15,7 +15,7 @@
                 {% for category,subitems in items %}
                 {% set i = i + 1 %}
                 <li>
-                    <a tabindex="-1" href="{{app.url}}/category/{{main_category}}/{{category}}">{{category|replace('-',' ')|title}}</a>
+                    <a tabindex="-1" href="{{app.url}}/category/{{category}}">{{category|replace('-',' ')|title}}</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -97,7 +97,7 @@
             <ul id="submenu-{{ id }}">
                 {% for category,subitems in items %}
                 <li>
-                    <a tabindex="-1" href="{{app.url}}/category/{{main_category}}/{{category}}">
+                    <a tabindex="-1" href="{{app.url}}/category/{{category}}">
                         <i class="fa fa-star-o"></i>
                         {{category|replace('-',' ')|title}}
                     </a>
