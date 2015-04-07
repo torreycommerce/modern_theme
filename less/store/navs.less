@@ -8,52 +8,62 @@
 
 nav#main {
     background: @nav-bg;
-    border-color: none;
+    border-color: lighten(@nav-text, 40%);
     border-top-style: solid;
-    border-top-width: 0;
+    border-top-width: 0px;
     border-bottom-style: solid;
-    border-bottom-width: 0;
+    border-bottom-width: 0px;
     padding-left:0;
     padding-right:0;
 }
 
 nav#nav-desktop-main {
-    text-align: center;
+   text-align: center;
 
-    // Horizontal Rule
-   hr { border-color: @nav-hr;}
-   
-    ul{
-        display: inline-block;
-        float: none;
+   // Horizontal Rule
+    hr { border-color: @nav-hr;}
 
-        li {
-            a {
-                color: @nav-text;
-                font-size: 20px;
-                outline: none;
-                padding: 16px 12px;                
+   ul{
+       float: none;
+       li {
+           a {
+               color: @nav-text;
+               font-weight: @nav-text-weight;
+               font-size: 16px;
+               outline: none;
+               padding: 16px 12px;
 
-                span.caret {
-                    border-top-color: @nav-text;
-                    border-bottom-color: @nav-text;
-                    margin-left: 8px;
-                }
-            }
-            &:active, &:focus, &:hover {
-                a {
-                    background-color: @nav-bg-hover;
-                    color: @nav-text-hover;
-                    text-decoration: @nav-text-hover-decoration;
-
-                    span.caret {
-                        border-top-color: @nav-text-hover;
-                        border-bottom-color: @nav-text-hover;
-                    }
-                }
-            }        
-        }
-    }
+               span.caret {
+                   border-top-color: @nav-text;
+                   border-bottom-color: @nav-text;
+                   margin-left: 8px;
+               }
+           }
+           &:active, &:focus {
+               a {
+                   background-color: @nav-bg-hover;
+                   color: @nav-text-hover;
+                   span.caret {
+                       border-top-color: @nav-text-hover;
+                       border-bottom-color: @nav-text-hover;
+                   }
+               }
+           }
+           &:hover {
+               ul.dropdown-menu {
+                   display: block;
+               }
+               a {
+                   background-color: @nav-bg-hover;
+                   color: @nav-text-hover;
+                   span.caret {
+                       border-top-color: @nav-text-hover;
+                       border-bottom-color: @nav-text-hover;
+                   }
+               }
+           }
+       }
+   }
 }
 
 nav#nav-desktop-main {
@@ -79,7 +89,7 @@ nav#nav-desktop-main ul li ul.dropdown-menu {
 // Dropdown Menu - Active
 nav#nav-desktop-main ul li:hover ul.dropdown-menu { display: block;}
 nav#nav-desktop-main ul.dropdown-menu {
-    margin: 0; padding: 0; border: 0;    
+    margin: 0; padding: 0; border: 0;
     li {
         margin: 0; padding: 0;
         a { border-width: 0; padding-top: 8px; padding-bottom: 8px;}
@@ -111,7 +121,7 @@ nav#nav-desktop-main ul.dropdown-menu {
                 background-color: @brand-primary;
                 color: #ffffff;
             }
-            
+
             .box-shadow; // mixins
         }
     }

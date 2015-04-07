@@ -6367,9 +6367,11 @@ nav#nav-desktop-main {
 nav#nav-desktop-main hr {
   border-color: #ede5da;
 }
+nav#nav-desktop-main ul li:hover ul.dropdown-menu {
+  display: block;
+}
 nav#nav-desktop-main ul {
-  display: inline-block;
-  float: none;
+    float: none;
 }
 nav#nav-desktop-main ul li a {
   color: #db5176;
