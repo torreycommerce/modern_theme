@@ -8,8 +8,8 @@
 {% set page_name = 'return' %}
 {% set order = api.get('/order',{query:{order_number: app.request.path}}).0 %}
 {% set orderitems = api.get('/orderitem', {query:{order_id:order.id, status:'shipped'}}) %}
-{% if order.date_created|strtotime < app.params.returnTime|strtotime %}
-    {% do app.redirect('/account/orders', {'error':'Order is too old for returns.x' ~ app.request.path ~ 'x'}) %}
+{% if order.date_created|strtotime > app.params.returnTime|strtotime %}
+    {% do app.redirect('/account/orders', {'error':'Order is too old for returns.'}) %}
 {% endif %}
 
 {% block title %}Account - Order Return{% endblock %}

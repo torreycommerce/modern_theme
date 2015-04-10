@@ -1,6 +1,6 @@
 {% extends "/_layouts/theme.html.twig" %}
 {% import "/_macros/form-elements-bootstrap.html.twig" as forms %}
-{% block title %}Create a Return{% endblock %} 
+{% block title %}Create a Return{% endblock %}
 {% block content %}
 {% if app.request.post.guestreturn is not empty or app.request.post.createreturn is not empty %}
     {% do app.request.validateToken() %}
@@ -12,7 +12,7 @@
     {% endif %}
     {% set page_name = 'return' %}
 	{% set orderitems = api.get('/orderitem', {query:{order_id:order.id}}) %}
-	{% if order.date_created|strtotime < app.params.returnTime|strtotime %}
+	{% if order.date_created|strtotime > app.params.returnTime|strtotime %}
     	{% do app.user.setFlash('Order is too old for returns.', 'danger') %}
     	{% do app.redirect('/return') %}
 	{% else %}
