@@ -49,7 +49,7 @@
 					<td>
 						<h2 style="font-size: 18px; text-transform: uppercase;">What Happens Next</h2>
 						<ol style="font-size: 14px; line-height: 22px; margin-bottom: 0px; padding-left: 20px;">
-							<li style="padding-bottom: 5px;">Print this page and cut on the dashed lines.</li> 
+							<li style="padding-bottom: 5px;">Print this page and cut on the dashed lines.</li>
 							<li style="padding-bottom: 5px;">Place the packing slip inside the box with the items you are returning.</li>
 							<li style="padding-bottom: 5px;">Affix the returns address label to the outside of your shipping box.</li>
 							<li style="padding-bottom: 5px;">Reprint as necessary for each package. If you do not currently have access to a printer, you can write your Return # and return shipping address on the shipping box.</li>
@@ -74,8 +74,8 @@
 							URL: {{app.url}}{{products[item.product_id].0.url}} <br>
 							SKU: {{item.sku}} <br>
 							Item name: {{ item.name }} <br>
-							Price: ${{ item.price|number_format(2) }} <br>
-							Quantity: {{ item.quantity }}
+							Price: ${{ ((item.price / item.quantity) * return.quantity)|number_format(2) }} <br>
+							Quantity: {{ return.quantity }}
 						</p>
 					</td>
 				</tr>
@@ -110,7 +110,7 @@
 			</table>
 		</td>
 	</tr>
-	<!-- End return address -->	
+	<!-- End return address -->
 	<!-- Begin thank you -->
 	<tr>
 		<td style="padding: 20px; vertical-align:top;">
