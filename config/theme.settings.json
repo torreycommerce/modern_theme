@@ -238,15 +238,15 @@
             "footer-color": {
                 "footer-bg-color": {
                     "type": "color",
-                    "value": "3B3B3B"
+                    "value": "F4EDE7"
                 },
                 "footer-color": {
                     "type": "color",
-                    "value": "333333"
+                    "value": "4D332E"
                 },
                 "footer-color-link": {
                     "type": "color",
-                    "value": "666666"
+                    "value": "EA567D"
                 },
                 "footer-header-text": {
                     "type": "color",

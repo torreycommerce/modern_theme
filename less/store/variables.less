@@ -1,7 +1,7 @@
 
 // Variables
 // ----------------------------------------------------------------------------------------------------
-// Project: Acenda Default Theme
+// Project: Acenda Modern Theme
 // ----------------------------------------------------------------------------------------------------
 
 
@@ -73,12 +73,12 @@
 
 // Brand
 // -------------------------
-@brand-primary:									#;
-@brand-secondary:								#;
-@brand-success:         						#;
-@brand-info:         		   					#;
-@brand-warning:     						    #;
-@brand-danger:     							    #;
+@brand-primary:									#DB5176;
+@brand-secondary:								#82D6D9;
+@brand-success:         						#5CB85C;
+@brand-info:         		   					#3BA4C4;
+@brand-warning:     						    #F0AD4E;
+@brand-danger:     							    #D9534F;
 
 // Gray
 // -------------------------
@@ -90,19 +90,19 @@
 
 // Feedback states
 // -------------------------
-@state-success-text:							#;
+@state-success-text:							#EEEEEE;
 @state-success-bg:								@brand-success;
 @state-success-border:							darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:								#;
+@state-info-text:								#FFFFFF;
 @state-info-bg:									@brand-info;
 @state-info-border:								darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:							#;
+@state-warning-text:							#FFFFFF;
 @state-warning-bg:								@brand-warning;
 @state-warning-border:							darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:								#;
+@state-danger-text:								#FFFFFF;
 @state-danger-bg:								@brand-danger;
 @state-danger-border:							darken(spin(@state-danger-bg, -10), 5%);
 
@@ -116,18 +116,18 @@
 
 // Background color for `<body>`
 // -------------------------
-@body-bg:					                    #FFFFFF;
+@body-bg:					                    #FAF6F0;
 @shop-bg-image:									0 none;
 @shop-bg-image-retina:							0 none;
 
 // Text color on `<body>`
 // -------------------------
-@text-color:									#;
+@text-color:									#4D332E;
 
 // Link color
 // -------------------------
-@link-color:    		                        @brand-primary;
-@link-hover-color:      						darken(@link-color, 15%);
+@link-color:    		                        #EA567D;
+@link-hover-color:      						#FC4C7B;
 
 // Price color
 // -------------------------
@@ -145,19 +145,19 @@
 
 // Body text
 // -------------------------
-@font-family-sans-serif:						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
-@font-family-serif:       						Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:   						Menlo, Monaco, Consolas, "Courier New", monospace; // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-lucida:							Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+@font-family-sans-serif:						Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@font-family-serif:								@font-family-sans-serif;
+@font-family-monospace:   						@font-family-sans-serif;
+@font-family-lucida:							Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif;
 @line-height-base:								1.428571429; // 20/14
 
 @font-size-base:								14px;
 @font-size-large:         						ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         						ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:									ceil((@font-size-base * 2.55));	// ~36px
-@font-size-h2:									ceil((@font-size-base * 1.85));	// ~26px
-@font-size-h3:									ceil((@font-size-base * 1.55));	// ~22px
+@font-size-h1:									38px;
+@font-size-h2:									28px;
+@font-size-h3:									18px;
 @font-size-h4:									ceil((@font-size-base * 1.25));	// ~18px
 @font-size-h5:									@font-size-base;				// ~15px
 @font-size-h6:									ceil((@font-size-base * 0.90));	// ~13px
@@ -170,14 +170,14 @@
 
 // Headings
 // -------------------------
-@headings-color:								;
-@headings-font-family:							'Open Sans Condensed';
-@headings-font-weight:							700;
+@headings-color:								#4D332E;
+@headings-font-family:							Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif;
+@headings-font-weight:							;
 @headings-line-height:							1.1;
-@headings-small-color:							#333333;
+@headings-small-color:							#4D332E;
 
-@page-header-color:								@gray;
-@page-header-border-color:						#EEEEEE;
+@page-header-color:								#4D332E;
+@page-header-border-color:						#4D332E;
 
 
 
@@ -204,7 +204,7 @@
 // Header
 // ----------------------------------------------------------------------------------------------------
 
-@header-bg-color:								#ffffff;
+@header-bg-color:								#FAF6F0;
 @header-bg-pattern:								0 none;
 @header-bg-pattern-retina:						0 none;
 
@@ -214,15 +214,15 @@
 // Toolbar
 // ----------------------------------------------------------------------------------------------------
 
-@toolbar-bg:									#;
+@toolbar-bg:									#FAF6F0;
 
 // Default state
 @toolbar-link-bg-color:							0 none;
-@toolbar-link-text-color:						#;
+@toolbar-link-text-color:						#99665C;
 
 // Hover
 @toolbar-link-bg-color-hover:					0 none;
-@toolbar-link-text-color-hover:					#;
+@toolbar-link-text-color-hover:					#99665C;
 
 
 
@@ -230,10 +230,10 @@
 // My Cart
 // ----------------------------------------------------------------------------------------------------
 
-@my-cart-bg:									@brand-primary;
+@my-cart-bg:									#DB5176;
 @my-cart-bg-hover:								saturate(@my-cart-bg, 10%);
-@my-cart-text:									#ffffff;
-@my-cart-text-hover:							#ffffff;
+@my-cart-text:									#FFFFFF;
+@my-cart-text-hover:							#FFFFFF;
 
 
 
@@ -241,10 +241,10 @@
 // Login
 // ----------------------------------------------------------------------------------------------------
 
-@login-color:									#ffffff;
-@login-bg:										@gray;
+@login-color:									#99665C;
+@login-bg:										#E6DBCF;
 
-@login-hover-color:								#ffffff;
+@login-hover-color:								@login-color;
 @login-hover-bg:								darken(@login-bg, 10%);
 
 
@@ -254,13 +254,13 @@
 
 // Default
 @nav-bg:										0 none;
-@nav-text:										#666666;
+@nav-text:										#EA567D;
 @nav-text-weight:								600;
-@nav-hr: 										;
+@nav-hr: 										@gray-lighter;
 
 // Hover
 @nav-bg-hover:									0 none;
-@nav-text-hover:								#000000;
+@nav-text-hover:								#FC4C7B;
 @nav-text-hover-decoration: 					underline;
 
 // Dropdown
@@ -294,9 +294,10 @@
 // Logo
 // ----------------------------------------------------------------------------------------------------
 
-@logo-color:									#333333;
-@logo-font-size:								40px;
-@logo-font-weight:								600;
+@logo-color:									#EA567D;
+@logo-font-style:								Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@logo-font-size:								60px;
+@logo-font-weight:								;
 @logo:                      		            "../images/store-logo-1x.png";
 @logo-retina:                       		    "../images/store-logo-2x.png";
 
@@ -330,7 +331,6 @@
 @table-border-color:            				#ddd;
 
 
-
 // 
 // Buttons
 // ----------------------------------------------------------------------------------------------------
@@ -344,44 +344,44 @@
 
 // Primary Button
 // -------------------------
-@btn-primary-bg:								@brand-primary;
-@btn-primary-border:							@brand-primary;
-@btn-primary-color:								#ffffff;
+@btn-primary-bg:								#DB5176;
+@btn-primary-border:							#DB5176;
+@btn-primary-color:								#666666;
 
 
 // Secondary Button
 // -------------------------
-@btn-secondary-bg:								@brand-secondary;
-@btn-secondary-border:							@brand-secondary;
-@btn-secondary-color:							#ffffff;
+@btn-secondary-bg:								#82D6D9;
+@btn-secondary-border:							#82D6D9;
+@btn-secondary-color:							#666666;
 
 
 // Cart Button
 // -------------------------
-@btn-cart-bg:									@brand-primary;
-@btn-cart-border:								@brand-primary;
-@btn-cart-color:								#ffffff;
+@btn-cart-bg:									#DB5176;
+@btn-cart-border:								#DB5176;
+@btn-cart-color:								#666666;
 
 
 // Checkout Button
 // -------------------------
-@btn-checkout-bg:								@brand-primary;
-@btn-checkout-border:							@brand-primary;
-@btn-checkout-color:							#ffffff;
+@btn-checkout-bg:								@btn-cart-bg;
+@btn-checkout-border:							@btn-cart-border;
+@btn-checkout-color:							@btn-cart-color;
 
 
 // Add to Registry Button
 // -------------------------
-@btn-registry-bg:								@gray-light;
-@btn-registry-border:							@gray-light;
-@btn-registry-color:							#ffffff;
+@btn-registry-bg:								#82D6D9;
+@btn-registry-border:							#82D6D9;
+@btn-registry-color:							#666666;
 
 
 // Add to Wishlist Button
 // -------------------------
-@btn-wishlist-bg:								@gray-light;
-@btn-wishlist-border:							@gray-light;
-@btn-wishlist-color:							#ffffff;
+@btn-wishlist-bg:								@btn-registry-bg;
+@btn-wishlist-border:							@btn-registry-border;
+@btn-wishlist-color:							@btn-registry-color;
 
 
 
@@ -390,29 +390,29 @@
 // ----------------------------------------------------------------------------------------------------
 
 // `<input>` background color
-@input-bg: 										#fff;
+@input-bg: 										#FFFFFF;
 
 // `<input disabled>` background color
-@input-bg-disabled:								@gray-lighter;
+@input-bg-disabled:								lighten(@input-color, 93.5%); 
 
 // Text color for `<input>`s
-@input-color:                    				@gray;
+@input-color:                    				#4D332E;
 
 // `<input>` border color
-@input-border:                   				#ccc;
+@input-border:                   				#CCBBB8;
 
 // Border color for inputs on focus
-@input-border-focus:             				#f45b4f;
+@input-border-focus:             				#DB5176;
 
 // Placeholder text color
-@input-color-placeholder:        				@gray-light;
+@input-color-placeholder:        				lighten(@input-color, 40%); 
 
-@legend-color:                   				@gray-dark;
+@legend-color:                   				#DB5176;
 
-@legend-border-color:            				#e5e5e5;
+@legend-border-color:            				lighten(@legend-color, 60%); 
 
 // Background color for textual input addons
-@input-group-addon-bg:           				@gray-lighter;
+@input-group-addon-bg:           				lighten(@legend-color, 50%); 
 
 // Border color for textual input addons
 @input-group-addon-border-color: 				@input-border;
@@ -424,7 +424,7 @@
 // ----------------------------------------------------------------------------------------------------
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    				#fff;
+@dropdown-bg:                    				#E6E2E1;
 
 //** Dropdown menu `border-color`.
 @dropdown-border:                				rgba(0,0,0,.15);
@@ -466,16 +466,16 @@
 // ----------------------------------------------------------------------------------------------------
 
 // Default
-@breadcrumb-color:								@gray;
-@breadcrumb-bg:									#ffffff;
+@breadcrumb-color:								darken(@breadcrumb-active-color, 13.5%);
+@breadcrumb-bg:									none;
 
 // Active
-@breadcrumb-active-color:						@gray-light;
-@breadcrumb-active-bg:							#ffffff;
+@breadcrumb-active-color:						#B3ABA1;
+@breadcrumb-active-bg:							none;
 
 // Hover
-@breadcrumb-color-hover:						@gray-darker;
-@breadcrumb-bg-hover:							#ffffff;
+@breadcrumb-color-hover:						lighten(@breadcrumb-color, 13.5%);
+@breadcrumb-bg-hover:							none;
 
 
 
@@ -530,60 +530,62 @@
 
 // Brand
 @product-brand-color: 							#4D332E;
-@product-brand-font-family:						@font-family-sans-serif;
-@product-brand-font-size:						14px;
+@product-brand-font-family:						Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@product-brand-font-size:						13px;
 @product-brand-font-style:						normal;
-@product-brand-font-weight:						400;
+@product-brand-font-weight:						600;
 @product-brand-text-transform:					none;
 
 // Product Name
 @product-name-color: 							#4D332E;
-@product-name-font-family:						@font-family-sans-serif;
+@product-name-font-family:						Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
 @product-name-font-size:						14px;
 @product-name-font-style:						normal;
 @product-name-font-weight:						400;
 @product-name-text-transform:					none;
 
 // Price
-@product-price-color: 							#DB5176;
-@product-price-font-family:						@font-family-sans-serif;
-@product-price-font-size:						14px;
+@product-price-color: 							#EA567D;
+@product-price-font-family:						Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@product-price-font-size:						13px;
 @product-price-font-style:						normal;
-@product-price-font-weight:						400;
+@product-price-font-weight:						600;
 @product-price-text-transform:					none;
 
 // Price Per Month
-@product-price-per-month-color:					lighten(@text-color, 10%);
-@product-price-per-month-font-family:			@font-family-sans-serif;
-@product-price-per-month-font-size:				12px;
+@product-price-per-month-color:					lighten(@product-name-color, 10%);
+@product-price-per-month-font-family:			Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@product-price-per-month-font-size:				14px;
 @product-price-per-month-font-style:			normal;
 @product-price-per-month-font-weight:			400;
 @product-price-per-month-text-transform:		none;
 
 // Price Range
-@product-price-range-color:						@text-color;
-@product-price-range-font-family:				@font-family-sans-serif;
-@product-price-range-font-size:					12px;
+@product-price-range-color:						lighten(@product-name-color, 10%);
+@product-price-range-font-family:				Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
+@product-price-range-font-size:					14px;
 @product-price-range-font-style:				normal;
 @product-price-range-font-weight:				400;
 @product-price-range-text-transform:			none;
 
 // Price Regular
-@product-price-regular-color:					@text-color;
-@product-price-regular-font-family:				@font-family-sans-serif;
+@product-price-regular-color:					lighten(@product-name-color, 10%);
+@product-price-regular-font-family:				Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
 @product-price-regular-font-size:				12px;
 @product-price-regular-font-style:				normal;
 @product-price-regular-font-weight:				400;
 @product-price-regular-text-transform:			none;
 
 // Price Percent
-@product-price-percent-color:					lighten(@text-color, 10%);
-@product-price-percent-font-family:				@font-family-sans-serif;
+@product-price-percent-color:					lighten(@product-name-color, 10%);
+@product-price-percent-font-family:				Open Sans, Lucida Grande, Helvetica, Arial, sans-serif;
 @product-price-percent-font-size:				12px;
 @product-price-percent-font-style:				normal;
 @product-price-percent-font-weight:				400;
 @product-price-percent-text-transform:			none;
 
+// Price Stock
+@stock-text-color:								#4D332E;
 
 
 // 
@@ -657,11 +659,12 @@
 // 
 // Panels
 // ----------------------------------------------------------------------------------------------------
-@panel-bg:										#ffffff;
+@panel-bg:										#FFFDFA;
+@panel-text-color:								#4D332E;
 @panel-body-padding:							10px;
 @panel-border-radius:							0px;
-@panel-inner-border: 							#ffffff;
-@panel-footer-bg: 								#ffffff;
+@panel-inner-border:                            #ffffff;
+@panel-footer-bg:                               darken(#fff , 50%);
 
 
 // Default
@@ -722,13 +725,13 @@
 
 @footer-bg-image:								"../images/bg-pattern-footer-1x.png";
 @footer-bg-image-retina:						"../images/bg-pattern-footer-2x.png";
-@footer-bg-color:								#222222;
-@footer-color:									@gray-light;
-@footer-color-link:								#ffffff;
+@footer-bg-color:								#F4EDE7;
+@footer-color:									#4D332E;
+@footer-color-link:								#EA567D;
 @footer-color-link-hover:						@brand-primary;
-@footer-header-text:							#ffffff;
-@footer-hr:										@gray;
-@footer-copy:									#FAF6F0;
+@footer-header-text:							#4D332E;
+@footer-hr:										#4D332E;
+@footer-copy:									#B3ABA1;
 
 
 // 
@@ -752,11 +755,13 @@
 //
 // Carousel
 // ----------------------------------------------------------------------------------------------------
-@carousel-caption-color: 						orange;
-@carousel-text-shadow:							2px 2px 1px rgba(15,130,153,1.0);
+
+// Captions
+@carousel-caption-color:                        #82D6D9;
+@carousel-text-shadow:                            0 none;
 
 // Controls
-@carousel-control-color:						#ffc859;
+@carousel-control-color:						#E6DBCF;
 @carousel-control-width:						5%;
 @carousel-control-opacity:						1.0;
 @carousel-control-font-size:					24px;
@@ -764,7 +769,6 @@
 // Indicators
 @carousel-indicator-active-bg:					#ffc859;
 @carousel-indicator-border-color:				#ffffff;
-@carousel-caption-color:						#fff;
 
 // Carousel Indicators
 @carousel-indicator-border-color:				;
