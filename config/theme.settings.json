@@ -1,269 +1,1117 @@
 {
     "current": {
-        "branding": {
-            "branding_colors": {
-                "brand-primary": "ba20ba",
-                "brand-second": "a86da8"
+        "colors": {
+            "brand": {
+                "brand-primary": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "brand-secondary": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "brand-success": {
+                    "type": "color",
+                    "value": "5CB85C"
+                },
+                "brand-info": {
+                    "type": "color",
+                    "value": "3BA4C4"
+                },
+                "brand-warning": {
+                    "type": "color",
+                    "value": "F0AD4E"
+                },
+                "brand-danger": {
+                    "type": "color",
+                    "value": "D9534F"
+                }
             },
-            "feedback_states": {
-                "brand-success": "000000",
-                "state-success-text": "000000",
-                "brand-info": "000000",
-                "state-info-text": "000000",
-                "brand-warning": "000000",
-                "state-warning-text": "000000",
-                "brand-danger": "000000",
-                "state-danger-text": "000000"
-            }
-        },
-        "logo_images_and_colors": {
-            "logo_background": {
-                "logo-custom": "1",
-                "logo-custom-upload": "",
-                "logo-custom-center": "0",
-                "favicon-image": "1",
-                "favicon-upload": "",
-                "site-bg-image": "style2",
-                "site-bg-image-custom": "",
-                "site-bg-image-display": "stretch"
+            "background": {
+                "body-bg": {
+                    "type": "color",
+                    "value": "FAF6F0"
+                }
             },
-            "toolbar": {
-                "toolbar-bg-color": "5987ba",
-                "toolbar-bg-color-none": "0",
-                "toolbar-text-color": "BBBBBB",
-                "toolbar-text-color-hover": "FFFFFF",
-                "toolbar-border-style": "none",
-                "toolbar-border-color": "000000",
-                "toolbar-border-search": "1",
-                "search-border-color": "000000"
-            },
-            "footer_colors": {
-                "footer-background-color": "000000",
-                "footer-bg-color-remove": "0",
-                "footer-text-color": "000000",
-                "footer-heading-color": "000000",
-                "footer-heading-underline": "0",
-                "footer-heading-underline-color": "000000",
-                "footer-link-color": "000000",
-                "footer-link-color-hover": "000000",
-                "footer-border-style": "none",
-                "footer-border-color": "000000"
-            },
-            "content_area_color": {
-                "site-border-color": "000000",
-                "content-background-color": "000000",
-                "content-background-transparent": "0",
-                "text-color": "000000",
-                "heading-color": "000000",
-                "link-color": "000000",
-                "link-color-hover": "000000",
-                "price-color": "000000"
+            "content": {
+                "logo-color": {
+                    "type": "color",
+                    "value": "EA567D"
+                },
+                "text-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "link-color": {
+                    "type": "color",
+                    "value": "EA567D"
+                },
+                "link-hover-color": {
+                    "type": "color",
+                    "value": "FC4C7B"
+                },
+                "breadcrumb-active-color": {
+                    "type": "color",
+                    "value": "B3ABA1"
+                }
             },
             "buttons": {
-                "btn-bg-color": "000000",
-                "btn-bg-color-hover": "000000",
-                "btn-text-color": "000000",
-                "btn-text-color-hover": "000000",
-                "btn-border-radius": "2px"
+                "btn-primary-bg": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "btn-primary-border": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "btn-primary-color": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "btn-secondary-bg": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "btn-secondary-border": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "btn-secondary-color": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "btn-cart-bg": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "btn-cart-border": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "btn-cart-color": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "btn-registry-bg": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "btn-registry-border": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "btn-registry-color": {
+                    "type": "color",
+                    "value": "666666"
+                }
             },
-            "borders": {
-                "general-border-style": "solid",
-                "gernal-border-color": "000000"
+            "forms": {
+                "input-bg": {
+                    "type": "color",
+                    "value": "FFFFFF"
+                },
+                "input-border": {
+                    "type": "color",
+                    "value": "CCBBB8"
+                },
+                "input-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "input-border-focus": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "legend-color": {
+                    "type": "color",
+                    "value": "DB5176"
+                }
             },
-            "tabs": {
-                "tab-bg-color": "000000",
-                "tab-bg-color-none": "1",
-                "tab-active-bg-color": "000000",
-                "tab-active-bg-color-none": "0"
+            "headers": {
+                "headings-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "headings-small-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "header-bg-color": {
+                    "type": "color",
+                    "value": "FAF6F0"
+                },
+                "page-header-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "page-header-border-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                }
+            },
+            "navigation": {
+                "nav-text": {
+                    "type": "color",
+                    "value": "EA567D"
+                },
+                "nav-text-hover": {
+                    "type": "color",
+                    "value": "FC4C7B"
+                },
+                "dropdown-bg": {
+                    "type": "color",
+                    "value": "E6E2E1"
+                }
+            },
+            "toolbar": {
+                "toolbar-bg": {
+                    "type": "color",
+                    "value": "FAF6F0"
+                },
+                "toolbar-link-text-color": {
+                    "type": "color",
+                    "value": "99665C"
+                },
+                "toolbar-link-text-color-hover": {
+                    "type": "color",
+                    "value": "99665C"
+                },
+                "my-cart-bg": {
+                    "type": "color",
+                    "value": "DB5176"
+                },
+                "my-cart-text": {
+                    "type": "color",
+                    "value": "FFFFFF"
+                },
+                "my-cart-text-hover": {
+                    "type": "color",
+                    "value": "FFFFFF"
+                },
+                "login-bg": {
+                    "type": "color",
+                    "value": "E6DBCF"
+                },
+                "login-color": {
+                    "type": "color",
+                    "value": "99665C"
+                }
+            },
+            "carousel": {
+                "carousel-caption-color": {
+                    "type": "color",
+                    "value": "82D6D9"
+                },
+                "carousel-control-color": {
+                    "type": "color",
+                    "value": "E6DBCF"
+                }
+            },
+            "product-grid": {
+                "product-brand-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "product-name-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "product-price-color": {
+                    "type": "color",
+                    "value": "EA567D"
+                },
+                "stock-text-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                }
+            },
+            "panel": {
+                "panel-bg": {
+                    "type": "color",
+                    "value": "FFFDFA"
+                },
+                "panel-text-color": {
+                    "type": "color",
+                    "value": "4D332E"
+                }
+            },
+            "footer-color": {
+                "footer-bg-color": {
+                    "type": "color",
+                    "value": "3B3B3B"
+                },
+                "footer-color": {
+                    "type": "color",
+                    "value": "333333"
+                },
+                "footer-color-link": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "footer-header-text": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "footer-hr": {
+                    "type": "color",
+                    "value": "4D332E"
+                },
+                "footer-copy": {
+                    "type": "color",
+                    "value": "B3ABA1"
+                }
             }
         },
         "typography": {
             "base_styles": {
-                "base-typeface": "Helvetica, Arial, sans-serif",
-                "body-font-size": "14px",
-                "body-line-height": "22px"
+                "base-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "font-size-base": {
+                    "type": "dropdown",
+                    "value": "14px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "body-font-weight": {
+                    "type": "dropdown",
+                    "value": "400",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "render-text": {
+                    "type": "render_text",
+                    "font_id": "base-typeface",
+                    "size_id": "font-size-base",
+                    "weight_id": "body-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "navigation_styles": {
-                "google-nav-font": "none",
-                "nav-font-size": "14px",
-                "nav-font-weight": "400",
-                "nav-font-style": "none",
-                "nav-line-height": "48px"
+            "logo_styles": {
+                "logo-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "logo-font-size": {
+                    "type": "dropdown",
+                    "value": "60px",
+                    "options": {
+                        "78px": "78px",
+                        "72px": "72px",
+                        "66px": "66px",
+                        "60px": "60px",
+                        "56px": "56px",
+                        "50px": "50px",
+                        "40px": "40px"
+                    }
+                },
+                "logo-font-weight": {
+                    "type": "dropdown",
+                    "value": "600",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "render-text-logo": {
+                    "type": "render_text",
+                    "font_id": "logo-typeface",
+                    "size_id": "logo-font-size",
+                    "weight_id": "logo-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "heading_styles": {
-                "google-header-font": "Open+Sans",
-                "header-weight": "400",
-                "header-font-style": "none",
-                "site-heading-font-size": "72px"
+            "h1_heading_styles": {
+                "heading-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "heading-font-weight": {
+                    "type": "dropdown",
+                    "value": "600",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "font-size-h1": {
+                    "type": "dropdown",
+                    "value": "38px",
+                    "options": {
+                        "42px": "42px",
+                        "40px": "40px",
+                        "38px": "38px",
+                        "36px": "36px",
+                        "34px": "34px",
+                        "32px": "32px",
+                        "30px": "30px",
+                        "28px": "28px"
+                    }
+                },
+                "render-text-h1": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h1",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "headings": {
-                "main-heading-font-size": "36px",
-                "h2-font-size": "36px",
-                "sub-heading-h3-font-size": "24px",
-                "h4-font-size": "24px",
-                "h5-font-size": "24px",
-                "h6-font-size": "24px"
+            "h2_heading_styles": {
+                "font-size-h2": {
+                    "type": "dropdown",
+                    "value": "28px",
+                    "options": {
+                        "34px": "34px",
+                        "32px": "32px",
+                        "30px": "30px",
+                        "28px": "28px",
+                        "26px": "26px",
+                        "24px": "24px",
+                        "22px": "22px",
+                        "20px": "20px",
+                        "18px": "28px"
+                    }
+                },
+                "render-text-h2": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h2",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "button_styles": {
-                "btn-font-size": "12px",
-                "btn-line-height": "36px",
-                "btn-font-style": "none",
-                "btn-font-weight": "700"
-            }
-        },
-        "navigation": {
-            "base_styles": {
-                "navigation-alignment": "right",
-                "navigation-center": "0",
-                "nav-right-padding": "72px",
-                "nav-link-color": "888888",
-                "nav-link-hover-color": "222222",
-                "selected-nav-link-color": "b858b8",
-                "nav-dropdown-link-color": "222222",
-                "show-dropdown-arrow": "1",
-                "dropdown-arrow": "dark",
-                "display-blog-dropdown": "1",
-                "display-collection-dropdown": "1"
-            }
-        },
-        "footer": {
-            "general": {
-                "footer-linklist": "main-menu",
-                "footer-blog-post-header": ""
+            "h3_heading_styles": {
+                "font-size-h3": {
+                    "type": "dropdown",
+                    "value": "18px",
+                    "options": {
+                        "26px": "26px",
+                        "24px": "24px",
+                        "22px": "22px",
+                        "20px": "20px",
+                        "18px": "18px",
+                        "16px": "16px",
+                        "14px": "14px",
+                        "12px": "12px"
+                    }
+                },
+                "render-text-h3": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h3",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
+            },
+            "product-text-styles": {
+                "product-text-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "product-brand-font-size": {
+                    "type": "dropdown",
+                    "value": "13px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "product-name-font-size": {
+                    "type": "dropdown",
+                    "value": "14px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "product-price-font-size": {
+                    "type": "dropdown",
+                    "value": "13px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                }
             }
         }
     },
-    "Default": {
-        "branding": {
-            "branding_colors": {
-                "brand-primary": "ba20ba",
-                "brand-second": "a86da8"
+    "default": {
+        "colors": {
+            "brand": {
+                "brand-primary": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "brand-secondary": {
+                    "type": "color",
+                    "value": "B3B3B3"
+                },
+                "brand-success": {
+                    "type": "color",
+                    "value": "5CB85C"
+                },
+                "brand-info": {
+                    "type": "color",
+                    "value": "3BA4C4"
+                },
+                "brand-warning": {
+                    "type": "color",
+                    "value": "F0AC4D"
+                },
+                "brand-danger": {
+                    "type": "color",
+                    "value": "D9534F"
+                }
             },
-            "feedback_states": {
-                "brand-success": "000000",
-                "state-success-text": "000000",
-                "brand-info": "000000",
-                "state-info-text": "000000",
-                "brand-warning": "000000",
-                "state-warning-text": "000000",
-                "brand-danger": "000000",
-                "state-danger-text": "000000"
-            }
-        },
-        "logo_images_and_colors": {
-            "logo_background": {
-                "logo-custom": "1",
-                "logo-custom-upload": "",
-                "logo-custom-center": "0",
-                "favicon-image": "1",
-                "favicon-upload": "",
-                "site-bg-image": "style2",
-                "site-bg-image-custom": "",
-                "site-bg-image-display": "stretch"
+            "background": {
+                "body-bg": {
+                    "type": "color",
+                    "value": "ffffff"
+                }
             },
-            "toolbar": {
-                "toolbar-bg-color": "5987ba",
-                "toolbar-bg-color-none": "0",
-                "toolbar-text-color": "BBBBBB",
-                "toolbar-text-color-hover": "FFFFFF",
-                "toolbar-border-style": "none",
-                "toolbar-border-color": "000000",
-                "toolbar-border-search": "1",
-                "search-border-color": "000000"
-            },
-            "footer_colors": {
-                "footer-background-color": "000000",
-                "footer-bg-color-remove": "0",
-                "footer-text-color": "000000",
-                "footer-heading-color": "000000",
-                "footer-heading-underline": "0",
-                "footer-heading-underline-color": "000000",
-                "footer-link-color": "000000",
-                "footer-link-color-hover": "000000",
-                "footer-border-style": "none",
-                "footer-border-color": "000000"
-            },
-            "content_area_color": {
-                "site-border-color": "000000",
-                "content-background-color": "000000",
-                "content-background-transparent": "0",
-                "text-color": "000000",
-                "heading-color": "000000",
-                "link-color": "000000",
-                "link-color-hover": "000000",
-                "price-color": "000000"
+            "content": {
+                "logo-color": {
+                    "type": "color",
+                    "value": "6a4362"
+                },
+                "text-color": {
+                    "type": "color",
+                    "value": "333333"
+                },
+                "link-color": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "link-hover-color": {
+                    "type": "color",
+                    "value": "44293E"
+                },
+                "breadcrumb-active-color": {
+                    "type": "color",
+                    "value": "000"
+                }
             },
             "buttons": {
-                "btn-bg-color": "000000",
-                "btn-bg-color-hover": "000000",
-                "btn-text-color": "000000",
-                "btn-text-color-hover": "000000",
-                "btn-border-radius": "2px"
+                "btn-primary-bg": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "btn-primary-border": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "btn-primary-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "btn-secondary-bg": {
+                    "type": "color",
+                    "value": "B3B3B3"
+                },
+                "btn-secondary-border": {
+                    "type": "color",
+                    "value": "B3B3B3"
+                },
+                "btn-secondary-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "btn-cart-bg": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "btn-cart-border": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "btn-cart-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "btn-registry-bg": {
+                    "type": "color",
+                    "value": "777777"
+                },
+                "btn-registry-border": {
+                    "type": "color",
+                    "value": "777777"
+                },
+                "btn-registry-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                }
             },
-            "borders": {
-                "general-border-style": "solid",
-                "gernal-border-color": "000000"
+            "forms": {
+                "input-bg": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "input-border": {
+                    "type": "color",
+                    "value": "ccc"
+                },
+                "input-color": {
+                    "type": "color",
+                    "value": "555555"
+                },
+                "input-border-focus": {
+                    "type": "color",
+                    "value": "f45b4f"
+                },
+                "legend-color": {
+                    "type": "color",
+                    "value": "6A4362"
+                }
             },
-            "tabs": {
-                "tab-bg-color": "000000",
-                "tab-bg-color-none": "1",
-                "tab-active-bg-color": "000000",
-                "tab-active-bg-color-none": "0"
+            "headers": {
+                "headings-color": {
+                    "type": "color",
+                    "value": "6a4362"
+                },
+                "headings-small-color": {
+                    "type": "color",
+                    "value": "333333"
+                },
+                "header-bg-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "page-header-color": {
+                    "type": "color",
+                    "value": "555555"
+                },
+                "page-header-border-color": {
+                    "type": "color",
+                    "value": "555555"
+                }
+            },
+            "navigation": {
+                "nav-text": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "nav-text-hover": {
+                    "type": "color",
+                    "value": "000000"
+                },
+                "dropdown-bg": {
+                    "type": "color",
+                    "value": "ffffff"
+                }
+            },
+            "toolbar": {
+                "toolbar-bg": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "toolbar-link-text-color": {
+                    "type": "color",
+                    "value": "999999"
+                },
+                "toolbar-link-text-color-hover": {
+                    "type": "color",
+                    "value": "666666"
+                },
+                "my-cart-bg": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "my-cart-text": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "my-text-hover": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "login-bg": {
+                    "type": "color",
+                    "value": "777777"
+                },
+                "login-color": {
+                    "type": "color",
+                    "value": "ffffff"
+                }
+            },
+            "carousel": {
+                "carousel-caption-color": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "carousel-control-color": {
+                    "type": "color",
+                    "value": "ffc859"
+                }
+            },
+            "product-grid": {
+                "product-brand-color": {
+                    "type": "color",
+                    "value": "6A4362"
+                },
+                "product-name-color": {
+                    "type": "color",
+                    "value": "777777"
+                },
+                "product-price-color": {
+                    "type": "color",
+                    "value": "6A4362"
+                }
+            },
+            "panel": {
+                "panel-bg": {
+                    "type": "color",
+                    "value": "535353"
+                },
+                "panel-text-color": {
+                    "type": "color",
+                    "value": "9B9B9B"
+                }
+            },
+            "footer-color": {
+                "footer-bg-color": {
+                    "type": "color",
+                    "value": "222222"
+                },
+                "footer-color": {
+                    "type": "color",
+                    "value": "999999"
+                },
+                "footer-color-link": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "footer-header-text": {
+                    "type": "color",
+                    "value": "ffffff"
+                },
+                "footer-hr": {
+                    "type": "color",
+                    "value": "999999"
+                },
+                "footer-copy": {
+                    "type": "color",
+                    "value": "FAF6F0"
+                }
             }
         },
         "typography": {
             "base_styles": {
-                "base-typeface": "Helvetica, Arial, sans-serif",
-                "body-font-size": "14px",
-                "body-line-height": "22px"
+                "base-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "font-size-base": {
+                    "type": "dropdown",
+                    "value": "14px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "body-font-weight": {
+                    "type": "dropdown",
+                    "value": "400",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "render-text": {
+                    "type": "render_text",
+                    "font_id": "base-typeface",
+                    "size_id": "font-size-base",
+                    "weight_id": "body-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "navigation_styles": {
-                "google-nav-font": "none",
-                "nav-font-size": "14px",
-                "nav-font-weight": "400",
-                "nav-font-style": "none",
-                "nav-line-height": "48px"
+            "logo_styles": {
+                "logo-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "logo-font-size": {
+                    "type": "dropdown",
+                    "value": "60px",
+                    "options": {
+                        "78px": "78px",
+                        "72px": "72px",
+                        "66px": "66px",
+                        "60px": "60px",
+                        "56px": "56px",
+                        "50px": "50px",
+                        "40px": "40px"
+                    }
+                },
+                "logo-font-weight": {
+                    "type": "dropdown",
+                    "value": "600",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "render-text-logo": {
+                    "type": "render_text",
+                    "font_id": "logo-typeface",
+                    "size_id": "logo-font-size",
+                    "weight_id": "logo-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "heading_styles": {
-                "google-header-font": "Open+Sans",
-                "header-weight": "400",
-                "header-font-style": "none",
-                "site-heading-font-size": "72px"
+            "h1_heading_styles": {
+                "heading-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "heading-font-weight": {
+                    "type": "dropdown",
+                    "value": "600",
+                    "options": {
+                        "700": "700",
+                        "600": "600",
+                        "400": "400",
+                        "300": "300"
+                    }
+                },
+                "font-size-h1": {
+                    "type": "dropdown",
+                    "value": "38px",
+                    "options": {
+                        "42px": "42px",
+                        "40px": "40px",
+                        "38px": "38px",
+                        "36px": "36px",
+                        "34px": "34px",
+                        "32px": "32px",
+                        "30px": "30px",
+                        "28px": "28px"
+                    }
+                },
+                "render-text-h1": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h1",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "headings": {
-                "main-heading-font-size": "36px",
-                "h2-font-size": "36px",
-                "sub-heading-h3-font-size": "24px",
-                "h4-font-size": "24px",
-                "h5-font-size": "24px",
-                "h6-font-size": "24px"
+            "h2_heading_styles": {
+                "font-size-h2": {
+                    "type": "dropdown",
+                    "value": "28px",
+                    "options": {
+                        "34px": "34px",
+                        "32px": "32px",
+                        "30px": "30px",
+                        "28px": "28px",
+                        "26px": "26px",
+                        "24px": "24px",
+                        "22px": "22px",
+                        "20px": "20px",
+                        "18px": "28px"
+                    }
+                },
+                "render-text-h2": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h2",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
             },
-            "button_styles": {
-                "btn-font-size": "12px",
-                "btn-line-height": "36px",
-                "btn-font-style": "none",
-                "btn-font-weight": "700"
-            }
-        },
-        "navigation": {
-            "base_styles": {
-                "navigation-alignment": "right",
-                "navigation-center": "0",
-                "nav-right-padding": "72px",
-                "nav-link-color": "888888",
-                "nav-link-hover-color": "222222",
-                "selected-nav-link-color": "b858b8",
-                "nav-dropdown-link-color": "222222",
-                "show-dropdown-arrow": "1",
-                "dropdown-arrow": "dark",
-                "display-blog-dropdown": "1",
-                "display-collection-dropdown": "1"
-            }
-        },
-        "footer": {
-            "general": {
-                "footer-linklist": "main-menu",
-                "footer-blog-post-header": ""
+            "h3_heading_styles": {
+                "font-size-h3": {
+                    "type": "dropdown",
+                    "value": "18px",
+                    "options": {
+                        "26px": "26px",
+                        "24px": "24px",
+                        "22px": "22px",
+                        "20px": "20px",
+                        "18px": "18px",
+                        "16px": "16px",
+                        "14px": "14px",
+                        "12px": "12px"
+                    }
+                },
+                "render-text-h3": {
+                    "type": "render_text",
+                    "font_id": "heading-typeface",
+                    "size_id": "font-size-h3",
+                    "weight_id": "heading-font-weight",
+                    "style_id": "",
+                    "transform_id": ""
+                }
+            },
+            "product-text-styles": {
+                "product-text-typeface": {
+                    "type": "dropdown_group",
+                    "value": "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif",
+                    "options": {
+                        "Sans-Serif": {
+                            "Helvetica, Arial, sans-serif": "Helvetica\/Arial",
+                            "Impact, Charcoal, Helvetica, Arial, sans-serif": "Impact",
+                            "Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida, Helvetica, Arial, sans-serif": "Lucida Grande",
+                            "Trebuchet MS, sans-serif": "Trebuchet MS",
+                            "Verdana, Helvetica, Arial, sans-serif": "Verdana",
+                            "Open Sans, Lucida Grande, Helvetica, Arial, sans-serif": "Open Sans",
+                            "Lato, Open Sans, Lucida Sans, Lucida Grande, Helvetica, sans-serif": "Lato"
+                        },
+                        "Serif": {
+                            "Garamond, Baskerville, Caslon, serif": "Garamond",
+                            "Georgia, Utopia, Times New Roman, Times, serif": "Georgia",
+                            "Palatino, Palatino Linotype, Book Antiqua, serif": "Palatino",
+                            "Times New Roman, Times, serif": "Times New Roman",
+                            "Josefin Slab, Georgia, Garamond, Times New Roman, Times, serif": "Josefin Slab"
+                        },
+                        "Monospace": {
+                            "Courier New, Courier, monospace": "Courier new",
+                            "Monaco, Lucida Console, DejaVu Sans Mono, monospace": "Monaco"
+                        }
+                    }
+                },
+                "product-brand-font-size": {
+                    "type": "dropdown",
+                    "value": "13px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "product-name-font-size": {
+                    "type": "dropdown",
+                    "value": "14px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                },
+                "product-price-font-size": {
+                    "type": "dropdown",
+                    "value": "13px",
+                    "options": {
+                        "17px": "17px",
+                        "16px": "16px",
+                        "15px": "15px",
+                        "14px": "14px",
+                        "13px": "13px",
+                        "12px": "12px",
+                        "11px": "11px"
+                    }
+                }
             }
         }
     }

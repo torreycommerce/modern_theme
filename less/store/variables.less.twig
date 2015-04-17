@@ -1,6 +1,6 @@
 // Variables
 // ----------------------------------------------------------------------------------------------------
-// Project: Acenda Default Theme
+// Project: Acenda Modern Theme
 // ----------------------------------------------------------------------------------------------------
 
 
@@ -72,12 +72,12 @@
 
 // Brand
 // -------------------------
-@brand-primary:									#{{ settings.current["branding"]["branding_colors"]["brand-primary"] }};
-@brand-secondary:								#{{ settings.current["branding"]["branding_colors"]["brand-second"] }};
-@brand-success:         						#{{ settings.current["branding"]["feedback_states"]["brand-success"] }};
-@brand-info:         		   					#{{ settings.current["branding"]["feedback_states"]["brand-info"] }};
-@brand-warning:     						    #{{ settings.current["branding"]["feedback_states"]["brand-warning"] }};
-@brand-danger:     							    #{{ settings.current["branding"]["feedback_states"]["brand-danger"] }};
+@brand-primary:									#{{ settings.current["colors"]["brand"]["brand-primary"]["value"] }};
+@brand-secondary:								#{{ settings.current["colors"]["brand"]["brand-secondary"]["value"] }};
+@brand-success:         						#{{ settings.current["colors"]["brand"]["brand-success"]["value"] }};
+@brand-info:         		   					#{{ settings.current["colors"]["brand"]["brand-info"]["value"] }};
+@brand-warning:     						    #{{ settings.current["colors"]["brand"]["brand-warning"]["value"] }};
+@brand-danger:     							    #{{ settings.current["colors"]["brand"]["brand-danger"]["value"] }};
 
 // Gray
 // -------------------------
@@ -89,19 +89,19 @@
 
 // Feedback states
 // -------------------------
-@state-success-text:							#{{ settings.current["branding"]["feedback_states"]["state-success-text"] }};
+@state-success-text:							#EEEEEE;
 @state-success-bg:								@brand-success;
 @state-success-border:							darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:								#{{ settings.current["branding"]["feedback_states"]["state-info-text"] }};
+@state-info-text:								#FFFFFF;
 @state-info-bg:									@brand-info;
 @state-info-border:								darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:							#{{ settings.current["branding"]["feedback_states"]["state-warning-text"] }};
+@state-warning-text:							#FFFFFF;
 @state-warning-bg:								@brand-warning;
 @state-warning-border:							darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:								#{{ settings.current["branding"]["feedback_states"]["state-danger-text"] }};
+@state-danger-text:								#FFFFFF;
 @state-danger-bg:								@brand-danger;
 @state-danger-border:							darken(spin(@state-danger-bg, -10), 5%);
 
@@ -115,18 +115,18 @@
 
 // Background color for `<body>`
 // -------------------------
-@body-bg:					                    #FFFFFF;
+@body-bg:					                    #{{ settings.current["colors"]["background"]["body-bg"]["value"] }};
 @shop-bg-image:									0 none;
 @shop-bg-image-retina:							0 none;
 
 // Text color on `<body>`
 // -------------------------
-@text-color:									#{{ settings.current["logo_images_and_colors"]["content_area_color"]["text-color"] }};
+@text-color:									#{{ settings.current["colors"]["content"]["text-color"]["value"] }};
 
 // Link color
 // -------------------------
-@link-color:    		                        @brand-primary;
-@link-hover-color:      						darken(@link-color, 15%);
+@link-color:    		                        #{{ settings.current["colors"]["content"]["link-color"]["value"] }};
+@link-hover-color:      						#{{ settings.current["colors"]["content"]["link-hover-color"]["value"] }};
 
 // Price color
 // -------------------------
@@ -144,19 +144,19 @@
 
 // Body text
 // -------------------------
-@font-family-sans-serif:						'Open Sans', "Helvetica Neue", helvetica, arial, sans-serif;
-@font-family-serif:       						Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:   						Menlo, Monaco, Consolas, "Courier New", monospace; // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-lucida:							Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+@font-family-sans-serif:						{{ settings.current["typography"]["base_styles"]["base-typeface"]["value"] }};
+@font-family-serif:								@font-family-sans-serif;
+@font-family-monospace:   						@font-family-sans-serif;
+@font-family-lucida:							{{ settings.current["typography"]["h1_heading_styles"]["heading-typeface"]["value"] }};
 @line-height-base:								1.428571429; // 20/14
 
-@font-size-base:								14px;
+@font-size-base:								{{ settings.current["typography"]["base_styles"]["font-size-base"]["value"] }};
 @font-size-large:         						ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         						ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:									ceil((@font-size-base * 2.55));	// ~36px
-@font-size-h2:									ceil((@font-size-base * 1.85));	// ~26px
-@font-size-h3:									ceil((@font-size-base * 1.55));	// ~22px
+@font-size-h1:									{{ settings.current["typography"]["h1_heading_styles"]["font-size-h1"]["value"] }};
+@font-size-h2:									{{ settings.current["typography"]["h2_heading_styles"]["font-size-h2"]["value"] }};
+@font-size-h3:									{{ settings.current["typography"]["h3_heading_styles"]["font-size-h3"]["value"] }};
 @font-size-h4:									ceil((@font-size-base * 1.25));	// ~18px
 @font-size-h5:									@font-size-base;				// ~15px
 @font-size-h6:									ceil((@font-size-base * 0.90));	// ~13px
@@ -169,14 +169,14 @@
 
 // Headings
 // -------------------------
-@headings-color:								;
-@headings-font-family:							'Open Sans Condensed';
-@headings-font-weight:							700;
+@headings-color:								#{{ settings.current["colors"]["headers"]["headings-color"]["value"] }};
+@headings-font-family:							{{ settings.current["typography"]["h1_heading_styles"]["heading-typeface"]["value"] }};
+@headings-font-weight:							{{ settings.current["typography"]["h1_heading_styles"]["headings-font-weight"]["value"] }};
 @headings-line-height:							1.1;
-@headings-small-color:							#333333;
+@headings-small-color:							#{{ settings.current["colors"]["headers"]["headings-small-color"]["value"] }};
 
-@page-header-color:								@gray;
-@page-header-border-color:						#EEEEEE;
+@page-header-color:								#{{ settings.current["colors"]["headers"]["page-header-color"]["value"] }};
+@page-header-border-color:						#{{ settings.current["colors"]["headers"]["page-header-border-color"]["value"] }};
 
 
 
@@ -203,7 +203,7 @@
 // Header
 // ----------------------------------------------------------------------------------------------------
 
-@header-bg-color:								#ffffff;
+@header-bg-color:								#{{ settings.current["colors"]["headers"]["header-bg-color"]["value"] }};
 @header-bg-pattern:								0 none;
 @header-bg-pattern-retina:						0 none;
 
@@ -213,15 +213,15 @@
 // Toolbar
 // ----------------------------------------------------------------------------------------------------
 
-@toolbar-bg:									#{{ settings.current["logo_images_and_colors"]["toolbar"]["toolbar-bg-color"] }};
+@toolbar-bg:									#{{ settings.current["colors"]["toolbar"]["toolbar-bg"]["value"] }};
 
 // Default state
 @toolbar-link-bg-color:							0 none;
-@toolbar-link-text-color:						#{{ settings.current["logo_images_and_colors"]["toolbar"]["toolbar-text-color"] }};
+@toolbar-link-text-color:						#{{ settings.current["colors"]["toolbar"]["toolbar-link-text-color"]["value"] }};
 
 // Hover
 @toolbar-link-bg-color-hover:					0 none;
-@toolbar-link-text-color-hover:					#{{ settings.current["logo_images_and_colors"]["toolbar"]["toolbar-text-color-hover"] }};
+@toolbar-link-text-color-hover:					#{{ settings.current["colors"]["toolbar"]["toolbar-link-text-color-hover"]["value"] }};
 
 
 
@@ -229,10 +229,10 @@
 // My Cart
 // ----------------------------------------------------------------------------------------------------
 
-@my-cart-bg:									@brand-primary;
+@my-cart-bg:									#{{ settings.current["colors"]["toolbar"]["my-cart-bg"]["value"] }};
 @my-cart-bg-hover:								saturate(@my-cart-bg, 10%);
-@my-cart-text:									#ffffff;
-@my-cart-text-hover:							#ffffff;
+@my-cart-text:									#{{ settings.current["colors"]["toolbar"]["my-cart-text"]["value"] }};
+@my-cart-text-hover:							#{{ settings.current["colors"]["toolbar"]["my-cart-text-hover"]["value"] }};
 
 
 
@@ -240,10 +240,10 @@
 // Login
 // ----------------------------------------------------------------------------------------------------
 
-@login-color:									#ffffff;
-@login-bg:										@gray;
+@login-color:									#{{ settings.current["colors"]["toolbar"]["login-color"]["value"] }};
+@login-bg:										#{{ settings.current["colors"]["toolbar"]["login-bg"]["value"] }};
 
-@login-hover-color:								#ffffff;
+@login-hover-color:								@login-color;
 @login-hover-bg:								darken(@login-bg, 10%);
 
 
@@ -253,13 +253,13 @@
 
 // Default
 @nav-bg:										0 none;
-@nav-text:										#666666;
+@nav-text:										#{{ settings.current["colors"]["navigation"]["nav-text"]["value"] }};
 @nav-text-weight:								600;
-@nav-hr: 										;
+@nav-hr: 										@gray-lighter;
 
 // Hover
 @nav-bg-hover:									0 none;
-@nav-text-hover:								#000000;
+@nav-text-hover:								#{{ settings.current["colors"]["navigation"]["nav-text-hover"]["value"] }};
 @nav-text-hover-decoration: 					underline;
 
 // Dropdown
@@ -293,9 +293,10 @@
 // Logo
 // ----------------------------------------------------------------------------------------------------
 
-@logo-color:									#333333;
-@logo-font-size:								40px;
-@logo-font-weight:								600;
+@logo-color:									#{{ settings.current["colors"]["content"]["logo-color"]["value"] }};
+@logo-font-style:								{{ settings.current["typography"]["logo_styles"]["logo-typeface"]["value"] }};
+@logo-font-size:								{{ settings.current["typography"]["logo_styles"]["logo-font-size"]["value"] }};
+@logo-font-weight:								{{ settings.current["typography"]["base_styles"]["logo-font-weight"]["value"] }};
 @logo:                      		            "../images/store-logo-1x.png";
 @logo-retina:                       		    "../images/store-logo-2x.png";
 
@@ -329,7 +330,6 @@
 @table-border-color:            				#ddd;
 
 
-
 // 
 // Buttons
 // ----------------------------------------------------------------------------------------------------
@@ -343,44 +343,44 @@
 
 // Primary Button
 // -------------------------
-@btn-primary-bg:								@brand-primary;
-@btn-primary-border:							@brand-primary;
-@btn-primary-color:								#ffffff;
+@btn-primary-bg:								#{{ settings.current["colors"]["buttons"]["btn-primary-bg"]["value"] }};
+@btn-primary-border:							#{{ settings.current["colors"]["buttons"]["btn-primary-border"]["value"] }};
+@btn-primary-color:								#{{ settings.current["colors"]["buttons"]["btn-primary-color"]["value"] }};
 
 
 // Secondary Button
 // -------------------------
-@btn-secondary-bg:								@brand-secondary;
-@btn-secondary-border:							@brand-secondary;
-@btn-secondary-color:							#ffffff;
+@btn-secondary-bg:								#{{ settings.current["colors"]["buttons"]["btn-secondary-bg"]["value"] }};
+@btn-secondary-border:							#{{ settings.current["colors"]["buttons"]["btn-secondary-border"]["value"] }};
+@btn-secondary-color:							#{{ settings.current["colors"]["buttons"]["btn-secondary-color"]["value"] }};
 
 
 // Cart Button
 // -------------------------
-@btn-cart-bg:									@brand-primary;
-@btn-cart-border:								@brand-primary;
-@btn-cart-color:								#ffffff;
+@btn-cart-bg:									#{{ settings.current["colors"]["buttons"]["btn-cart-bg"]["value"] }};
+@btn-cart-border:								#{{ settings.current["colors"]["buttons"]["btn-cart-border"]["value"] }};
+@btn-cart-color:								#{{ settings.current["colors"]["buttons"]["btn-cart-color"]["value"] }};
 
 
 // Checkout Button
 // -------------------------
-@btn-checkout-bg:								@brand-primary;
-@btn-checkout-border:							@brand-primary;
-@btn-checkout-color:							#ffffff;
+@btn-checkout-bg:								@btn-cart-bg;
+@btn-checkout-border:							@btn-cart-border;
+@btn-checkout-color:							@btn-cart-color;
 
 
 // Add to Registry Button
 // -------------------------
-@btn-registry-bg:								@gray-light;
-@btn-registry-border:							@gray-light;
-@btn-registry-color:							#ffffff;
+@btn-registry-bg:								#{{ settings.current["colors"]["buttons"]["btn-registry-bg"]["value"] }};
+@btn-registry-border:							#{{ settings.current["colors"]["buttons"]["btn-registry-border"]["value"] }};
+@btn-registry-color:							#{{ settings.current["colors"]["buttons"]["btn-registry-color"]["value"] }};
 
 
 // Add to Wishlist Button
 // -------------------------
-@btn-wishlist-bg:								@gray-light;
-@btn-wishlist-border:							@gray-light;
-@btn-wishlist-color:							#ffffff;
+@btn-wishlist-bg:								@btn-registry-bg;
+@btn-wishlist-border:							@btn-registry-border;
+@btn-wishlist-color:							@btn-registry-color;
 
 
 
@@ -389,29 +389,29 @@
 // ----------------------------------------------------------------------------------------------------
 
 // `<input>` background color
-@input-bg: 										#fff;
+@input-bg: 										#{{ settings.current["colors"]["forms"]["input-bg"]["value"] }};
 
 // `<input disabled>` background color
-@input-bg-disabled:								@gray-lighter;
+@input-bg-disabled:								lighten(@input-color, 93.5%); 
 
 // Text color for `<input>`s
-@input-color:                    				@gray;
+@input-color:                    				#{{ settings.current["colors"]["forms"]["input-color"]["value"] }};
 
 // `<input>` border color
-@input-border:                   				#ccc;
+@input-border:                   				#{{ settings.current["colors"]["forms"]["input-border"]["value"] }};
 
 // Border color for inputs on focus
-@input-border-focus:             				#f45b4f;
+@input-border-focus:             				#{{ settings.current["colors"]["forms"]["input-border-focus"]["value"] }};
 
 // Placeholder text color
-@input-color-placeholder:        				@gray-light;
+@input-color-placeholder:        				lighten(@input-color, 40%); 
 
-@legend-color:                   				@gray-dark;
+@legend-color:                   				#{{ settings.current["colors"]["forms"]["legend-color"]["value"] }};
 
-@legend-border-color:            				#e5e5e5;
+@legend-border-color:            				lighten(@legend-color, 60%); 
 
 // Background color for textual input addons
-@input-group-addon-bg:           				@gray-lighter;
+@input-group-addon-bg:           				lighten(@legend-color, 50%); 
 
 // Border color for textual input addons
 @input-group-addon-border-color: 				@input-border;
@@ -423,7 +423,7 @@
 // ----------------------------------------------------------------------------------------------------
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    				#fff;
+@dropdown-bg:                    				#{{ settings.current["colors"]["navigation"]["dropdown-bg"]["value"] }};
 
 //** Dropdown menu `border-color`.
 @dropdown-border:                				rgba(0,0,0,.15);
@@ -465,16 +465,16 @@
 // ----------------------------------------------------------------------------------------------------
 
 // Default
-@breadcrumb-color:								@gray;
-@breadcrumb-bg:									#ffffff;
+@breadcrumb-color:								darken(@breadcrumb-active-color, 13.5%);
+@breadcrumb-bg:									none;
 
 // Active
-@breadcrumb-active-color:						@gray-light;
-@breadcrumb-active-bg:							#ffffff;
+@breadcrumb-active-color:						#{{ settings.current["colors"]["content"]["breadcrumb-active-color"]["value"] }};
+@breadcrumb-active-bg:							none;
 
 // Hover
-@breadcrumb-color-hover:						@gray-darker;
-@breadcrumb-bg-hover:							#ffffff;
+@breadcrumb-color-hover:						lighten(@breadcrumb-color, 13.5%);
+@breadcrumb-bg-hover:							none;
 
 
 
@@ -528,61 +528,63 @@
 @product-bg-color:								none;	
 
 // Brand
-@product-brand-color: 							#4D332E;
-@product-brand-font-family:						@font-family-sans-serif;
-@product-brand-font-size:						14px;
+@product-brand-color: 							#{{ settings.current["colors"]["product-grid"]["product-brand-color"]["value"] }};
+@product-brand-font-family:						{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
+@product-brand-font-size:						{{ settings.current["typography"]["product-text-styles"]["product-brand-font-size"]["value"] }};
 @product-brand-font-style:						normal;
-@product-brand-font-weight:						400;
+@product-brand-font-weight:						600;
 @product-brand-text-transform:					none;
 
 // Product Name
-@product-name-color: 							#4D332E;
-@product-name-font-family:						@font-family-sans-serif;
-@product-name-font-size:						14px;
+@product-name-color: 							#{{ settings.current["colors"]["product-grid"]["product-name-color"]["value"] }};
+@product-name-font-family:						{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
+@product-name-font-size:						{{ settings.current["typography"]["product-text-styles"]["product-name-font-size"]["value"] }};
 @product-name-font-style:						normal;
 @product-name-font-weight:						400;
 @product-name-text-transform:					none;
 
 // Price
-@product-price-color: 							#DB5176;
-@product-price-font-family:						@font-family-sans-serif;
-@product-price-font-size:						14px;
+@product-price-color: 							#{{ settings.current["colors"]["product-grid"]["product-price-color"]["value"] }};
+@product-price-font-family:						{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
+@product-price-font-size:						{{ settings.current["typography"]["product-text-styles"]["product-price-font-size"]["value"] }};
 @product-price-font-style:						normal;
-@product-price-font-weight:						400;
+@product-price-font-weight:						600;
 @product-price-text-transform:					none;
 
 // Price Per Month
-@product-price-per-month-color:					lighten(@text-color, 10%);
-@product-price-per-month-font-family:			@font-family-sans-serif;
-@product-price-per-month-font-size:				12px;
+@product-price-per-month-color:					lighten(@product-name-color, 10%);
+@product-price-per-month-font-family:			{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
+@product-price-per-month-font-size:				14px;
 @product-price-per-month-font-style:			normal;
 @product-price-per-month-font-weight:			400;
 @product-price-per-month-text-transform:		none;
 
 // Price Range
-@product-price-range-color:						@text-color;
-@product-price-range-font-family:				@font-family-sans-serif;
-@product-price-range-font-size:					12px;
+@product-price-range-color:						lighten(@product-name-color, 10%);
+@product-price-range-font-family:				{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
+@product-price-range-font-size:					14px;
 @product-price-range-font-style:				normal;
 @product-price-range-font-weight:				400;
 @product-price-range-text-transform:			none;
 
 // Price Regular
-@product-price-regular-color:					@text-color;
-@product-price-regular-font-family:				@font-family-sans-serif;
+@product-price-regular-color:					lighten(@product-name-color, 10%);
+@product-price-regular-font-family:				{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
 @product-price-regular-font-size:				12px;
 @product-price-regular-font-style:				normal;
 @product-price-regular-font-weight:				400;
 @product-price-regular-text-transform:			none;
 
 // Price Percent
-@product-price-percent-color:					lighten(@text-color, 10%);
-@product-price-percent-font-family:				@font-family-sans-serif;
+@product-price-percent-color:					lighten(@product-name-color, 10%);
+@product-price-percent-font-family:				{{ settings.current["typography"]["product-text-styles"]["product-text-typeface"]["value"] }};
 @product-price-percent-font-size:				12px;
 @product-price-percent-font-style:				normal;
 @product-price-percent-font-weight:				400;
 @product-price-percent-text-transform:			none;
 
+// Price Stock
+@stock-text-color:								#{{ settings.current["colors"]["product-grid"]["stock-text-color"]["value"] }};
 
 
 // 
@@ -656,11 +658,12 @@
 // 
 // Panels
 // ----------------------------------------------------------------------------------------------------
-@panel-bg:										#ffffff;
+@panel-bg:										#{{ settings.current["colors"]["panel"]["panel-bg"]["value"] }};
+@panel-text-color:								#{{ settings.current["colors"]["panel"]["panel-text-color"]["value"] }};
 @panel-body-padding:							10px;
 @panel-border-radius:							0px;
-@panel-inner-border: 							#ffffff;
-@panel-footer-bg: 								#ffffff;
+@panel-inner-border:                            #ffffff;
+@panel-footer-bg:                               darken(#fff , 50%);
 
 
 // Default
@@ -721,13 +724,13 @@
 
 @footer-bg-image:								"../images/bg-pattern-footer-1x.png";
 @footer-bg-image-retina:						"../images/bg-pattern-footer-2x.png";
-@footer-bg-color:								#222222;
-@footer-color:									@gray-light;
-@footer-color-link:								#ffffff;
+@footer-bg-color:								#{{ settings.current["colors"]["footer-color"]["footer-bg-color"]["value"] }};
+@footer-color:									#{{ settings.current["colors"]["footer-color"]["footer-color"]["value"] }};
+@footer-color-link:								#{{ settings.current["colors"]["footer-color"]["footer-color-link"]["value"] }};
 @footer-color-link-hover:						@brand-primary;
-@footer-header-text:							#ffffff;
-@footer-hr:										@gray;
-@footer-copy:									#FAF6F0;
+@footer-header-text:							#{{ settings.current["colors"]["footer-color"]["footer-header-text"]["value"] }};
+@footer-hr:										#{{ settings.current["colors"]["footer-color"]["footer-hr"]["value"] }};
+@footer-copy:									#{{ settings.current["colors"]["footer-color"]["footer-copy"]["value"] }};
 
 
 // 
@@ -751,11 +754,13 @@
 //
 // Carousel
 // ----------------------------------------------------------------------------------------------------
-@carousel-caption-color: 						orange;
-@carousel-text-shadow:							2px 2px 1px rgba(15,130,153,1.0);
+
+// Captions
+@carousel-caption-color:                        #{{ settings.current["colors"]["carousel"]["carousel-caption-color"]["value"] }};
+@carousel-text-shadow:                            0 none;
 
 // Controls
-@carousel-control-color:						#ffc859;
+@carousel-control-color:						#{{ settings.current["colors"]["carousel"]["carousel-control-color"]["value"] }};
 @carousel-control-width:						5%;
 @carousel-control-opacity:						1.0;
 @carousel-control-font-size:					24px;
@@ -763,7 +768,6 @@
 // Indicators
 @carousel-indicator-active-bg:					#ffc859;
 @carousel-indicator-border-color:				#ffffff;
-@carousel-caption-color:						#fff;
 
 // Carousel Indicators
 @carousel-indicator-border-color:				;
